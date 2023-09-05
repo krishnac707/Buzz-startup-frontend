@@ -1,0 +1,23 @@
+.overview-profile-body {
+    width: 100%;
+}
+
+.overview-profile-startup-heading{
+width: 100%;
+padding: 2%;
+border-bottom: 1px solid gray;
+}
+
+.overview-profile-startup-heading>{
+    font-weight: 700;
+}
+
+.add-remain-button{
+    border: none;
+    font-weight: 700;
+    width: 15%;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px #e8e8e8;
+}
+

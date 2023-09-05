@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sign-email-div{
+    width: 90%;
+    margin-left: 5%;
+    position: relative;
+}
+
+.sign-email-div>input{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    /* outline-color: ; */
+    border: none;
+    border: 1px solid #dbd6d6;
+    color: black;
+    /* background: #f9f9f9; */
+    border-radius: 8px;
+    margin-top: 6%;
+}
+
+.sign-email-div>span{
+    position: absolute;
+    left: 10px;
+    top: 28px;
+    padding: 5px;
+    pointer-events: none;
+    font-size: 18px;
+    color: black;
+    transition: 0.5s;
+}
+
+.sign-email-div input:valid ~span,
+.sign-email-div input:focus ~span{
+    transform: translateX(10px) translateY(-20px);
+    font-size: 0.65rem;
+    /* padding: 0 10px; */
+    color: #F28C28;
+    top: 32px;
+    background: #f9f9f9;
+}
+
+.signup-button-color{
+    width: 90%;
+    /* margin-left: 5%; */
+    border-radius: 8px;
+    color: white;
+    background-color: #F28C28;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 700;
+    border: none;
+    margin-top: 6%;
+}

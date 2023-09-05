@@ -2,8 +2,19 @@ import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMap } from '@fortawesome/free-solid-svg-icons'
+import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
+
+    const location = useLocation();
+    const isLoginPage = location.pathname === '/login';
+    const isSignupPage = location.pathname === '/register';
+    const isStartupPage = location.pathname === '/start-up-account';
+    const isOverviewProfile = location.pathname === "/overview-profile";
+    if (isLoginPage || isSignupPage || isStartupPage || isOverviewProfile) {
+        return null;
+    }
+
     return (
         <div className='footer-main-body'>
             <div className="footer-first-div">

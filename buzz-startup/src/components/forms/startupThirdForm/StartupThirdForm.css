@@ -1,0 +1,11 @@
+.startup-form-checbox-div{
+width: 75%;
+display: flex;
+justify-content: space-between;
+margin-top: 2%;
+align-items: baseline;
+}
+
+.startup-form-checbox-div>p{
+    width: 93%;
+}

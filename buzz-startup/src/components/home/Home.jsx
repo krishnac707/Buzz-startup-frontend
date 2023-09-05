@@ -29,26 +29,26 @@ const Home = () => {
         <button className='banner-image-button-second-css'>Invest With Us &rarr;</button>
       </div>
       <h2 className='text-dark home-subheading-text'>INVEST WITH US</h2>
-      <h3 className='text-dark home-banner-heading-text'>INVESTMENT MADE EASY</h3>
+      <h3 className='home-banner-heading-text orange-color'>INVESTMENT MADE EASY</h3>
       <p className='home-buzz-start-up-vision'>BuzzStartup’s vision is to make investment opportunities universally accessible. By employing innovative strategies, we break barriers hindering startup growth, creating a supportive investment ecosystem.</p>
       <button className='home-start-invest-button'>Start Investing Now</button>
 
       <div className='home-number-animation-css'>
         <div className='home-inside-number-animation-css'>
-          <h1><NumberAnimation n={10}></NumberAnimation>+</h1>
-          <p><b>Portfolio Companies</b></p>
+          <h1 className='mb-0'><NumberAnimation n={10}></NumberAnimation>+  </h1>
+          <p className='mb-0'><b>Portfolio Companies</b></p>
         </div>
         <div className='home-inside-number-animation-css'>
-          <h1><NumberAnimation n={100}></NumberAnimation>+</h1>
-          <p><b>Startup Pitched</b></p>
+          <h1 className='mb-0'><NumberAnimation n={100}></NumberAnimation>+</h1>
+          <p className='mb-0'><b>Startup Pitched</b></p>
         </div>
         <div className='home-inside-number-animation-css'>
-          <h1><NumberAnimation n={1000}></NumberAnimation>+</h1>
-          <p><b>Startups Evaluated</b></p>
+          <h1 className='mb-0'><NumberAnimation n={1000}></NumberAnimation>+</h1>
+          <p className='mb-0'><b>Startups Evaluated</b></p>
         </div>
         <div className='home-inside-number-animation-css'>
-          <h1>$<NumberAnimation n={20}></NumberAnimation>M+</h1>
-          <p><b>Funds Deployed</b></p>
+          <h1 className='mb-0'>$<NumberAnimation n={20}></NumberAnimation>M+</h1>
+          <p className='mb-0'><b>Funds Deployed</b></p>
         </div>
       </div>
 
@@ -224,7 +224,7 @@ const Home = () => {
       </div>
 
       <h2 className='home-startup-align-div'>STARTUPS NEWS & UPDATES</h2>
-      <h3 className='home-startup-align-div'>Browse our articles on marketing and growth through BuzzTImes</h3>
+      <h3 className='home-startup-align-div'>Browse our <span className='orange-color'>articles</span> on marketing and growth through BuzzTImes</h3>
       <h5 className='home-startup-content-align-div'>Uncover a treasure trove of captivating articles focused on marketing and growth. Inside, you'll find indispensable wisdom and strategies to amplify your business's presence, allure an expanding audience, and unlock</h5>
 
       <div className='home-news-main-div'>
@@ -260,7 +260,7 @@ const Home = () => {
         <button>Browse all article &rarr;</button>
       </div>
 
-      <h2 className='home-startup-align-div'>GET TO KNOW, HOW WE WORK</h2>
+      <h2 className='home-startup-align-div orange-color'>GET TO KNOW, HOW WE WORK</h2>
       <h3 className='home-startup-align-div'>We unify and transform your challenges into success by
         bringing everything together under one umbrella.</h3>
       <h5 className='home-startup-content-align-div'>Every step here is made easy by combined efforts, deals and unique steps towards the united vision. FAAD takes
@@ -271,7 +271,7 @@ const Home = () => {
           <img src={startupImage} alt="" />
         </div>
         <div className="home-startup-detail-description-div">
-          <h4>FOR STARTUPS</h4>
+          <h4 className='orange-color'>FOR STARTUPS</h4>
           <div className='home-feature-startup-div'>
             <div className="home-feature-startup-image-div">
               <img src={enterImage} alt="" />
@@ -310,7 +310,7 @@ const Home = () => {
       <div className='home-startup-detail-div'>
        
         <div className="home-startup-detail-description-div">
-          <h4>FOR INVESTOR</h4>
+          <h4 className='orange-color'>FOR INVESTOR</h4>
           <div className='home-feature-startup-div'>
             <div className="home-feature-startup-image-div">
               <img src={fundingImage} alt="" />
