@@ -1,0 +1,17 @@
+
+.input-file{
+    display: none;
+}
+
+.file-div{
+    width: 100%;
+    border: 1px dashed black;
+    text-align: center;
+    padding: 10%;
+    cursor: pointer;
+}
+
+.custom-button{
+    font-weight: 700 !important;
+    cursor: pointer;
+}

@@ -1,0 +1,33 @@
+.invester-home-css {
+    width: 100%;
+    /* margin-top: 5%; */
+    padding-top: 8% !important;
+    background-color: #f9f9f9;
+    padding-bottom: 3%;
+
+}
+
+.invester-pending-verify-page-div {
+    width: 80%;
+    background: white;
+    margin-left: 10%;
+    box-shadow: 0 3px 12px #e8e8e8;
+    margin-bottom: 2%;
+}
+
+.invester-pending-verify-page-div>div:nth-child(1) {
+    border-bottom: 1px solid #dbd6d6;
+
+}
+
+/* width: 90%;
+margin-left: 5%;
+padding: 2% 3%;
+box-shadow: 0 3px 12px #e8e8e8; */
+
+@media screen and (max-width: 768px) {
+
+    .invester-pending-verify-page-div {
+        margin-top: 7%;
+    }
+}

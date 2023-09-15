@@ -1,7 +1,11 @@
 import React from 'react'
 import "./OverviewProfile.css"
+import { useNavigate } from 'react-router-dom'
 
 const OverviewProfile = () => {
+
+    const router = useNavigate();
+
     return (
         <div className='overview-profile-body'>
             <div className="overview-profile-startup-heading">
@@ -12,7 +16,7 @@ const OverviewProfile = () => {
                 boost visibility and attract opportunities. When your profile hits 100%, you can submit your
                 startup for listing to potential investors. Watch your progress bar fill up as you go! 🌟
             </p>
-            <button className='mx-4 mb-1 p-2 text-center add-remain-button'>+Add Remaining Details</button>
+            <button className='mx-4 mb-1 p-2 text-center add-remain-button' onClick={()=>router("/startup-main-form-dashboard")}>+Add Remaining Details</button>
 
             <p className='px-4 py-2'>Welcome, aspiring startups! 🌟 Excited to showcase your brilliance to potential
                 investors? See how your filled startup details will be displayed in all its glory!

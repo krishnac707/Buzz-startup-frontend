@@ -1,0 +1,91 @@
+
+.my-innovation-body{
+    width: 100%;
+    padding-top: 5%;
+}
+
+.customfW{
+    font-weight: 700;
+}
+
+.my-innovation-image-div{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.my-innovation-image-div>img{
+width: 100%;
+
+}
+
+.my-innovation-searchbar-div{
+    width: 50%;
+    margin-left: 25%;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding-left: 2%;
+    margin-bottom: 2%;
+}
+
+.my-innovation-searchbar-div>input:nth-child(1){
+width: 93%;
+border: none;
+outline: none;
+}
+
+.my-innovation-searchbar-div>img:nth-child(2){
+width: 5%;
+}
+
+.my-innovation-suggestion-div{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.my-innovation-suggestion-div-inside{
+    width: 100%;
+    display: flex;
+}
+
+.my-innovation-suggestion-div-inside>div{
+    width: 33%;
+    cursor: pointer;
+}
+
+.my-innovation-step-div{
+    width: 90%;
+    margin-left: 5%;
+    background-color: black;
+    color: white;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.innovation-three-step-div{
+    width: 100%;
+    display: flex;
+}
+
+.innovation-three-step-div>div:nth-child(1){
+    width: 33%;
+}
+
+.innovation-three-step-div>div:nth-child(2){
+    width: 33%;
+}
+
+.innovation-three-step-div>div:nth-child(3){
+    width: 33%;
+}
+
+.colorBlack{
+    color: black;
+}
+
+.my-innovation-step-circle-div{
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: gray;
+}

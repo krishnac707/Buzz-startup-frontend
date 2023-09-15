@@ -11,8 +11,11 @@ const Footer = () => {
     const isSignupPage = location.pathname === '/register';
     const isStartupPage = location.pathname === '/start-up-account';
     const isOverviewProfile = location.pathname === "/overview-profile";
-    if (isLoginPage || isSignupPage || isStartupPage || isOverviewProfile) {
-        return null;
+    const isStartupMainDashboard = location.pathname === "/startup-main-form-dashboard";
+    const isInvestorMainDashboard = location.pathname === "/investor-form-account";
+    const isInvestorAccountDashboard = location.pathname === "/investor/account"
+    if (isLoginPage || isSignupPage || isStartupPage || isOverviewProfile || isStartupMainDashboard || isInvestorMainDashboard || isInvestorAccountDashboard) {
+        return null; 
     }
 
     return (

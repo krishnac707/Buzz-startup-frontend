@@ -4,11 +4,12 @@ import investorHeading from "./../../images/investor-meet.jpg"
 import investorPitch from "./../../images/Investor Pitch.jpg";
 import portfoliomanage from "./../../images/Portfolio Management.jpg";
 import networking from "./../../images/Networking.jpg";
-
 import { useSpring, animated } from 'react-spring';
+import { useNavigate } from 'react-router-dom';
 
 const InvestorPage = () => {
 
+    const router = useNavigate()
     const NumberAnimation = ({ n }) => {
         const { number } = useSpring({
             from: { number: 0 },
@@ -26,7 +27,7 @@ const InvestorPage = () => {
                     <h2>INVEST WITH US </h2>
                     <h3 className='orange-color'>INVESTMENT MADE EASY</h3>
                     <p>We at BuzzStartups, have a goal of making investment opportunities ubiquitous and accessible for all. Faad pushes the boundaries of the growth of start-ups by drawing intensive measures to overcome limitations and promote a healthy environment for Investment</p>
-                    <button>Become an Investor &rarr;</button>
+                    <button onClick={()=>router('/investor-form-account')}>Become an Investor &rarr;</button>
                 </div>
 
                 <div>
@@ -88,6 +89,16 @@ const InvestorPage = () => {
                     <h2 className='orange-color'>NETWORKING </h2>
                     <h3>TRULY Top-Notch</h3>
                     <p><b>Best BuzzStartups takes charge of overseeing investee company development, affording privileges like consistent updates, monthly MIS, networking within the business community, mentorship, and opportunities for future fundraising.</b></p>
+                </div>
+            </div>
+
+            <div className='email-subscribe-main-div py-3 '>
+                <div>
+                    <h3 className='mb-0 text-center'>Stay tuned with our Newsletter.</h3>
+                </div>
+                <div>
+                    <input type="text" className='email-input-common px-3 py-2' placeholder='Email Address' />
+                    <button className='subscribe-button-css px-3 py-2'>Subscribe To BuzzNetWork &rarr;</button>
                 </div>
             </div>
 

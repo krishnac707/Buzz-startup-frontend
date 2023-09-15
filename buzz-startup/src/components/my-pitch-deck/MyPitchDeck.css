@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+html{
+    font-size: 62.5%;
+} */
+
+.my-pitch-deck-body {
+    width: 100%;
+    margin-top: 5%;
+}
+
+.pitch-banner-div {
+    background-image: url("../../images/Pitch\ deck\ background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.pitch-banner-div-content {
+    width: 40%;
+    color: white;
+}
+
+.pitch-banner-button {
+    color: black;
+    background-color: white;
+    border: none;
+    width: 28%;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pitch-banner-button:hover {
+    color: black;
+    background-color: white;
+    border: none;
+    width: 28%;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition-duration: .3s;
+    transition-property: transform;
+}
+
+.pitch-deck-percentage-div {
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pitch-deck-percentage-div>div:nth-child(1) {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pitch-deck-percentage-div>div:nth-child(2) {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pitch-deck-percentage-div>div:nth-child(3) {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pitch-percentage {
+    width: 25%;
+    height: 100%;
+    background: #376AEE1A;
+    border-radius: 50%;
+}
+
+.pitch-percentage>h3 {
+    margin: auto;
+}
+
+.pitch-percent-para {
+    font-weight: 600;
+    width: 67%;
+}
+
+.deck-7x-main-div {
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.deck-7x-div {
+    width: 48%;
+    background: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+}
+
+.deck-7x-div>h3{
+    /* margin: auto; */
+    color: #376AEE;
+}
+
+.deck-feature-div-css{
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.deck-first-feature-div-css{
+    width: 32%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%
+}
+
+.deck-first-feature-div-css>h4{
+    width: 73%;
+}
+
+.deck-spend-div{
+    width: 100%;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    display: flex;
+    justify-content: space-between;
+    background: #D9D9D94D;
+    margin-bottom: 2%;
+}
+
+.deck-spend-div>div:nth-child(1){
+    width: 40%;
+    font-weight: 700;
+}
+
+.deck-spend-div>div:nth-child(2){
+    background-color: white;
+    width: 30%;
+    border-radius: 6px;
+    /* margin-left: 5%; */
+}
+
+.deck-happen-button-css{
+    width: 60%;
+    border: none;
+    background: #D9D9D94D;
+    border-radius: 6px;
+    font-weight: 700;
+    margin: auto;
+}
+
+.pitch-deck-live-div-css{
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.pitch-deck-live-div-css>div:nth-child(2){
+    width: 50%;
+}
+
+.pitch-deck-live-div-css>div:nth-child(2)>img{
+    width: 100%;
+    height: fit-content;
+}
+
+.pitch-deck-para-css{
+    font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .my-pitch-deck-body {
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    .pitch-banner-div-content {
+        width: 100%;
+        color: white;
+    }
+
+    .pitch-banner-button {
+        width: 50%;
+    }
+
+    .pitch-banner-button:hover {
+        width: 50%;
+    }
+
+    .pitch-deck-percentage-div {
+        width: 90%;
+        margin-left: 5%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .pitch-deck-percentage-div>div:nth-child(1) {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1%;
+
+
+    }
+
+    .pitch-deck-percentage-div>div:nth-child(2) {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1%;
+
+    }
+
+    .pitch-deck-percentage-div>div:nth-child(3) {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1%;
+
+    }
+
+}

@@ -1,0 +1,40 @@
+.relation-ship-image-info-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.relation-ship-image-info-div>div:nth-child(1){
+    width: 13%;
+}
+
+.relation-ship-image-info-div>div:nth-child(1)>img{
+    width: 100%;
+}
+
+.relation-ship-image-info-div>div:nth-child(2){
+    width: 82%;
+}
+
+.chat-button-css{
+    width: 25%;
+    border: none;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.relationship-note{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.relationship-note>p:nth-child(1){
+width: 10%;
+}
+
+.relationship-note>p:nth-child(2){
+width: 90%;
+}

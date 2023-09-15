@@ -1,0 +1,24 @@
+
+.pitch-deck-body-css{
+    width: 70%;
+    box-shadow: 0 3px 12px #e8e8e8;
+    margin-left: 15%;
+    margin-top: 6%;
+}
+
+.startup-pitch-deck-input-div{
+    width: 100%;
+}
+
+.pitch-deck-input-div-inside{
+    width: 100%;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.pitch-deck-input{
+    width: 100%;
+    border: none;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px #e8e8e8;
+}

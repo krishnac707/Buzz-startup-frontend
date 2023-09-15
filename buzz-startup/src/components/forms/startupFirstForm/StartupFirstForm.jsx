@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./StartupFirstForm.css"
-import DatePicker from 'react-date-picker'
+// import DatePicker from 'react-date-picker'
 
 const StartupFirstForm = ({ formData, setFormData }) => {
 
-    const [dateValue, onDateChange] = useState(new Date());
+    // const [dateValue, onDateChange] = useState(new Date());
 
     return (
         <div className='startup-first-form-div'>

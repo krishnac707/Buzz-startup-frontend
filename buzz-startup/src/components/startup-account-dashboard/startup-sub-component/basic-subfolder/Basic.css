@@ -1,0 +1,88 @@
+
+.background-color-startup-navbar{
+    color: black !important;
+}
+
+.border-bottom-navbar-css{
+    border-bottom: 1px solid #dee2e6;
+}
+
+.background-color-startup-navbar.active{
+    background-color: transparent !important;
+    color: black !important;
+    border-bottom: 1px solid #c00;
+}
+
+
+/* general css */
+.startup-general-body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.startup-general-startup-name-div{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.startup-general-startup-name-div>div:nth-child(1){
+    width: 40%;
+}
+
+.startup-general-startup-name-div>div:nth-child(2){
+    width: 55%;
+}
+
+.startname-input-general{
+    width: 90%;
+    border: none;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px #e8e8e8;
+}
+
+.startup-basic-general-save-button{
+    width: 13%;
+    border: none;
+    float: right;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+}
+
+/* Logo css */
+
+.basic-logo-body-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.basic-logo-body-div>div:nth-child(1){
+    width: 12%;
+}
+
+.basic-logo-body-div>div:nth-child(1)>img{
+    width: 90%;
+    height: 100%;
+}
+
+.basic-logo-body-div>div:nth-child(2){
+    width: 69%;
+}
+
+.basic-logo-body-div>div:nth-child(3){
+    width: 17%;
+}
+
+.basic-logo-body-div>div:nth-child(3)>button{
+    width: 80%;
+    border: none;
+    background-color: #ee4437;
+    color: white;
+    border-radius: 6px;
+}
+

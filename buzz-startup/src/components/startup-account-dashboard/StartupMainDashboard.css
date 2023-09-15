@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.startup-main-dashboard-body-div{
+    width: 100%;
+}
+
+.startup-main-heading-div-form{
+    width: 100%;
+    height: 150px;
+    background-color: antiquewhite;
+    padding: 4% 0% 3% 7%;
+}
+
+.startup-dashboard-inside-shadow-div{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: -2%;
+    background-color: white;
+    border-radius: 6px;
+    padding: 2% 3%;
+    box-shadow: 0 3px 12px #e8e8e8;
+}
+
+.startup-dashboard-profile-form-div{
+    width: 100%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.startup-dashboard-profile-form-div>div:nth-child(1){
+    width: 11%;
+}
+
+.startup-dashboard-profile-form-div>div:nth-child(1)>img{
+    width: 80%;
+    height: 100%;
+    /* border-radius:; */
+}
+
+.startup-dashboard-profile-form-div>div:nth-child(2){
+    width: 89%;
+}
+
+.startup-side-nav-component-content-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.startup-side-nav-component-content-div>div:nth-child(1){
+    width: 25%;
+    height: fit-content;
+}
+
+.startup-side-nav-component-content-div>div:nth-child(2){
+    width: 73%;
+}
+
+.basic-startup-form-div{
+    width: 100%;
+    color: black !important;
+    /* background-color: aqua; */
+}
+
+.startup-navbar-color{
+    color: black !important;
+}
+
+.nav-link.active {
+    background-color: #ffefef !important;
+    color: #c00 !important;
+}
+

@@ -9,6 +9,14 @@ import Login from './components/login/Login';
 import Signup from './components/signup/Signup';
 import StartupMainForm from './components/forms/startupForm/StartupMainForm';
 import OverviewProfile from './components/overview-profile/OverviewProfile';
+import { ErrorPage } from './components/ErrorPage';
+import StartupMainDashboard from './components/startup-account-dashboard/StartupMainDashboard';
+import MyPitchDeck from './components/my-pitch-deck/MyPitchDeck';
+import FinancialModalling from './components/financial-modalling/FinancialModalling';
+import InvestorMainForm from './components/investor-form/investorMainForm/InvestorMainForm';
+import InvestorHome from './components/investor-inside/investor-home/InvestorHome';
+import InvestorAccount from './components/investor-inside/investor-account/InvestorAccount';
+import MyInnovation from './components/my-innovation/MyInnovation';
 
 function App() {
     return (
@@ -22,6 +30,14 @@ function App() {
                 <Route exact path='/investor-page' element={<InvestorPage />} />
                 <Route exact path='/start-up-account' element={<StartupMainForm />} />
                 <Route exact path='/overview-profile' element={<OverviewProfile />} />
+                <Route exact path='/startup-main-form-dashboard' element={<StartupMainDashboard />} />
+                <Route exact path='*' element={<ErrorPage />} />
+                <Route exact path='/pitch-deck' element={<MyPitchDeck />} />
+                <Route exact path='/investor-form-account' element={<InvestorMainForm />} />
+                <Route exact path='/financial-modelling' element={<FinancialModalling />} />
+                <Route exact path='/investor/home' element={<InvestorHome />} />
+                <Route exact path='/investor/account' element={<InvestorAccount />} />
+                <Route exact path='/my-innovation' element = {<MyInnovation />} />
             </Routes>
             <Footer />
         </div>

@@ -1,0 +1,28 @@
+.add-founder-button-css {
+    display: flex;
+    justify-content: center;
+}
+
+.startup-team-add-button {
+    width: 30%;
+    border: none;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+}
+
+.fouder-detail-css {
+    box-shadow: 0 3px 12px #e8e8e8;
+}
+
+.delete-founder-button-css{
+    display: flex;
+    justify-content: end;
+}
+
+.delete-founder-button-css>button{
+    border: none;
+    background-color: white;
+    font-size: 20px;
+}
+
