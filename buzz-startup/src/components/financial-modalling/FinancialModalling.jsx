@@ -10,9 +10,9 @@ const FinancialModalling = () => {
         <div className='my-pitch-deck-body'>
             <div className='pitch-banner-div'>
                 <div className='px-4 py-4 pitch-banner-div-content'>
-                    <h3>Justifiable Valuations to back
+                    <h2>Justifiable Valuations to back
                         you up in front of investors
-                    </h3>
+                    </h2>
                     <h5 className='py-2 '>While it is helpful for investors to know the estimated value of
                         your business, but it isn't necessarily the dominant reason why an investor will invest
                         in a startup. Quite often, convincing an investor is more about being influential,
@@ -24,7 +24,7 @@ const FinancialModalling = () => {
 
             <div className='data-centric-div px-4 py-3'>
                 <div>
-                    <h3 className='pb-3'>Data-centric Reliable Valuations</h3>
+                    <h2 className='pb-3'>Data-centric Reliable Valuations</h2>
                     <h4 className='pb-3'>
                         Valuation Accepted by all Investors/Angel Investors/ Venture Capitalist/PE Firms
                     </h4>
@@ -54,8 +54,8 @@ const FinancialModalling = () => {
             </div>
 
             <div className='pitch-deck-sub-heading-1'>
-                <h3 className='text-center py-4 mb-0'>Pillars of Creation for Financial
-                    Modeling and Valuations</h3>
+                <h2 className='text-center py-4 mb-0'>Pillars of Creation for Financial
+                    Modeling and Valuations</h2>
             </div>
 
             <div className='financial-modalling-image-div'>
@@ -64,13 +64,13 @@ const FinancialModalling = () => {
 
             <div className='deck-spend-div py-3'>
                 <div>
-                    <h3 className='mb-4'>
+                    <h2 className='mb-4'>
                         1000s of Founders lose a deal because they lack data-centric reliable valuation report.
-                    </h3>
-                    <h3 className='investor-hate-heading'>
+                    </h2>
+                    <h2 className='investor-hate-heading'>
                         Investors Hate
                         Guesswork!
-                    </h3>
+                    </h2>
                 </div>
                 <div className='p-3 inside-div-background'>
                     <h4 className='pb-3'>We Only Have Few Minutes
@@ -81,7 +81,7 @@ const FinancialModalling = () => {
 
             <div className='email-subscribe-main-div py-3 '>
                 <div>
-                    <h3 className='mb-0 text-center'>Stay tuned with our Newsletter.</h3>
+                    <h2 className='mb-0 text-center'>Stay tuned with our Newsletter.</h2>
                 </div>
                 <div>
                     <input type="text" className='email-input-common px-3 py-2' placeholder='Email Address' />

@@ -13,6 +13,7 @@ import DocumentDashboardProvider from './context/DocumentDashboard.context';
 import InvesterAccountDashboardProvider from './context/InvestorAccountDashboard.context';
 import GeneralDetailDashboardProvider from './context/GeneralDetailDashboard.context';
 import KycFormDashboardProvider from './context/KycFormDashboard.context';
+import FullReportDashboardProvider from './context/fullReportDashboard.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,7 +27,9 @@ root.render(
                 <InvesterAccountDashboardProvider>
                   <GeneralDetailDashboardProvider>
                     <KycFormDashboardProvider>
+                      <FullReportDashboardProvider>
                       <App />
+                      </FullReportDashboardProvider>
                     </KycFormDashboardProvider>
                   </GeneralDetailDashboardProvider>
                 </InvesterAccountDashboardProvider>

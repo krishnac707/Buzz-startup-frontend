@@ -16,7 +16,9 @@ const Header = () => {
     const isInvestorMainDashboard = location.pathname === "/investor-form-account";
     const isInvestorHomeDashboard = location.pathname === "/investor/home";
     const isInvestorAccountDashboard = location.pathname === "/investor/account";
-    if (isLoginPage || isSignupPage || isStartupPage || isOverviewProfile || isStartupMainDashboard || isInvestorMainDashboard) {
+    const isFullReport = location.pathname === "/full-report"
+
+    if (isLoginPage || isFullReport || isSignupPage || isStartupPage || isOverviewProfile || isStartupMainDashboard || isInvestorMainDashboard) {
         return null;
     }
 
@@ -54,8 +56,8 @@ const Header = () => {
                         <Nav className="me-auto navbar-menu-div" >
                             <Nav.Link className='navbar-link-menu-div' onClick={() => router("/startup-page")}>Startups</Nav.Link>
                             <Nav.Link className='navbar-link-menu-div' onClick={() => router("/investor-page")}>Investors</Nav.Link>
-                            <Nav.Link className='navbar-link-menu-div'>Portfolio</Nav.Link>
-                            <Nav.Link className='navbar-link-menu-div'>About Us</Nav.Link>
+                            <Nav.Link className='navbar-link-menu-div' onClick={()=>router("/about-us")}>About Us</Nav.Link>
+                            <Nav.Link className='navbar-link-menu-div' onClick={()=>router('/contact-us')}>Contact Us</Nav.Link>
                             {/* <Nav.Link className='navbar-link-menu-div'>Explore</Nav.Link> */}
                             <NavDropdown title="Explore" className='navbar-link-menu-div' id="basic-nav-dropdown">
                                 <NavDropdown.Item onClick={()=>router("/my-innovation")}>MyInnovation</NavDropdown.Item>

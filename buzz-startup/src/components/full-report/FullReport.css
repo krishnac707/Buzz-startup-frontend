@@ -1,0 +1,41 @@
+
+.full-report-body{
+    width: 100%;
+    margin-top: 3%;
+}
+
+.startup-report-heading-div{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.search-report-input{
+    width: 60%;
+    border-radius: 25px;
+}
+
+.report-menu-main-div{
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.report-menu-div{
+    width: 25%;
+}
+
+.report-content-div{
+    width: 73%;
+}
+
+.report-menu-sub-div{
+    width: 100%;
+    border-radius: 4px;
+}
+
+.report-sub-menu-color{
+    color: black !important;
+    background-color: gray !important;
+}

@@ -17,6 +17,9 @@ import InvestorMainForm from './components/investor-form/investorMainForm/Invest
 import InvestorHome from './components/investor-inside/investor-home/InvestorHome';
 import InvestorAccount from './components/investor-inside/investor-account/InvestorAccount';
 import MyInnovation from './components/my-innovation/MyInnovation';
+import FullReport from './components/full-report/FullReport';
+import AboutUs from './components/about-us/AboutUs';
+import ContactUs from './components/contact-us/ContactUs';
 
 function App() {
     return (
@@ -38,6 +41,9 @@ function App() {
                 <Route exact path='/investor/home' element={<InvestorHome />} />
                 <Route exact path='/investor/account' element={<InvestorAccount />} />
                 <Route exact path='/my-innovation' element = {<MyInnovation />} />
+                <Route exact path='/full-report' element= {<FullReport />} />
+                <Route exact path='/about-us' element={<AboutUs />} />
+                <Route exact path='/contact-us' element={<ContactUs />} />
             </Routes>
             <Footer />
         </div>

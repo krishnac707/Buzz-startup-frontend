@@ -16,9 +16,9 @@ const MyPitchDeck = () => {
     <div className='my-pitch-deck-body'>
       <div className='pitch-banner-div'>
         <div className='px-4 py-4 pitch-banner-div-content'>
-          <h3>We Take The Hassle
+          <h2>We Take The Hassle
             Out Of Pitch Deck Making
-          </h3>
+          </h2>
           <h5 className='py-2 '>With over USD $10M raised by our clients, we can help you with the perfect
             investment collateral. Since our experts know what it takes to hook investors'
             attention and present your compelling story.</h5>
@@ -28,7 +28,7 @@ const MyPitchDeck = () => {
       <div className='pitch-deck-percentage-div my-3'>
         <div>
           <div className='pitch-percentage'>
-            <h3 className='text-center py-3'>95%</h3>
+            <h2 className='text-center py-3'>95%</h2>
           </div>
           <div className='pitch-percent-para'>
             <p className='mb-0 pt-2'>of The Founders Struggle at Pitch
@@ -38,7 +38,7 @@ const MyPitchDeck = () => {
         </div>
         <div>
           <div className='pitch-percentage'>
-            <h3 className='text-center py-3'>87%</h3>
+            <h2 className='text-center py-3'>87%</h2>
           </div>
           <div className='pitch-percent-para'>
             <p className='mb-0 pt-2'>of Founders, Spend More Than 3 Months
@@ -48,7 +48,7 @@ const MyPitchDeck = () => {
         </div>
         <div>
           <div className='pitch-percentage'>
-            <h3 className='text-center py-3'>75%</h3>
+            <h2 className='text-center py-3'>75%</h2>
           </div>
           <div className='pitch-percent-para'>
             <p className='mb-0 pt-2'>of Them Are Not Confident About
@@ -59,13 +59,13 @@ const MyPitchDeck = () => {
       </div>
 
       <div className='pitch-deck-sub-heading-1'>
-        <h3 className='text-center py-4 mb-0'>Pitch Deck Creating Solutions To
-          Make Your Life Easier</h3>
+        <h2 className='text-center py-4 mb-0'>Pitch Deck Creating Solutions To
+          Make Your Life Easier</h2>
       </div>
 
       <div className='deck-7x-main-div mb-2'>
         <div className='deck-7x-div p-2'>
-          <h3 className='mb-0 pt-3 px-2'>7X</h3>
+          <h2 className='mb-0 pt-3 px-2'>7X</h2>
           <h4 className='mb-0 pt-3'>Increase Your Chances
             of Funding
           </h4>
@@ -75,7 +75,7 @@ const MyPitchDeck = () => {
         </div>
 
         <div className='deck-7x-div p-2'>
-          <h3 className='mb-0 pt-3 px-2 '>75%</h3>
+          <h2 className='mb-0 pt-3 px-2 '>75%</h2>
           <h4 className='mb-0 pt-3'>Time-Saving in
             Investment Prep.
           </h4>
@@ -87,8 +87,8 @@ const MyPitchDeck = () => {
 
 
       <div className='pitch-deck-sub-heading-1'>
-        <h3 className='text-center py-4 mb-0'>You Never Get a Second Chance to
-          Make a First Impression!</h3>
+        <h2 className='text-center py-4 mb-0'>You Never Get a Second Chance to
+          Make a First Impression!</h2>
       </div>
 
       <div className='deck-feature-div-css mb-2'>
@@ -143,14 +143,14 @@ const MyPitchDeck = () => {
 
       <div className='deck-spend-div py-3'>
         <div>
-          <h3 className='mb-4'>
+          <h2 className='mb-4'>
             On Average, an Investor
             Spends 4 Mins on a Pitch Deck.
-          </h3>
-          <h3>
+          </h2>
+          <h2>
             An Investment Associate
             Gets 2000 Decks a Year.
-          </h3>
+          </h2>
         </div>
         <div className='p-3'>
           <h4 className='pb-3'>We Only Have Few Minutes
@@ -161,7 +161,7 @@ const MyPitchDeck = () => {
 
       <div className='pitch-deck-live-div-css'>
         <div>
-          <h3>Pitch Decks are what we live and breathe!</h3>
+          <h2>Pitch Decks are what we live and breathe!</h2>
           <p className='pitch-deck-para-css'>A dedicated team of 30+ strive to assist you at every step of the way.
             We are here to help you carve a successful path where you achieve your dreams.</p>
         </div>
@@ -172,7 +172,7 @@ const MyPitchDeck = () => {
 
       <div className='email-subscribe-main-div py-3 '>
         <div>
-          <h3 className='mb-0 text-center'>Stay tuned with our Newsletter.</h3>
+          <h2 className='mb-0 text-center'>Stay tuned with our Newsletter.</h2>
         </div>
         <div>
           <input type="text" className='email-input-common px-3 py-2' placeholder='Email Address' />
