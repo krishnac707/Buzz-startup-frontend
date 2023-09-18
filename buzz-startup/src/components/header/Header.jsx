@@ -20,7 +20,7 @@ const Header = () => {
 
     
 
-    if (isLoginPage || isFullReport || isSignupPage || isStartupPage || isOverviewProfile || isStartupMainDashboard || isInvestorMainDashboard) {
+    if (isLoginPage || isFullReport || isSignupPage || isStartupPage || isOverviewProfile || isInvestorMainDashboard) {
         return null;
     }
 
@@ -34,10 +34,34 @@ const Header = () => {
                         <Navbar.Collapse id="basic-navbar-nav" className='navbar-menu-main-div-last'>
                             <Nav className="navbar-nav right-investor-header-div">
                                 <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4' onClick={() => router("/investor/home")}>Opportunities</Nav.Link>
-                                <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4' onClick={() => router("/login")}>My Portfolio</Nav.Link>
+                                <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4'>My Portfolio</Nav.Link>
                                 <NavDropdown title={<img src={headerImage} className='hpid py-2' alt="Image" />} className='navbar-link-investor-menu-div i-mobile-view-size' id="basic-nav-dropdown">
                                 {/* <span className='nhid'><img className='pt-3 pb-3' src={headerImage} alt="" /></span> */}
                                     <NavDropdown.Item onClick={()=>router('/investor/account')}>My Profile</NavDropdown.Item>
+                                    <NavDropdown.Item>Logout</NavDropdown.Item>
+                                </NavDropdown>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>
+            </div>
+        )
+    }
+
+    if (isStartupMainDashboard) {
+        return (
+            <div id='navbar-header' >
+                <Navbar expand="lg" fixed="top" className="bg-body-tertiary border-bottom-css-navbar p-0">
+                    <Container>
+                        <div className='navbar-heading-logo-color-1 navbar-logo-width' ><p className='mb-0 logo-cursor' onClick={() => router("/")}>BuzzStartups</p></div>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav" className='navbar-menu-main-div-last'>
+                            <Nav className="navbar-nav right-investor-header-div">
+                                <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4' onClick={() => router("/overview-profile")}>Opportunities</Nav.Link>
+                                <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4'>My Portfolio</Nav.Link>
+                                <NavDropdown title={<img src={headerImage} className='hpid py-2' alt="Image" />} className='navbar-link-investor-menu-div i-mobile-view-size' id="basic-nav-dropdown">
+                                {/* <span className='nhid'><img className='pt-3 pb-3' src={headerImage} alt="" /></span> */}
+                                    <NavDropdown.Item onClick={()=>router('/overview-profile')}>My Profile</NavDropdown.Item>
                                     <NavDropdown.Item>Logout</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>

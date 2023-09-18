@@ -9,10 +9,12 @@ import Funding from './startup-sub-component/Funding';
 import Team from './startup-sub-component/Team';
 import RelationShip from './startup-sub-component/RelationShip';
 import Documents from './startup-sub-component/Documents';
+import { useNavigate } from 'react-router-dom';
 
 const StartupMainDashboard = () => {
-
+    
     const {  setBasicStartup, setPitchStartup, setFundingStartup, setTeamStartup, setDocumentStartup, setRelationShip } = useContext(StartupDashboardContext);
+    const router = useNavigate()
 
     const basicFunction = () => {
         setPitchStartup(false)
@@ -71,7 +73,7 @@ const StartupMainDashboard = () => {
     return (
         <div className='startup-main-dashboard-body-div'>
             <div className='startup-main-heading-div-form'>
-                <h3 className='ps-5'>&larr; My Profile</h3>
+                <h3 className='ps-5' onClick={()=>router("/")}>&larr; My Profile</h3>
             </div>
             <div className='startup-dashboard-inside-shadow-div'>
                 <div className='startup-dashboard-profile-form-div'>
