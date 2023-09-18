@@ -27,7 +27,7 @@ const InvestorPage = () => {
                     <h2>INVEST WITH US </h2>
                     <h3 className='orange-color'>INVESTMENT MADE EASY</h3>
                     <p>We at BuzzStartups, have a goal of making investment opportunities ubiquitous and accessible for all. Faad pushes the boundaries of the growth of start-ups by drawing intensive measures to overcome limitations and promote a healthy environment for Investment</p>
-                    <button onClick={()=>router('/investor-form-account')}>Become an Investor &rarr;</button>
+                    <button onClick={()=>router("/login")}>Become an Investor &rarr;</button>
                 </div>
 
                 <div>

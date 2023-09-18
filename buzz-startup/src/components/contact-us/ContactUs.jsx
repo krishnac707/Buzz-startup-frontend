@@ -5,6 +5,12 @@ import messageImage from './../../images/mail.png'
 import locationImage from './../../images/location.png'
 
 const ContactUs = () => {
+
+    // const headingRef = useRef(null);
+    // useEffect(() => {
+    //   headingRef.current.scrollIntoView({ behavior: 'smooth' });
+    // }, []);
+
     return (
         <div className='contact-us-body'>
             <div className='contact-us-main-div'>

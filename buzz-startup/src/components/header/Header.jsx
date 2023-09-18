@@ -18,6 +18,8 @@ const Header = () => {
     const isInvestorAccountDashboard = location.pathname === "/investor/account";
     const isFullReport = location.pathname === "/full-report"
 
+    
+
     if (isLoginPage || isFullReport || isSignupPage || isStartupPage || isOverviewProfile || isStartupMainDashboard || isInvestorMainDashboard) {
         return null;
     }

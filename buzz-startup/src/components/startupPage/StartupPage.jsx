@@ -18,6 +18,10 @@ import { useNavigate } from 'react-router-dom';
 const StartupPage = () => {
 
     const router = useNavigate();
+    // const headingRef = useRef(null);
+    // useEffect(() => {
+    //   headingRef.current.scrollIntoView({ behavior: 'smooth' });
+    // }, []);
 
     const NumberAnimation = ({ n }) => {
         const { number } = useSpring({
@@ -38,7 +42,7 @@ const StartupPage = () => {
                     <p>Welcome to BuzzStartups Network, where innovation knows no bounds. Embarking on a journey that spans the globe, we proudly invest between 50k USD to 1MN USD in the earliest stages of startups. Whether it's the seed of an idea or the promising coalescence of a Pre-Series venture, Buzz Network is there to champion your vision.</p>
                     <p>At BuzzStartups, our commitment to transforming ideas into remarkable milestones is unwavering. Through exclusive partnerships with technology-focused enterprises, we not only provide the financial backing your startup deserves but also the strategic guidance it needs to thrive. Our visionary process is finely attuned to the contemporary rhythm of entrepreneurship, ensuring that your journey aligns seamlessly with the rapid pace of modern innovation.</p>
                     <p>Join hands with BuzzStartups Network and let's reshape the future together. Your journey from concept to success is our shared destination.</p>
-                    <button onClick={() => router("/start-up-account")}>Apply For Funding &rarr;</button>
+                    <button onClick={()=>router("/login")}>Apply For Funding &rarr;</button>
                 </div>
 
                 <div>
@@ -164,7 +168,7 @@ const StartupPage = () => {
                         <div>
                             <p className='orange-color'><b>TERM SHEET & DEAL DUE DILIGENCE</b></p>
                             <p>Call/Meetings are scheduled with the interested investors to finalize the term sheet. A comprehensive due diligence process takes places for roughly 2-4 weeks.</p>
-                            <button className='road-map-button'>Apply For Funding &rarr;</button>
+                            <button className='road-map-button' onClick={()=>router("/login")}>Apply For Funding &rarr;</button>
                         </div>
 
                     </div>

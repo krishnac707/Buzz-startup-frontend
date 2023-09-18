@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './MyInnovation.css'
-import IstockImage from './../../images/istockphoto-1385970223-612x612.jpg'
+import IstockImage from './../../images/MyInnovation.jpeg'
 import searchIcon from './../../images/search-interface-symbol.png'
 import { Typewriter } from 'react-simple-typewriter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

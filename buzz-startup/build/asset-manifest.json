@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.45009163.css",
-    "main.js": "/static/js/main.519474ef.js",
+    "main.css": "/static/css/main.e0e92078.css",
+    "main.js": "/static/js/main.867ba9f8.js",
     "static/js/787.bb25098a.chunk.js": "/static/js/787.bb25098a.chunk.js",
     "static/media/Financial Modelling & Valuation.png": "/static/media/Financial Modelling & Valuation.31d33ea0901bb3389669.png",
     "static/media/2.jpg": "/static/media/2.06aff0a79d102c6eef40.jpg",
+    "static/media/MyInnovation.jpeg": "/static/media/MyInnovation.0f2ea4ef5de341cf33ea.jpeg",
     "static/media/Untitled design.jpg": "/static/media/Untitled design.98dc51eee825436a21fd.jpg",
+    "static/media/About us.jpeg": "/static/media/About us.7f17bc7c75158cd9ddd8.jpeg",
     "static/media/login_investor.svg": "/static/media/login_investor.65b2a0e783dcdb4fcc216e1ab2d5c772.svg",
     "static/media/ScreenShot_858.png": "/static/media/ScreenShot_858.2a33b6e72d094116307f.png",
     "static/media/startup-login-image.svg": "/static/media/startup-login-image.d2b5c47d2afdc1548231d70538f0ce16.svg",
-    "static/media/istockphoto-1385970223-612x612.jpg": "/static/media/istockphoto-1385970223-612x612.6d2200c90b3d7786143e.jpg",
     "static/media/Pitch deck image.jpg": "/static/media/Pitch deck image.2935940f0b69b9e7e27b.jpg",
     "static/media/location.png": "/static/media/location.2542c3166ecdc42c13e2.png",
     "static/media/top-startups-in-pune.jpg": "/static/media/top-startups-in-pune.c27e76e61647b0736ad7.jpg",
     "static/media/partnerImage.jpg": "/static/media/partnerImage.5f3c2c738196d7939428.jpg",
     "static/media/Networking.jpg": "/static/media/Networking.eb39d82dc30e320c88e4.jpg",
-    "static/media/Buzzaboutus2.jpg": "/static/media/Buzzaboutus2.99a76c96c5308d937a36.jpg",
     "static/media/investor-meet.jpg": "/static/media/investor-meet.67283e1491daa91ccad2.jpg",
     "static/media/Portfolio Management.jpg": "/static/media/Portfolio Management.25676d4c4de3862720ec.jpg",
     "static/media/buzzaboutus.jpg": "/static/media/buzzaboutus.a6d1db5186ad89b1f960.jpg",
@@ -41,12 +41,12 @@
     "static/media/password_svg.svg": "/static/media/password_svg.e811b5af87574550ae1a.svg",
     "index.html": "/index.html",
     "static/media/email_svg.svg": "/static/media/email_svg.c8a5935428f27791409b.svg",
-    "main.45009163.css.map": "/static/css/main.45009163.css.map",
-    "main.519474ef.js.map": "/static/js/main.519474ef.js.map",
+    "main.e0e92078.css.map": "/static/css/main.e0e92078.css.map",
+    "main.867ba9f8.js.map": "/static/js/main.867ba9f8.js.map",
     "787.bb25098a.chunk.js.map": "/static/js/787.bb25098a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.45009163.css",
-    "static/js/main.519474ef.js"
+    "static/css/main.e0e92078.css",
+    "static/js/main.867ba9f8.js"
   ]
 }

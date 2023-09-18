@@ -8,8 +8,11 @@ import enterImage from "./../../images/enter.png";
 import userImage from "./../../images/user.png";
 import fundingImage from "./../../images/funding.png";
 import rocketImage from "./../../images/rocket.png";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+  const router = useNavigate();
 
   const NumberAnimation = ({ n }) => {
     const { number } = useSpring({
@@ -25,13 +28,13 @@ const Home = () => {
     <div className='home-body'>
       <div className='home-banner-image-div'>
         <img src={bannerImage} alt="" />
-        <button className='banner-image-button-first-css'>Apply For Funding &rarr;</button>
-        <button className='banner-image-button-second-css'>Invest With Us &rarr;</button>
+        <button className='banner-image-button-first-css' onClick={()=>router("/login")}>Apply For Funding &rarr;</button>
+        <button className='banner-image-button-second-css' onClick={()=>router("/login")}>Invest With Us &rarr;</button>
       </div>
       <h2 className='text-dark home-subheading-text'>INVEST WITH US</h2>
       <h3 className='home-banner-heading-text orange-color'>INVESTMENT MADE EASY</h3>
       <p className='home-buzz-start-up-vision'>BuzzStartup’s vision is to make investment opportunities universally accessible. By employing innovative strategies, we break barriers hindering startup growth, creating a supportive investment ecosystem.</p>
-      <button className='home-start-invest-button'>Start Investing Now</button>
+      <button className='home-start-invest-button' onClick={()=>router("/login")}>Start Investing Now</button>
 
       <div className='home-number-animation-css'>
         <div className='home-inside-number-animation-css'>
@@ -302,7 +305,7 @@ const Home = () => {
             </div>
           </div>
 
-          <button>Apply For Funding &rarr;</button>
+          <button onClick={()=>router("/login")}>Apply For Funding &rarr;</button>
 
         </div>
       </div>
@@ -341,7 +344,7 @@ const Home = () => {
             </div>
           </div>
 
-          <button>Apply For Funding &rarr;</button>
+          <button onClick={()=>router("/login")}>Apply For Funding &rarr;</button>
 
         </div>
 

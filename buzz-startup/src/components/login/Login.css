@@ -182,6 +182,7 @@
 .login-email-div {
     width: 90%;
     position: relative;
+    
 }
 
 .login-email-div>input {
@@ -216,6 +217,11 @@
     font-size: 0.66rem;
     background: #f9f9f9;
     color: #F28C28;
+}
+
+
+.login-email-div>span{
+    position: absolute;
 }
 
 .login-password-div {

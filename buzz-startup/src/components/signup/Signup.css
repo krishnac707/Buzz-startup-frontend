@@ -14,11 +14,9 @@
     width: 100%;
     border: none;
     padding: 10px;
-    /* outline-color: ; */
     border: none;
     border: 1px solid #dbd6d6;
     color: black;
-    /* background: #f9f9f9; */
     border-radius: 8px;
     margin-top: 6%;
 }
@@ -38,7 +36,6 @@
 .sign-email-div input:focus ~span{
     transform: translateX(10px) translateY(-20px);
     font-size: 0.65rem;
-    /* padding: 0 10px; */
     color: #F28C28;
     top: 32px;
     background: #f9f9f9;

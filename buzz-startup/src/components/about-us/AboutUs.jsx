@@ -1,7 +1,7 @@
 import React from 'react'
 import './AboutUs.css'
 import buzzAboutImage from './../../images/buzzaboutus.jpg'
-import buzzAboutImage2 from './../../images/Buzzaboutus2.jpg'
+import buzzAboutImage2 from './../../images/About us.jpeg'
 import checkedImage from './../../images/checked (1).png'
 
 const AboutUs = () => {
