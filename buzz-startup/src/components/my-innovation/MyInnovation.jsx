@@ -18,7 +18,7 @@ const MyInnovation = () => {
             <h2 className='text-center customfW'>Unleash Your Startup
                 Superpower with Buzz AI </h2>
             <h5 className='text-center'>AI-Powered Startup Ideas and Tools to Fuel Your Entrepreneurial Journey</h5>
-            <div class="d-grid gap-2 col-2 mx-auto">
+            <div class="d-grid gap-2 col-2 mx-auto get-start-button-mobile-css">
                 <button class="road-map-button mb-2" type="button">Get Started</button>
             </div>
             <div className='my-innovation-image-div'>
@@ -68,8 +68,8 @@ const MyInnovation = () => {
                     <p><FontAwesomeIcon className='svg-font-size' icon={faMagnifyingGlass} /></p>
                 </div>
                 <div className='border-bottom'></div>
-                <div class="d-grid gap-2 col-2 mx-auto">
-                    <button class="road-map-button mb-2 mt-2" type="button" onClick={()=>router("/full-report")}>Get Full Report</button>
+                <div class="d-grid gap-2 col-2 mx-auto mobile-full-report-width-div">
+                    <button class="road-map-button mb-2 mt-2 " type="button" onClick={()=>router("/full-report")}>Get Full Report</button>
                 </div>
 
             </div>}
@@ -108,8 +108,8 @@ const MyInnovation = () => {
                     <h3 className='mb-0 text-center'>Stay tuned with our Newsletter.</h3>
                 </div>
                 <div>
-                    <input type="text" className='email-input-common px-3 py-2' placeholder='Email Address' />
-                    <button className='subscribe-button-css px-3 py-2'>Subscribe To BuzzNetWork &rarr;</button>
+                    <input type="text" className='email-input-common' placeholder='Email Address' />
+                    <button className='subscribe-button-css '>Subscribe To BuzzNetWork &rarr;</button>
                 </div>
             </div>
 

@@ -1,16 +1,16 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.sign-email-div{
+.sign-email-div {
     width: 90%;
     margin-left: 5%;
     position: relative;
 }
 
-.sign-email-div>input{
+.sign-email-div>input {
     width: 100%;
     border: none;
     padding: 10px;
@@ -21,7 +21,7 @@
     margin-top: 6%;
 }
 
-.sign-email-div>span{
+.sign-email-div>span {
     position: absolute;
     left: 10px;
     top: 28px;
@@ -32,16 +32,16 @@
     transition: 0.5s;
 }
 
-.sign-email-div input:valid ~span,
-.sign-email-div input:focus ~span{
+.sign-email-div input:valid~span,
+.sign-email-div input:focus~span {
     transform: translateX(10px) translateY(-20px);
     font-size: 0.65rem;
     color: #F28C28;
-    top: 32px;
+    top: 20px;
     background: #f9f9f9;
 }
 
-.signup-button-color{
+.signup-button-color {
     width: 90%;
     /* margin-left: 5%; */
     border-radius: 8px;
@@ -52,4 +52,40 @@
     font-weight: 700;
     border: none;
     margin-top: 6%;
+}
+
+@media screen and (max-width: 850px) {
+
+    .sign-email-div>span {
+        top: 20px;
+        padding: 2px 4px;
+    }
+
+    .sign-email-div input:valid~span,
+    .sign-email-div input:focus~span {
+        transform: translateX(10px) translateY(-20px);
+        font-size: 0.65rem;
+        color: #F28C28;
+        top: 24px;
+        background: #f9f9f9;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .sign-email-div>span {
+        top: 24px;
+        padding: 2px 4px;
+    }
+
+    .sign-email-div input:valid~span,
+    .sign-email-div input:focus~span {
+        transform: translateX(10px) translateY(-20px);
+        font-size: 0.65rem;
+        color: #F28C28;
+        top: 26px;
+        background: #f9f9f9;
+    }
+
 }

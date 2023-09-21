@@ -65,21 +65,21 @@ const MyPitchDeck = () => {
 
       <div className='deck-7x-main-div mb-2'>
         <div className='deck-7x-div p-2'>
-          <h2 className='mb-0 pt-3 px-2'>7X</h2>
-          <h4 className='mb-0 pt-3'>Increase Your Chances
+          <h2 className='mb-0 pt-3 px-2 time-percent-div-width'>7X</h2>
+          <h4 className='mb-0 pt-3 time-text-div-width'>Increase Your Chances
             of Funding
           </h4>
-          <div className='pt-1'>
+          <div className='pt-3 time-image-div-width'>
             <img src={image1} alt="" />
           </div>
         </div>
 
         <div className='deck-7x-div p-2'>
-          <h2 className='mb-0 pt-3 px-2 '>75%</h2>
-          <h4 className='mb-0 pt-3'>Time-Saving in
+          <h2 className='mb-0 pt-3 px-2 time-percent-div-width '>75%</h2>
+          <h4 className='mb-0 pt-3 time-text-div-width'>Time-Saving in
             Investment Prep.
           </h4>
-          <div className=''>
+          <div className='time-image-div-width'>
             <img src={image2} alt="" />
           </div>
         </div>
@@ -175,8 +175,8 @@ const MyPitchDeck = () => {
           <h2 className='mb-0 text-center'>Stay tuned with our Newsletter.</h2>
         </div>
         <div>
-          <input type="text" className='email-input-common px-3 py-2' placeholder='Email Address' />
-          <button className='subscribe-button-css px-3 py-2'>Subscribe To BuzzNetWork &rarr;</button>
+          <input type="text" className='email-input-common' placeholder='Email Address' />
+          <button className='subscribe-button-css'>Subscribe To BuzzNetWork &rarr;</button>
         </div>
       </div>
 

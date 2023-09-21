@@ -17,6 +17,7 @@
     margin-bottom: 3%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .only-the-best-first-div>div:nth-child(1){
@@ -39,6 +40,7 @@
     margin-bottom: 3%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .only-the-best-second-div>div:nth-child(1){
@@ -71,4 +73,34 @@
     width: 100%;
     padding: 0% 25%;
     font-size: 17px;
+}
+
+@media screen and (max-width: 850px) {
+
+    .investor-page-body {
+        padding-top: 9%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .investor-page-body {
+        padding-top: 15%;
+    }
+    .only-the-best-first-div>div:nth-child(1){
+        width: 100%;
+    }
+
+    .only-the-best-first-div>div:nth-child(2){
+        width: 100%;
+        margin-top: 4%;
+    }
+
+    .only-the-best-second-div>div:nth-child(1){
+        width: 100%;
+    }
+
+    .only-the-best-second-div>div:nth-child(2){
+        width: 100%;
+    }
 }

@@ -75,15 +75,15 @@ const Login = () => {
               <div className='radio-form-css-div'>
                 <div>
                   <input type="radio" name="role" value="startup" onChange={handleOptionChange}  checked={selectedOption === "startup"} />
-                  <p className='mb-0'>Startup</p>
+                  <p className='mb-0 px-1'>Startup</p>
                 </div>
                 <div>
                   <input type="radio" name="role" value="investor" onChange={handleOptionChange} checked={selectedOption === "investor"} />
-                  <p className='mb-0'>Investor</p>
+                  <p className='mb-0 px-1'>Investor</p>
                 </div>
                 <div>
                   <input type="radio" name="role" value="partner" onChange={handleOptionChange} checked={selectedOption === "partner"} />
-                  <p className='mb-0'>Partner</p>
+                  <p className='mb-0 px-1'>Partner</p>
                 </div>
               </div>
               <div className='horizontal-line-css-div'></div>

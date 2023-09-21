@@ -9,6 +9,7 @@
     margin-left: 5%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
 }
 
@@ -18,6 +19,10 @@
 
 .about-us-intro-right-div{
     width: 49%;
+}
+
+.about-us-intro-right-div>img{
+    width: 100%;
 }
 
 .about-us-stage-main-div{
@@ -69,4 +74,28 @@
 .about-us-presence-div{
     width: 90%;
     margin-left: 5%;
+}
+
+@media screen and (max-width: 850px) {
+    .about-us-body{
+        padding-top: 12%;
+    }
+
+    .about-us-stage-left-div{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .about-us-body{
+        padding-top: 17%;
+    }
+
+    .about-us-intro-left-div{
+        width: 100%;
+    }
+
+    .about-us-intro-right-div{
+        width: 100%;
+    }
 }

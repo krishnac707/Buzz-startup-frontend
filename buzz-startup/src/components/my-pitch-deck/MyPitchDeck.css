@@ -95,6 +95,7 @@ html{
     margin-left: 5%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .deck-7x-div {
@@ -103,6 +104,7 @@ html{
     display: flex;
     justify-content: space-between;
     border-radius: 6px;
+    flex-wrap: wrap;
 }
 
 .deck-7x-div>h3{
@@ -138,6 +140,7 @@ html{
     justify-content: space-between;
     background: #D9D9D94D;
     margin-bottom: 2%;
+    flex-wrap: wrap;
 }
 
 .deck-spend-div>div:nth-child(1){
@@ -167,6 +170,7 @@ html{
     display: flex;
     justify-content: space-between;
     margin-bottom: 2%;
+    flex-wrap: wrap;
 }
 
 .pitch-deck-live-div-css>div:nth-child(2){
@@ -182,7 +186,7 @@ html{
     font-size: 18px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
 
     .my-pitch-deck-body {
         width: 100%;
@@ -195,11 +199,11 @@ html{
     }
 
     .pitch-banner-button {
-        width: 50%;
+        width: 25%;
     }
 
     .pitch-banner-button:hover {
-        width: 50%;
+        width: 25%;
     }
 
     .pitch-deck-percentage-div {
@@ -234,5 +238,94 @@ html{
         margin-bottom: 1%;
 
     }
+
+    .pitch-percentage{
+        height: 90%;
+    }
+
+    .deck-7x-div{
+        width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .time-image-div-width{
+        width: 13%;
+    }
+
+    .time-text-div-width{
+        width: 50%;
+    }
+
+    .deck-first-feature-div-css>h4{
+        width: 60%;
+    }
+
+    .deck-spend-div>div:nth-child(1){
+        width: 100%;
+    }
+
+    .deck-spend-div>div:nth-child(2){
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .my-pitch-deck-body{
+        margin-top: 13%;
+    }
+
+    .pitch-banner-button {
+        width: 35%;
+    }
+
+    .pitch-banner-button:hover {
+        width: 35%;
+    }
+
+    .pitch-percentage{
+        height: 85%;
+    }
+
+    
+    .deck-7x-div{
+        width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .deck-spend-div>div:nth-child(1){
+        width: 100%;
+    }
+
+    .deck-spend-div>div:nth-child(2){
+        width: 100%;
+    }
+
+    .time-image-div-width{
+        width: 20%;
+    }
+
+    .time-percent-div-width{
+        width: 20%;
+    }
+
+    .deck-first-feature-div-css{
+        width: 100%;
+        margin-bottom: 6%;
+    }
+
+    .deck-first-feature-div-css>h4{
+        width: 70%;
+    }
+
+    .pitch-deck-live-div-css>div:nth-child(2){
+        width: 100%;
+    }
+
+    .time-image-div-width>img{
+        width: 100%;
+    }
+
 
 }

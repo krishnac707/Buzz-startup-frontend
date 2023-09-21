@@ -1,30 +1,31 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.startup-page-body{
+.startup-page-body {
     padding-top: 7%;
     width: 100%;
 }
 
-.startop-page-inside-body{
+.startop-page-inside-body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding-left: 5%;
     padding-right: 5%;
 }
 
-.startop-page-inside-body>div{
+.startop-page-inside-body>div {
     width: 49%;
 }
 
-.startop-page-inside-body>div:nth-child(1)>h2{
+.startop-page-inside-body>div:nth-child(1)>h2 {
     font-weight: 800px;
 }
 
-.startop-page-inside-body>:nth-child(1)>button{
+.startop-page-inside-body>:nth-child(1)>button {
     border: none;
     background-color: black;
     color: white;
@@ -35,11 +36,11 @@
     font-weight: 700;
 }
 
-.startop-page-inside-body>div>img{
+.startop-page-inside-body>div>img {
     width: 100%;
 }
 
-.start-up-description-main-div{
+.start-up-description-main-div {
     width: 100%;
     text-align: center;
     font-weight: 700;
@@ -48,11 +49,11 @@
     padding-bottom: 15%;
 }
 
-.start-up-description-main-div>h2:nth-child(2){
+.start-up-description-main-div>h2:nth-child(2) {
     padding: 0% 30%;
 }
 
-.start-up-description-main-div>p:nth-child(3){
+.start-up-description-main-div>p:nth-child(3) {
     text-align: center;
     width: 100%;
     padding: 0% 25%;
@@ -61,7 +62,7 @@
 
 
 
-.start-up-step-to-invest-main-div{
+.start-up-step-to-invest-main-div {
     width: 100%;
     text-align: center;
     font-weight: 700;
@@ -71,34 +72,36 @@
     padding-bottom: 3%;
 }
 
-.start-up-step-to-invest-main-div>h2:nth-child(2){
+.start-up-step-to-invest-main-div>h2:nth-child(2) {
     padding: 0% 30%;
 }
 
-.start-up-step-to-invest-main-div>p:nth-child(3){
+.start-up-step-to-invest-main-div>p:nth-child(3) {
     text-align: center;
     width: 100%;
     padding: 0% 25%;
     font-size: 17px;
 }
 
-.start-up-card-main-div{
+.start-up-card-main-div {
     width: 100%;
     padding: 3% 12%;
     margin-top: -12%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.start-up-card-second-main-div{
+.start-up-card-second-main-div {
     width: 100%;
     padding: 3% 12%;
     /* margin-top: -12%; */
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.start-up-card-inside-main-div{
+.start-up-card-inside-main-div {
     width: 32%;
     padding: 5% 3% 3% 3%;
     border-radius: 10px;
@@ -106,79 +109,80 @@
     position: relative;
 }
 
-.start-up-card-inside-main-div>img{
+.start-up-card-inside-main-div>img {
     position: absolute;
     margin-top: -30%;
     width: 54%;
     padding-left: 24%;
 }
 
-.start-up-card-inside-main-div>p:nth-child(2){
+.start-up-card-inside-main-div>p:nth-child(2) {
     margin-top: 11%;
     font-size: 18px;
     font-weight: 700;
     text-align: center;
 }
 
-.invest-step-main-div{
+.invest-step-main-div {
     width: 100%;
     padding-left: 13%;
     padding-right: 13%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.invest-step-main-div>div:nth-child(1){
+.invest-step-main-div>div:nth-child(1) {
     width: 35%;
 }
 
-.invest-step-main-div>div:nth-child(1)>img:nth-child(1){
+.invest-step-main-div>div:nth-child(1)>img:nth-child(1) {
     width: 100%;
 }
 
-.all-steps-div{
+.all-steps-div {
     width: 57%;
     display: flex;
     /* position: relative; */
 }
 
-.road-map-left-div{
+.road-map-left-div {
     width: 50%;
 }
 
-.road-map-left-div>div:nth-child(1){
+.road-map-left-div>div:nth-child(1) {
     border-top: 2px dashed #e3e3e3;
     border-right: 2px dashed #e3e3e3;
     border-bottom: 2px dashed #e3e3e3;
     width: 97%;
-    padding:12%;
+    padding: 12%;
     /* border-radius: 15px; */
-    border-bottom-right-radius:15px;
+    border-bottom-right-radius: 15px;
     position: relative;
     margin-left: 3%;
 }
 
-.road-map-left-div>div:nth-child(3){
+.road-map-left-div>div:nth-child(3) {
     /* border-top: 2px dashed #e3e3e3; */
     border-right: 2px dashed #e3e3e3;
     border-bottom: 2px dashed #e3e3e3;
     width: 97%;
-    padding:9% 12% 24% 12%;
+    padding: 9% 12% 24% 12%;
     margin-top: 8%;
     /* border-radius: 15px; */
-    border-bottom-right-radius:15px;
+    border-bottom-right-radius: 15px;
     position: relative;
     margin-left: 3%;
 }
 
-.road-map-left-div>div:nth-child(5){
+.road-map-left-div>div:nth-child(5) {
     width: 97%;
-    padding:9% 12% 24% 12%;
+    padding: 9% 12% 24% 12%;
     margin-top: 8%;
     margin-left: 3%;
 }
 
-.startup-number-first-div{
+.startup-number-first-div {
     width: 65px;
     height: 65px;
     border: 1px solid black;
@@ -193,7 +197,7 @@
     color: white;
 }
 
-.startup-number-second-div{
+.startup-number-second-div {
     width: 65px;
     height: 65px;
     border: 1px solid black;
@@ -208,46 +212,46 @@
     color: white;
 }
 
-.road-map-right-div{
+.road-map-right-div {
     width: 50%;
 }
 
-.road-map-right-div>div:nth-child(1){
+.road-map-right-div>div:nth-child(1) {
     width: 100%;
     /* padding-left: 10%; */
     padding: 12%;
 }
 
-.road-map-right-div>div:nth-child(3){
+.road-map-right-div>div:nth-child(3) {
     width: 100%;
     /* padding-left: 10%; */
     padding: 9% 12% 6% 12%;
     margin-top: 8%;
-    
+
 }
 
-.road-map-right-div>div:nth-child(5){
+.road-map-right-div>div:nth-child(5) {
     width: 100%;
     /* padding-left: 10%; */
     padding: 9% 12% 6% 12%;
     margin-top: 13%;
-    
+
 }
 
-.road-map-third-div{
+.road-map-third-div {
     /* border-top: 2px dashed #e3e3e3; */
     border-left: 2px dashed #e3e3e3;
     border-bottom: 2px dashed #e3e3e3;
     width: 100%;
-    padding:17%;
+    padding: 17%;
     /* border-radius: 15px; */
-    border-bottom-left-radius:15px;
-    border-top-left-radius:15px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
     position: relative;
-    
+
 }
 
-.startup-number-third-div{
+.startup-number-third-div {
     width: 65px;
     height: 65px;
     border: 1px solid black;
@@ -262,7 +266,7 @@
     color: white;
 }
 
-.startup-number-fourth-div{
+.startup-number-fourth-div {
     width: 65px;
     height: 65px;
     border: 1px solid black;
@@ -277,15 +281,15 @@
     color: white;
 }
 
-.road-map-right-div>div:nth-child(2){
+.road-map-right-div>div:nth-child(2) {
     padding: 17%;
 }
 
-.road-map-right-div>div:nth-child(4){
+.road-map-right-div>div:nth-child(4) {
     padding: 17%;
 }
 
-.road-map-button{
+.road-map-button {
     width: 90%;
     text-align: center;
     cursor: pointer;
@@ -295,4 +299,176 @@
     font-weight: 700;
     padding: 8px;
     border-radius: 10px;
+}
+
+
+.all-step-div-mobile-view{
+    display: none;
+}
+
+@media screen and (max-width: 850px) {
+    .startup-page-body {
+        padding-top: 9%;
+    }
+
+    .startop-page-inside-body>:nth-child(1)>button {
+        width: 52%;
+    }
+
+    .start-up-description-main-div>p:nth-child(3) {
+        padding: 0% 8%;
+    }
+
+    .start-up-step-to-invest-main-div>p:nth-child(3) {
+        padding: 0% 10%;
+    }
+
+    .invest-step-main-div {
+        margin-top: 5%;
+    }
+
+    .invest-step-main-div>div:nth-child(1){
+        width: 100%;
+    }
+
+    .invest-step-main-div>div:nth-child(1)>img{
+        height: fit-content;
+    }
+
+    .all-steps-div{
+        width: 100%;
+        margin-top: 15%;
+    }
+
+    .startup-number-first-div {
+        width: 30%;
+        height: 40%;
+        top: -41px;
+    }
+
+    .startup-number-second-div {
+        width: 30%;
+        height: 41%;
+    }
+
+    .startup-number-third-div{
+        width: 30%;
+        height: 85%;
+        left: -20px;
+    }
+
+    .startup-number-fourth-div{
+        width: 28%;
+        height: 78%;
+        right: -20px;
+    }
+
+    .road-map-button{
+        width: 100%;
+        font-size: 11px;
+        padding: 10px 0px;
+    }
+
+    .all-step-div-mobile-view{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .startup-page-body {
+        padding-top: 15%;
+    }
+
+    .startop-page-inside-body>div {
+        width: 100%;
+    }
+
+    .start-up-description-main-div>p:nth-child(3) {
+        padding: 0% 10%;
+    }
+
+    .start-up-card-inside-main-div {
+        width: 100%;
+        margin-bottom: 20%;
+    }
+
+    .start-up-card-inside-main-div>img {
+        margin-top: -16%;
+        width: 54%;
+        padding-left: 35%;
+    }
+
+    .start-up-step-to-invest-main-div>p:nth-child(3) {
+        padding: 0% 10%;
+    }
+
+    .all-steps-div {
+        display: none;
+    }
+
+    .invest-step-main-div>div:nth-child(1) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .invest-step-main-div>div:nth-child(1)>img:nth-child(1){
+        height: 300px;
+        width: fit-content;
+    }
+
+    .invest-step-main-div {
+        width: 100%;
+         padding-left: 5%; 
+         padding-right: 5%; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+    }
+
+    
+    .all-step-div-mobile-view{
+        display: block;
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    .all-step-div-mobile-view-body{
+        width: 90%;
+        margin-left: 5%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 3%;
+    }
+
+    .all-step-div-mobile-view-body>div:nth-child(1){
+        width: 25%;
+    }
+
+    .step-count-div-mobile-view{
+        width: 50px;
+        background-color: black;
+        color: white;
+        height: 50px;
+        /* margin: auto; */
+        font-weight: 700;
+        border-radius: 50px;
+        text-align: center;
+    }
+
+    .all-step-div-mobile-view-body>div:nth-child(2){
+        width: 73%;
+        /* font-weight: 700; */
+    }
+
+
+    .road-map-button{
+        width: fit-content;
+        padding: 8px;
+        margin-left: 27%;
+
+    }
+
 }

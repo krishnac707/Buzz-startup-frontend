@@ -65,6 +65,7 @@
 .innovation-three-step-div {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .innovation-three-step-div>div:nth-child(1) {
@@ -113,4 +114,52 @@
 
 .follow-question-div>p:nth-child(2) {
     width: 5%;
+}
+
+@media screen and (max-width: 850px) {
+
+    .my-innovation-body {
+        padding-top: 10%;
+    }
+
+    .my-innovation-searchbar-div{
+        width: 65%;
+        margin-left: 20%;
+    }
+
+
+}
+
+@media screen and (max-width: 450px) {
+    .my-innovation-body {
+        padding-top: 15%;
+    }
+
+    .get-start-button-mobile-css{
+        width: 25% !important;
+    }
+
+    .mobile-full-report-width-div{
+        width: 40% !important;
+    }
+
+    .my-innovation-searchbar-div{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .my-innovation-suggestion-div {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .innovation-three-step-div>div:nth-child(1){
+        width: 100%;
+    }
+    .innovation-three-step-div>div:nth-child(2){
+        width: 100%;
+    }
+    .innovation-three-step-div>div:nth-child(3){
+        width: 100%;
+    }
 }

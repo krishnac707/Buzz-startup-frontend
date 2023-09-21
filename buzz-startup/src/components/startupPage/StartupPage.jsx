@@ -190,6 +190,81 @@ const StartupPage = () => {
                     </div>
                 </div>
 
+                <div className='all-step-div-mobile-view'>
+                    <div className='all-step-div-mobile-view-body'>
+                        <div>
+                            <div className='step-count-div-mobile-view py-2'>
+                                <span>1</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Apply</h4>
+                            <p>Startup can send their updated pitch at deals@buzzstartups.com</p>
+                        </div>
+                    </div>
+
+                    <div className='all-step-div-mobile-view-body'>
+                        <div>
+                            <div className='step-count-div-mobile-view py-2'>
+                                <span>2</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>EVALUATE</h4>
+                            <p>Startup can expect a reply within 1-2 weeks once the deal has been evaluated.</p>
+                        </div>
+                    </div>
+
+                    <div className='all-step-div-mobile-view-body'>
+                        <div>
+                            <div className='step-count-div-mobile-view py-2'>
+                                <span>3</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>SCREENING</h4>
+                            <p>Shortlisted startup gets further notified for a meeting/call with the team & hence the shortlisting happens.</p>
+                        </div>
+                    </div>
+
+                    <div className='all-step-div-mobile-view-body'>
+                        <div>
+                            <div className='step-count-div-mobile-view py-2'>
+                                <span>4</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>ENGAGE & PITCH</h4>
+                            <p>An investment process is explained followed by signing of the mandate. After approval from the investment committee, startup present at a monthly pitching session.</p>
+                        </div>
+                    </div>
+
+                    <div className='all-step-div-mobile-view-body'>
+                        <div>
+                            <div className='step-count-div-mobile-view py-2'>
+                                <span>5</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>TERM SHEET & DEAL DUE DILIGENCE</h4>
+                            <p>Call/Meetings are scheduled with the interested investors to finalize the term sheet. A comprehensive due diligence process takes places for roughly 2-4 weeks.</p>
+                        </div>
+                    </div>
+
+                    <div className='all-step-div-mobile-view-body'>
+                        <div>
+                            <div className='step-count-div-mobile-view py-2'>
+                                <span>6</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>DEAL</h4>
+                            <p>The SSHA document would be signed and an action to call for money gets initiate. The whole process takes 30-60 days.</p>
+                        </div>
+                    </div>
+
+                    <button className='road-map-button' onClick={()=>router("/login")}>Apply For Funding &rarr;</button>
+                </div>
             </div>
 
             <div className='email-subscribe-main-div py-3 '>
@@ -197,8 +272,8 @@ const StartupPage = () => {
                     <h3 className='mb-0 text-center'>Stay tuned with our Newsletter.</h3>
                 </div>
                 <div>
-                    <input type="text" className='email-input-common px-3 py-2' placeholder='Email Address' />
-                    <button className='subscribe-button-css px-3 py-2'>Subscribe To BuzzNetWork &rarr;</button>
+                    <input type="text" className='email-input-common ' placeholder='Email Address' />
+                    <button className='subscribe-button-css '>Subscribe To BuzzNetWork &rarr;</button>
                 </div>
             </div>
 

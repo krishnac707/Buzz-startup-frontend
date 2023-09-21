@@ -99,8 +99,8 @@ const ContactUs = () => {
                     <h3 className='mb-0 text-center'>Stay tuned with our Newsletter.</h3>
                 </div>
                 <div>
-                    <input type="text" className='email-input-common px-3 py-2' placeholder='Email Address' />
-                    <button className='subscribe-button-css px-3 py-2'>Subscribe To BuzzNetWork &rarr;</button>
+                    <input type="text" className='email-input-common' placeholder='Email Address' />
+                    <button className='subscribe-button-css'>Subscribe To BuzzNetWork &rarr;</button>
                 </div>
             </div>
             

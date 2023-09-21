@@ -1,25 +1,25 @@
-
-.contact-us-body{
+.contact-us-body {
     width: 100%;
     margin-top: 7%;
 }
 
-.contact-us-main-div{
+.contact-us-main-div {
     width: 90%;
     margin-left: 5%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.contact-us-left-main-div{
+.contact-us-left-main-div {
     width: 70%;
 }
 
-.contact-us-right-main-div{
+.contact-us-right-main-div {
     width: 25%;
 }
 
-.contact-us-mail-emoji-div{
+.contact-us-mail-emoji-div {
     width: 150px;
     height: 150px;
     background-color: #D9D9D9;
@@ -27,62 +27,94 @@
 
 }
 
-.contact-us-email-image{
+.contact-us-email-image {
     margin-left: 23%;
     margin-top: 17%;
 }
 
-.contact-us-sr-div{
+.contact-us-sr-div {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.contact-us-sr-div>div:nth-child(1){
+.contact-us-sr-div>div:nth-child(1) {
     width: 5%;
 
 }
 
-.contact-us-sr-div>div:nth-child(2){
+.contact-us-sr-div>div:nth-child(2) {
     width: 95%;
 }
 
-.contact-us-input{
+.contact-us-input {
     border: none;
     outline: none;
     font-size: 22px;
     width: 60%;
 }
 
-.button-contact-us-send{
+.button-contact-us-send {
     width: 20%;
     border-radius: 6px;
     border: none;
     color: white;
     background-color: black;
     font-weight: 700;
-    
+
 }
 
 
-.contact-us-mail-emoji-div>img{
+.contact-us-mail-emoji-div>img {
     width: 50%;
 }
 
-.contact-us-location-main-div{
+.contact-us-location-main-div {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.contact-us-location-main-div>div:nth-child(1){
+.contact-us-location-main-div>div:nth-child(1) {
     width: 20%;
 }
 
-.contact-us-location-main-div>div:nth-child(1)>img{
-width: 100%;
+.contact-us-location-main-div>div:nth-child(1)>img {
+    width: 100%;
 }
 
-.contact-us-location-main-div>div:nth-child(2){
+.contact-us-location-main-div>div:nth-child(2) {
     width: 75%;
+}
+
+@media screen and (max-width: 850px) {
+    .contact-us-body {
+        padding-top: 6%;
+    }
+
+    .contact-us-left-main-div{
+        width: 100%;
+    }
+
+    .contact-us-right-main-div{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .contact-us-body {
+        padding-top: 12%;
+    }
+
+    .contact-us-right-main-div{
+        width: 100%;
+    }
+
+    .contact-us-sr-div>div:nth-child(1){
+        width: 10%;
+    }
+
+    .contact-us-location-main-div>div:nth-child(2){
+        width: 77%;
+    }
 }

@@ -226,8 +226,8 @@ const Home = () => {
         </div>
       </div>
 
-      <h2 className='home-startup-align-div'>STARTUPS NEWS & UPDATES</h2>
-      <h3 className='home-startup-align-div'>Browse our <span className='orange-color'>articles</span> on marketing and growth through BuzzTImes</h3>
+      <h2 className='home-startup-align-div px-2'>STARTUPS NEWS & UPDATES</h2>
+      <h3 className='home-startup-align-div px-2'>Browse our <span className='orange-color'>articles</span> on marketing and growth through BuzzTImes</h3>
       <h5 className='home-startup-content-align-div'>Uncover a treasure trove of captivating articles focused on marketing and growth. Inside, you'll find indispensable wisdom and strategies to amplify your business's presence, allure an expanding audience, and unlock</h5>
 
       <div className='home-news-main-div'>
@@ -263,8 +263,8 @@ const Home = () => {
         <button>Browse all article &rarr;</button>
       </div>
 
-      <h2 className='home-startup-align-div orange-color'>GET TO KNOW, HOW WE WORK</h2>
-      <h3 className='home-startup-align-div'>We unify and transform your challenges into success by
+      <h2 className='home-startup-align-div orange-color px-2'>GET TO KNOW, HOW WE WORK</h2>
+      <h3 className='home-startup-align-div px-2'>We unify and transform your challenges into success by
         bringing everything together under one umbrella.</h3>
       <h5 className='home-startup-content-align-div'>Every step here is made easy by combined efforts, deals and unique steps towards the united vision. FAAD takes
         delight in making success a moment rather than just a goal.</h5>
