@@ -4,7 +4,8 @@
 }
 
 .startup-team-add-button {
-    width: 30%;
+    width: fit-content;
+    padding: 0px 6px;
     border: none;
     border-radius: 6px;
     background-color: black;

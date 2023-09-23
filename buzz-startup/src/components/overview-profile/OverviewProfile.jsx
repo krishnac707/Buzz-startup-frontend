@@ -16,7 +16,7 @@ const OverviewProfile = () => {
                 boost visibility and attract opportunities. When your profile hits 100%, you can submit your
                 startup for listing to potential investors. Watch your progress bar fill up as you go! 🌟
             </p>
-            <button className='mx-4 mb-1 p-2 text-center add-remain-button' onClick={()=>router("/startup-main-form-dashboard")}>+Add Remaining Details</button>
+            <button className='mx-4 mb-1 p-2 text-center add-remain-button' onClick={() => router("/startup-main-form-dashboard")}>+Add Remaining Details</button>
 
             <p className='px-4 py-2'>Welcome, aspiring startups! 🌟 Excited to showcase your brilliance to potential
                 investors? See how your filled startup details will be displayed in all its glory!
@@ -26,44 +26,47 @@ const OverviewProfile = () => {
                 crowd!
             </p>
 
-            <div className='company-card-inside-deal-div shadow-sm mx-4 mb-2' >
-                <div className="company-name-image-div">
-                    <div><img src="https://www.efeed.in/static/media/logoFull_orange.01ce8f91aee2decbba6a6ca90acf97b6.svg" alt="" /></div>
-                    <div>
-                        <h6>eFeed</h6>
-                        <p className='home-live-dashboard-company-description-font-size'>Better nutrition better lives</p>
+            <div className='companys-cards-deals-div'>
+
+                <div className='company-card-inside-deal-div shadow-sm mb-2' >
+                    <div className="company-name-image-div">
+                        <div><img src="https://www.efeed.in/static/media/logoFull_orange.01ce8f91aee2decbba6a6ca90acf97b6.svg" alt="" /></div>
+                        <div>
+                            <h6>eFeed</h6>
+                            <p className='home-live-dashboard-company-description-font-size'>Better nutrition better lives</p>
+                        </div>
                     </div>
-                </div>
-                <div className='valuation-deadline-div'>
-                    <div>
-                        <p className="mb-0">valuation</p>
-                        <p className="mb-0"><b>32 cr</b></p>
+                    <div className='valuation-deadline-div'>
+                        <div>
+                            <p className="mb-0">valuation</p>
+                            <p className="mb-0"><b>32 cr</b></p>
+                        </div>
+                        <div>
+                            <p className="mb-0">Deadline</p>
+                            <p className="mb-0"><b>2022-12-15</b></p>
+                        </div>
                     </div>
-                    <div>
-                        <p className="mb-0">Deadline</p>
-                        <p className="mb-0"><b>2022-12-15</b></p>
+                    <div className='valuation-deadline-div-1'>
+                        <div>
+                            <p className="mb-0">Funding Asked</p>
+                            <p className="mb-0"><b>4 cr</b></p>
+                        </div>
+                        <div>
+                            <p className="mb-0">Min. Investment</p>
+                            <p className="mb-0"><b>2 Lakhs</b></p>
+                        </div>
                     </div>
-                </div>
-                <div className='valuation-deadline-div-1'>
-                    <div>
-                        <p className="mb-0">Funding Asked</p>
-                        <p className="mb-0"><b>4 cr</b></p>
-                    </div>
-                    <div>
-                        <p className="mb-0">Min. Investment</p>
-                        <p className="mb-0"><b>2 Lakhs</b></p>
-                    </div>
-                </div>
-                <div className='valuation-deadline-div-2'>
-                    <div>
-                        <p className="mb-0">CAP</p>
-                        <p className="mb-0"><b>Founder:60%</b></p>
-                        <p className="mb-0"><b>ESOP:20%</b></p>
-                        <p className="mb-0"><b>Investor:20%</b></p>
-                        <button className='agritech-button'>Agritech</button>
-                    </div>
-                    <div>
-                        <p className="mb-0"><b>500,000 USD</b></p>
+                    <div className='valuation-deadline-div-2'>
+                        <div>
+                            <p className="mb-0">CAP</p>
+                            <p className="mb-0"><b>Founder:60%</b></p>
+                            <p className="mb-0"><b>ESOP:20%</b></p>
+                            <p className="mb-0"><b>Investor:20%</b></p>
+                            <button className='agritech-button'>Agritech</button>
+                        </div>
+                        <div>
+                            <p className="mb-0"><b>500,000 USD</b></p>
+                        </div>
                     </div>
                 </div>
             </div>

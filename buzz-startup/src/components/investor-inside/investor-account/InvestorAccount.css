@@ -3,3 +3,44 @@
     width: 100%;
     padding-top: 6%;
 }
+
+.mobile-view-investor-dashboard{
+    display: none;
+}
+
+.web-view-investor-dashboard{
+    display: block;
+}
+
+.back-button-css-temp-mobile{
+    display: none;
+}
+
+.back-button-css-temp{
+    display: block;
+}
+
+
+@media screen and (max-width: 850px) {
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .mobile-view-investor-dashboard{
+        display: block;
+    }
+
+    .web-view-investor-dashboard{
+        display: none;
+    }
+
+    .back-button-css-temp-mobile{
+        display: block;
+    }
+
+    .back-button-css-temp{
+        display: none;
+    }
+
+}

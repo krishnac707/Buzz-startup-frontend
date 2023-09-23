@@ -22,3 +22,12 @@
     border-radius: 6px;
     box-shadow: 0 1px 3px #e8e8e8;
 }
+
+@media screen and (max-width: 450px) {
+    
+    .pitch-deck-body-css{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+}

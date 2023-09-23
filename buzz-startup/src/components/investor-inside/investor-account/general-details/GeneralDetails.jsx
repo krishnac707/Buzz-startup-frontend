@@ -42,7 +42,7 @@ const GeneralDetails = () => {
 
     return generalDetail &&
         <div>
-            <Nav className='border-bottom-navbar-css' defaultActiveKey="link-1">
+            <Nav className='border-bottom-navbar-css horizontal-scrollable' defaultActiveKey="link-1">
                 <Nav.Item >
                     <Nav.Link className='background-color-startup-navbar' onClick={profilePicFunction} eventKey="link-1">Profile Pic</Nav.Link>
                 </Nav.Item>

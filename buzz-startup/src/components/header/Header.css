@@ -97,7 +97,11 @@
     border-bottom: 1px solid #dbd6d6;
 }
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: 850px) {
+
+    
 
     #navbar-header .navbar-heading-logo-color {
         font-weight: 700;

@@ -41,7 +41,7 @@ const Team = () => {
 
   return (teamStartup &&
     <div>
-      <Nav className='border-bottom-navbar-css' defaultActiveKey="link-1">
+      <Nav className='border-bottom-navbar-css horizontal-scrollable' defaultActiveKey="link-1">
         <Nav.Item >
           <Nav.Link className='background-color-startup-navbar' onClick={founderDetailFunction} eventKey="link-1">Founder Details</Nav.Link>
         </Nav.Item>

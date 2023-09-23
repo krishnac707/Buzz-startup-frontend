@@ -32,6 +32,7 @@
     margin-bottom: 2%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .startup-dashboard-profile-form-div>div:nth-child(1){
@@ -52,6 +53,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .startup-side-nav-component-content-div>div:nth-child(1){
@@ -77,4 +79,76 @@
     background-color: black !important;
     color: white !important;
 }
+
+.mobile-view-startup-dashboard{
+    display: none;
+}
+
+.web-view-startup-dashboard{
+    display: block;
+}
+
+.back-button-css-temp-mobile{
+    display: none;
+}
+
+.back-button-css-temp{
+    display: block;
+}
+
+@media screen and (max-width: 850px) {
+
+    .startup-dashboard-profile-form-div>div:nth-child(1){
+        width: 17%;
+    }
+
+    .startup-dashboard-profile-form-div>div:nth-child(2){
+        width: 81%;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .startup-main-heading-div-form {
+        padding: 8% 0% 3% 7%;
+    }
+    
+    .startup-dashboard-profile-form-div>div:nth-child(1) {
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    .startup-dashboard-inside-shadow-div{
+        margin-top: -8%;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .mobile-view-startup-dashboard{
+        display: block;
+    }
+
+    .web-view-startup-dashboard{
+        display: none;
+    }
+
+    .startup-side-nav-component-content-div>div:nth-child(1){
+        width: 100%;
+        height: fit-content;
+    }
+    
+    .startup-side-nav-component-content-div>div:nth-child(2){
+        width: 100%;
+    }
+
+    .back-button-css-temp-mobile{
+        display: block;
+    }
+
+    .back-button-css-temp{
+        display: none;
+    }
+}
+
+
 

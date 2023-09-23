@@ -15,7 +15,7 @@ border-bottom: 1px solid gray;
 .add-remain-button{
     border: none;
     font-weight: 700;
-    width: 15%;
+    width: fit-content;
     border-radius: 6px;
     cursor: pointer;
     box-shadow: 0 1px 3px #e8e8e8;

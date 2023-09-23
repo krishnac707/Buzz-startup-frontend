@@ -21,7 +21,7 @@ const Documents = () => {
 
   return (documentStartup &&
     <div >
-      <Nav className='border-bottom-navbar-css' defaultActiveKey="link-1">
+      <Nav className='border-bottom-navbar-css horizontal-scrollable' defaultActiveKey="link-1">
         <Nav.Item >
           <Nav.Link className='background-color-startup-navbar' onClick={pitchDeckFunction} eventKey="link-1">Pitch Deck</Nav.Link>
         </Nav.Item>

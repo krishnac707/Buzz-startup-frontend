@@ -61,11 +61,11 @@ const ContactUs = () => {
                         </div>
                     </div>
 
-                    <button className='button-contact-us-send py-2 mt-4 mb-4'><h4>Send it!</h4></button>
+                    <button className='button-contact-us-send py-2 mt-4 mb-4'><h4 className='mb-0'>Send it!</h4></button>
 
                 </div>
                 <div className='contact-us-right-main-div'>
-                    <div className='contact-us-mail-emoji-div mx-3'>
+                    <div className='contact-us-mail-emoji-div'>
                         <img className='contact-us-email-image' src={emailImage} alt="" />
                     </div>
 

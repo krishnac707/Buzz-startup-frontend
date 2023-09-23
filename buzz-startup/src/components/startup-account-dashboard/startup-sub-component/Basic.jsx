@@ -32,7 +32,7 @@ const Basic = () => {
 
     return basicStartup &&
         <div>
-            <Nav className='border-bottom-navbar-css' defaultActiveKey="link-1">
+            <Nav className='border-bottom-navbar-css horizontal-scrollable' defaultActiveKey="link-1">
                 <Nav.Item >
                     <Nav.Link className='background-color-startup-navbar' onClick={generalFunction} eventKey="link-1">Basic</Nav.Link>
                 </Nav.Item>

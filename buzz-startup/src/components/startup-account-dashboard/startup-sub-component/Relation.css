@@ -38,3 +38,18 @@ width: 10%;
 .relationship-note>p:nth-child(2){
 width: 90%;
 }
+
+@media screen and (max-width: 850px) {
+    
+    .chat-button-css{
+        width: fit-content;
+       
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .chat-button-css{
+        width: fit-content;
+    }
+}
