@@ -36,7 +36,7 @@ const Footer = () => {
                         <p className="mb-0 ccp" onClick={()=>router("/startup-page")}>Startups</p>
                         {/* <p className="mb-0">Partners</p> */}
                         <p className="mb-0 ccp">BuzzTimes</p>
-                        <p className="mb-0 ccp">Privacy Policy</p>
+                        {/* <p className="mb-0 ccp">Privacy Policy</p> */}
                     </div>
                     <div>
                         {/* <p className="mb-0">Portfolio</p> */}

@@ -10,7 +10,7 @@ const StartupFirstForm = ({ formData, setFormData }) => {
         <div className='startup-first-form-div'>
             <input type="text" name="" placeholder='Enter Your Startup Name' />
             <input type="text" name="" placeholder='Enter Email Address' />
-            <input type="date" name="" />
+            <input type="date" name="" placeholder='Enter Date' />
             <input type="text" name="" placeholder='Website URL' />
             <input type="text" name="" placeholder='Headquarter' />
             <input type="text" name="" placeholder='State' />

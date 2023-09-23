@@ -55,13 +55,12 @@
 }
 
 .button-contact-us-send {
-    width: 20%;
+    width: fit-content;
     border-radius: 6px;
     border: none;
     color: white;
     background-color: black;
     font-weight: 700;
-
 }
 
 

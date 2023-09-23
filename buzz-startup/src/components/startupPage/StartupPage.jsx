@@ -193,7 +193,7 @@ const StartupPage = () => {
                 <div className='all-step-div-mobile-view'>
                     <div className='all-step-div-mobile-view-body'>
                         <div>
-                            <div className='step-count-div-mobile-view py-2'>
+                            <div className='step-count-div-mobile-view '>
                                 <span>1</span>
                             </div>
                         </div>
@@ -205,7 +205,7 @@ const StartupPage = () => {
 
                     <div className='all-step-div-mobile-view-body'>
                         <div>
-                            <div className='step-count-div-mobile-view py-2'>
+                            <div className='step-count-div-mobile-view '>
                                 <span>2</span>
                             </div>
                         </div>
@@ -217,7 +217,7 @@ const StartupPage = () => {
 
                     <div className='all-step-div-mobile-view-body'>
                         <div>
-                            <div className='step-count-div-mobile-view py-2'>
+                            <div className='step-count-div-mobile-view '>
                                 <span>3</span>
                             </div>
                         </div>
@@ -229,7 +229,7 @@ const StartupPage = () => {
 
                     <div className='all-step-div-mobile-view-body'>
                         <div>
-                            <div className='step-count-div-mobile-view py-2'>
+                            <div className='step-count-div-mobile-view '>
                                 <span>4</span>
                             </div>
                         </div>
@@ -241,7 +241,7 @@ const StartupPage = () => {
 
                     <div className='all-step-div-mobile-view-body'>
                         <div>
-                            <div className='step-count-div-mobile-view py-2'>
+                            <div className='step-count-div-mobile-view '>
                                 <span>5</span>
                             </div>
                         </div>
@@ -253,7 +253,7 @@ const StartupPage = () => {
 
                     <div className='all-step-div-mobile-view-body'>
                         <div>
-                            <div className='step-count-div-mobile-view py-2'>
+                            <div className='step-count-div-mobile-view '>
                                 <span>6</span>
                             </div>
                         </div>

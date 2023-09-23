@@ -312,7 +312,7 @@
     }
 
     .startop-page-inside-body>:nth-child(1)>button {
-        width: 52%;
+        width: fit-content;
     }
 
     .start-up-description-main-div>p:nth-child(3) {
@@ -456,6 +456,7 @@
         font-weight: 700;
         border-radius: 50px;
         text-align: center;
+        padding-top: 14%;
     }
 
     .all-step-div-mobile-view-body>div:nth-child(2){
