@@ -52,4 +52,12 @@ width: 90%;
     .chat-button-css{
         width: fit-content;
     }
+
+    .relationship-note>p:nth-child(1){
+        width: 18%;
+    }
+
+    .relationship-note>p:nth-child(2){
+        width: 80%;
+    }
 }

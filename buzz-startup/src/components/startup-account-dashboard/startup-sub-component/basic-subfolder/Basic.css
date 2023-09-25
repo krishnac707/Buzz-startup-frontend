@@ -131,6 +131,17 @@
         width: 100%;
         margin-top: 17%;
     }
+
+    .startup-general-startup-name-div{
+        width: 100% !important;
+    }
+
+    .startup-general-startup-name-div>div:first-child{
+        width: 43%;
+    }
+    /* .startup-general-startup-name-div>div:nth-child(2){
+        width: ;
+    } */
 }
 
 @media screen and (max-width: 380px) {
