@@ -381,7 +381,7 @@
 
     .home-browse-article-div>button {
         margin-bottom: 2%;
-        width: 22%;
+        width: fit-content;
     }
 
     
@@ -479,7 +479,7 @@
 
     .home-browse-article-div>button {
         margin-bottom: 2%;
-        width: 42%;
+        width: fit-content;
     }
 
     .home-startup-detail-image {
