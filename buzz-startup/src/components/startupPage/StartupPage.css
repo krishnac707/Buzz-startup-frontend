@@ -414,7 +414,7 @@
 
     .invest-step-main-div>div:nth-child(1)>img:nth-child(1){
         height: 300px;
-        width: fit-content;
+        width: 50%;
     }
 
     .invest-step-main-div {

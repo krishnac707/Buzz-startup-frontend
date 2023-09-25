@@ -132,3 +132,11 @@
         margin-top: 17%;
     }
 }
+
+@media screen and (max-width: 380px) {
+
+    .basic-logo-body-div>div:nth-child(1){
+        width: 16%;
+    }
+
+}

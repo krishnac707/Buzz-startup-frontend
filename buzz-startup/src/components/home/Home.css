@@ -498,3 +498,17 @@
     }
 
 }
+
+@media screen and (max-width: 380px) {
+    .banner-image-button-first-css {
+            width: fit-content;
+    }
+
+    .home-browse-article-div>button{
+        width: fit-content;
+    }
+
+    .home-startup-detail-description-div>button:nth-child(5){
+        width: fit-content;
+    }
+}
