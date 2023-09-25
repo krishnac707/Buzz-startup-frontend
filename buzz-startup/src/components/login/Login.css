@@ -355,7 +355,7 @@
 
 }
 
-@media screen and (max-width: 355px) {
+/* @media screen and (max-width: 350px) {
 
     .login-email-div>span {
         right: 48%;
@@ -363,8 +363,8 @@
     }
 
     .login-password-div>span {
-        right: 25% !important;
+        right: 28% !important;
         bottom: 10%;
     }
 
-}
+} */
