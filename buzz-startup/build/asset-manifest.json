@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.e3951107.css",
+    "main.css": "/static/css/main.de2fa1de.css",
     "main.js": "/static/js/main.566a993b.js",
     "static/js/787.bb25098a.chunk.js": "/static/js/787.bb25098a.chunk.js",
     "static/media/Financial Modelling & Valuation.png": "/static/media/Financial Modelling & Valuation.31d33ea0901bb3389669.png",
@@ -41,12 +41,12 @@
     "static/media/password_svg.svg": "/static/media/password_svg.e811b5af87574550ae1a.svg",
     "index.html": "/index.html",
     "static/media/email_svg.svg": "/static/media/email_svg.c8a5935428f27791409b.svg",
-    "main.e3951107.css.map": "/static/css/main.e3951107.css.map",
+    "main.de2fa1de.css.map": "/static/css/main.de2fa1de.css.map",
     "main.566a993b.js.map": "/static/js/main.566a993b.js.map",
     "787.bb25098a.chunk.js.map": "/static/js/787.bb25098a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3951107.css",
+    "static/css/main.de2fa1de.css",
     "static/js/main.566a993b.js"
   ]
 }
