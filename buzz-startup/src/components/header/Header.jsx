@@ -29,6 +29,8 @@ function Header() {
     //    router("/startup-page")
     // }
     const [expanded, setExpanded] = useState(false);
+    
+    console.log(expanded,"33");
 
     const handleNavItemClick = (route) => {
         router(route) 
