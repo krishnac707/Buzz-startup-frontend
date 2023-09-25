@@ -344,12 +344,12 @@
 @media screen and (max-width: 380px) {
 
     .login-email-div>span {
-        right: 57%;
+        right: 52%;
         bottom: 10%;
     }
 
     .login-password-div>span {
-        right: 47%;
+        right: 40%;
         bottom: 10%;
     }
 
