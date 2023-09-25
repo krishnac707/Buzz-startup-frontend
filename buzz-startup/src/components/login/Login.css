@@ -341,10 +341,24 @@
 
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 388px) {
 
     .login-email-div>span {
-        right: 52%;
+        right: 57%;
+        bottom: 10%;
+    }
+
+    .login-password-div>span {
+        right: 48% !important;
+        bottom: 10%;
+    }
+
+}
+
+@media screen and (max-width: 355px) {
+
+    .login-email-div>span {
+        right: 48%;
         bottom: 10%;
     }
 
