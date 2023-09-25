@@ -349,7 +349,7 @@
     }
 
     .login-password-div>span {
-        right: 34%;
+        right: 34% !important;
         bottom: 10%;
     }
 
