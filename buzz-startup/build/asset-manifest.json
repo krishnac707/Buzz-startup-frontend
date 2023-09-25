@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ecee75a2.css",
-    "main.js": "/static/js/main.f1b8cfce.js",
+    "main.js": "/static/js/main.566a993b.js",
     "static/js/787.bb25098a.chunk.js": "/static/js/787.bb25098a.chunk.js",
     "static/media/Financial Modelling & Valuation.png": "/static/media/Financial Modelling & Valuation.31d33ea0901bb3389669.png",
     "static/media/2.jpg": "/static/media/2.06aff0a79d102c6eef40.jpg",
@@ -42,11 +42,11 @@
     "index.html": "/index.html",
     "static/media/email_svg.svg": "/static/media/email_svg.c8a5935428f27791409b.svg",
     "main.ecee75a2.css.map": "/static/css/main.ecee75a2.css.map",
-    "main.f1b8cfce.js.map": "/static/js/main.f1b8cfce.js.map",
+    "main.566a993b.js.map": "/static/js/main.566a993b.js.map",
     "787.bb25098a.chunk.js.map": "/static/js/787.bb25098a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ecee75a2.css",
-    "static/js/main.f1b8cfce.js"
+    "static/js/main.566a993b.js"
   ]
 }

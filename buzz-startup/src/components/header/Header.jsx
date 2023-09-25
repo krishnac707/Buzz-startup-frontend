@@ -30,8 +30,6 @@ function Header() {
     // }
     const [expanded, setExpanded] = useState(false);
     
-    console.log(expanded,"33");
-
     const handleNavItemClick = (route) => {
         router(route) 
       setExpanded(false); // Close the Navbar when a menu item is clicked
