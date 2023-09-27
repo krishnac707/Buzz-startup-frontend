@@ -16,7 +16,7 @@ const PortfolioComponent = () => {
     ])
 
     // console.log(cardDetail);
-    cardDetail.map(singleImage => console.log(singleImage.image))
+    // cardDetail.map(singleImage => console.log(singleImage.image))
 
     return (
         <div className='protfolio-body-css'>

@@ -42,7 +42,7 @@ const StartupMainForm = () => {
         if (page === FormTitles.length - 1) {
             alert("FORM SUBMITTED");
             router("/overview-profile")
-            console.log(formData);
+            // console.log(formData);
         } else {
             setPage((currPage) => currPage + 1);
         }

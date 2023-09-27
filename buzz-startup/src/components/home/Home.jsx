@@ -38,19 +38,19 @@ const Home = () => {
 
       <div className='home-number-animation-css'>
         <div className='home-inside-number-animation-css'>
-          <h1 className='mb-0'><NumberAnimation n={10}></NumberAnimation>+  </h1>
+          <h1 className='mb-0'><NumberAnimation n={5}></NumberAnimation>+  </h1>
           <p className='mb-0'><b>Portfolio Companies</b></p>
         </div>
         <div className='home-inside-number-animation-css'>
-          <h1 className='mb-0'><NumberAnimation n={100}></NumberAnimation>+</h1>
-          <p className='mb-0'><b>Startup Pitched</b></p>
+          <h1 className='mb-0'><NumberAnimation n={50}></NumberAnimation>+</h1>
+          <p className='mb-0'><b>Startups Pitched</b></p>
         </div>
         <div className='home-inside-number-animation-css'>
-          <h1 className='mb-0'><NumberAnimation n={1000}></NumberAnimation>+</h1>
+          <h1 className='mb-0'><NumberAnimation n={500}></NumberAnimation>+</h1>
           <p className='mb-0'><b>Startups Evaluated</b></p>
         </div>
         <div className='home-inside-number-animation-css'>
-          <h1 className='mb-0'>$<NumberAnimation n={20}></NumberAnimation>M+</h1>
+          <h1 className='mb-0'>$<NumberAnimation n={5}></NumberAnimation>M+</h1>
           <p className='mb-0'><b>Funds Deployed</b></p>
         </div>
       </div>

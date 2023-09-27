@@ -18,8 +18,8 @@ const MyInnovation = () => {
             <h2 className='text-center customfW'>Unleash Your Startup
                 Superpower with Buzz AI </h2>
             <h5 className='text-center'>AI-Powered Startup Ideas and Tools to Fuel Your Entrepreneurial Journey</h5>
-            <div class="d-grid gap-2 col-2 mx-auto get-start-button-mobile-css">
-                <button class="road-map-button mb-2" type="button">Get Started</button>
+            <div className="d-grid gap-2 col-2 mx-auto get-start-button-mobile-css">
+                <button className="road-map-button mb-2" type="button">Get Started</button>
             </div>
             <div className='my-innovation-image-div'>
                 <img src={IstockImage} alt="" />
@@ -68,8 +68,8 @@ const MyInnovation = () => {
                     <p><FontAwesomeIcon className='svg-font-size' icon={faMagnifyingGlass} /></p>
                 </div>
                 <div className='border-bottom'></div>
-                <div class="d-grid gap-2 col-2 mx-auto mobile-full-report-width-div">
-                    <button class="road-map-button mb-2 mt-2 " type="button" onClick={()=>router("/full-report")}>Get Full Report</button>
+                <div className="d-grid gap-2 col-2 mx-auto mobile-full-report-width-div">
+                    <button className="road-map-button mb-2 mt-2 " type="button" onClick={()=>router("/full-report")}>Get Full Report</button>
                 </div>
 
             </div>}

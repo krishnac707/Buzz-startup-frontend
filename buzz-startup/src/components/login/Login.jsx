@@ -12,7 +12,7 @@ const Login = () => {
   const [selectedOption, setSelectedOption] = useState("startup");
   const [imageSrc, setImageSrc] = useState(startupImage);
 
-  console.log(userData,"15");
+  // console.log(userData,"15");
 
   const handleOptionChange = (event) => {
     const value = event.target.value;

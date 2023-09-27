@@ -44,7 +44,7 @@ const InvestorMainForm = () => {
         if (page === FormTitles.length - 1) {
             alert("FORM SUBMITTED");
             router("/investor/home")
-            console.log(formData);
+            // console.log(formData);
         } else {
             setPage((currPage) => currPage + 1);
         }
