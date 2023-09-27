@@ -20,6 +20,7 @@ import MyInnovation from './components/my-innovation/MyInnovation';
 import FullReport from './components/full-report/FullReport';
 import AboutUs from './components/about-us/AboutUs';
 import ContactUs from './components/contact-us/ContactUs';
+import PortfolioComponent from './components/portfolio-component/PortfolioComponent';
 
 function App() {
     return (
@@ -44,6 +45,7 @@ function App() {
                 <Route exact path='/full-report' element= {<FullReport />} />
                 <Route exact path='/about-us' element={<AboutUs />} />
                 <Route exact path='/contact-us' element={<ContactUs />} />
+                <Route exact path='/portfolio' element={<PortfolioComponent />} />
             </Routes>
             <Footer />
         </div>

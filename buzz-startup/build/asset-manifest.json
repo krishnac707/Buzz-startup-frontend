@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6e36973a.css",
-    "main.js": "/static/js/main.566a993b.js",
+    "main.css": "/static/css/main.365d9f85.css",
+    "main.js": "/static/js/main.95f492ed.js",
     "static/js/787.bb25098a.chunk.js": "/static/js/787.bb25098a.chunk.js",
     "static/media/Financial Modelling & Valuation.png": "/static/media/Financial Modelling & Valuation.31d33ea0901bb3389669.png",
     "static/media/2.jpg": "/static/media/2.06aff0a79d102c6eef40.jpg",
@@ -21,10 +21,12 @@
     "static/media/buzzaboutus.jpg": "/static/media/buzzaboutus.a6d1db5186ad89b1f960.jpg",
     "static/media/Investor Pitch.jpg": "/static/media/Investor Pitch.c9c9bbaad08445bfaa42.jpg",
     "static/media/9.png": "/static/media/9.e0da2530164713549545.png",
+    "static/media/BharatCHAT.png": "/static/media/BharatCHAT.e1b22a31c37ef8b81715.png",
     "static/media/2.png": "/static/media/2.4d2cce1d4fe20b3de91e.png",
     "static/media/4.jpg": "/static/media/4.a3642dd55c557b6f27cf.jpg",
     "static/media/rocket.png": "/static/media/rocket.25cf0bb4d7197fb46837.png",
     "static/media/mail.png": "/static/media/mail.0ff6ef70ecb5ff5d4cf3.png",
+    "static/media/NewzAPI.jpeg": "/static/media/NewzAPI.851815c60c93228f320b.jpeg",
     "static/media/1.png": "/static/media/1.b969559c2cbbf844c61c.png",
     "static/media/8.png": "/static/media/8.dcde32f9f934672c579c.png",
     "static/media/5.png": "/static/media/5.3e4e0559d2bdb9484183.png",
@@ -35,18 +37,20 @@
     "static/media/6.png": "/static/media/6.d7169d86e0c9a456e3f0.png",
     "static/media/email.png": "/static/media/email.24cbd35c8e81db76afcf.png",
     "static/media/3.png": "/static/media/3.a2605e43df761fae51bc.png",
+    "static/media/OS9.png": "/static/media/OS9.ea221d1475b15e0832d2.png",
     "static/media/enter.png": "/static/media/enter.bc102390c27513b2399d.png",
     "static/media/7.png": "/static/media/7.a784cc4f7979c442e6ec.png",
+    "static/media/GulfGPT.jpeg": "/static/media/GulfGPT.5b9d785f62215e1f574c.jpeg",
     "static/media/checked (1).png": "/static/media/checked (1).dc6fda5f5f69d3d218b1.png",
     "static/media/password_svg.svg": "/static/media/password_svg.e811b5af87574550ae1a.svg",
     "index.html": "/index.html",
     "static/media/email_svg.svg": "/static/media/email_svg.c8a5935428f27791409b.svg",
-    "main.6e36973a.css.map": "/static/css/main.6e36973a.css.map",
-    "main.566a993b.js.map": "/static/js/main.566a993b.js.map",
+    "main.365d9f85.css.map": "/static/css/main.365d9f85.css.map",
+    "main.95f492ed.js.map": "/static/js/main.95f492ed.js.map",
     "787.bb25098a.chunk.js.map": "/static/js/787.bb25098a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e36973a.css",
-    "static/js/main.566a993b.js"
+    "static/css/main.365d9f85.css",
+    "static/js/main.95f492ed.js"
   ]
 }

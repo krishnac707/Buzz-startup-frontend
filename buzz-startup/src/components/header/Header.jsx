@@ -106,6 +106,7 @@ function Header() {
                             {/* <Nav.Link className='navbar-link-menu-div'>Explore</Nav.Link> */}
                             <NavDropdown title="Explore" className='navbar-link-menu-div' id="basic-nav-dropdown">
                                 <NavDropdown.Item onClick={() => handleNavItemClick("/my-innovation")}>MyInnovation</NavDropdown.Item>
+                                <NavDropdown.Item onClick={() => handleNavItemClick("/portfolio")}>Portfolio</NavDropdown.Item>
                                 <NavDropdown.Item onClick={() => handleNavItemClick("/pitch-deck")}>
                                     Pitch Deck
                                 </NavDropdown.Item>

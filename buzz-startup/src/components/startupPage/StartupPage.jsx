@@ -109,7 +109,7 @@ const StartupPage = () => {
 
                 <div className='start-up-card-inside-main-div shadow-sm'>
                     <img className='mx-auto' src={sixth} alt="" />
-                    <p><span className='orange-color'>Startups</span> with innovative ideas, USP, scalability across India and globe.</p>
+                    <p>Establishing worldwide <span className='orange-color'>technological collaborations</span> with startups, small and medium-sized enterprises (SMEs), and research institutions.</p>
                 </div>
             </div>
 
