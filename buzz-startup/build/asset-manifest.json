@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.365d9f85.css",
-    "main.js": "/static/js/main.95f492ed.js",
+    "main.js": "/static/js/main.29ffe45c.js",
     "static/js/787.bb25098a.chunk.js": "/static/js/787.bb25098a.chunk.js",
     "static/media/Financial Modelling & Valuation.png": "/static/media/Financial Modelling & Valuation.31d33ea0901bb3389669.png",
     "static/media/2.jpg": "/static/media/2.06aff0a79d102c6eef40.jpg",
@@ -37,7 +37,7 @@
     "static/media/6.png": "/static/media/6.d7169d86e0c9a456e3f0.png",
     "static/media/email.png": "/static/media/email.24cbd35c8e81db76afcf.png",
     "static/media/3.png": "/static/media/3.a2605e43df761fae51bc.png",
-    "static/media/OS9.png": "/static/media/OS9.ea221d1475b15e0832d2.png",
+    "static/media/OS9.png": "/static/media/OS9.5dd981d66e68dc101884.png",
     "static/media/enter.png": "/static/media/enter.bc102390c27513b2399d.png",
     "static/media/7.png": "/static/media/7.a784cc4f7979c442e6ec.png",
     "static/media/GulfGPT.jpeg": "/static/media/GulfGPT.5b9d785f62215e1f574c.jpeg",
@@ -46,11 +46,11 @@
     "index.html": "/index.html",
     "static/media/email_svg.svg": "/static/media/email_svg.c8a5935428f27791409b.svg",
     "main.365d9f85.css.map": "/static/css/main.365d9f85.css.map",
-    "main.95f492ed.js.map": "/static/js/main.95f492ed.js.map",
+    "main.29ffe45c.js.map": "/static/js/main.29ffe45c.js.map",
     "787.bb25098a.chunk.js.map": "/static/js/787.bb25098a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.365d9f85.css",
-    "static/js/main.95f492ed.js"
+    "static/js/main.29ffe45c.js"
   ]
 }

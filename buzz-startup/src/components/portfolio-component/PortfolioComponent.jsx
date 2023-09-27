@@ -24,7 +24,7 @@ const PortfolioComponent = () => {
             <Row xs={1} md={2} lg={4} className="g-4">
                 {cardDetail && cardDetail.map((singleCard,idx) => (
                     <Col key={idx}>
-                        <Card>
+                        <Card className='shadow-sm'>
                             <Card.Img variant="top" className='card-image-size' src={singleCard?.image} />
                             <Card.Body>
                                 <Card.Title className='text-center fw-bold' >{singleCard?.title}</Card.Title>
