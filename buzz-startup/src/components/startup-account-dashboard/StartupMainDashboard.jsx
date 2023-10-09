@@ -10,10 +10,11 @@ import Team from './startup-sub-component/Team';
 import RelationShip from './startup-sub-component/RelationShip';
 import Documents from './startup-sub-component/Documents';
 import { useNavigate } from 'react-router-dom';
+import ReportStartup from './startup-sub-component/ReportStartup';
 
 const StartupMainDashboard = () => {
 
-    const { setBasicStartup, setPitchStartup, setFundingStartup, setTeamStartup, setDocumentStartup, setRelationShip } = useContext(StartupDashboardContext);
+    const { setBasicStartup, setPitchStartup, setFundingStartup, setTeamStartup, setDocumentStartup,setReportStartup, setRelationShip } = useContext(StartupDashboardContext);
     const router = useNavigate()
 
     const [toggleMenu, setToggleMenu] = useState(false);
@@ -28,6 +29,7 @@ const StartupMainDashboard = () => {
         setFundingStartup(false)
         setTeamStartup(false)
         setDocumentStartup(false)
+        setReportStartup(false)
         setRelationShip(false)
     }
 
@@ -38,6 +40,7 @@ const StartupMainDashboard = () => {
         setFundingStartup(false)
         setTeamStartup(false)
         setDocumentStartup(false)
+        setReportStartup(false)
         setRelationShip(false)
     }
 
@@ -48,6 +51,7 @@ const StartupMainDashboard = () => {
         setFundingStartup(true)
         setTeamStartup(false)
         setDocumentStartup(false)
+        setReportStartup(false)
         setRelationShip(false)
     }
 
@@ -58,6 +62,7 @@ const StartupMainDashboard = () => {
         setFundingStartup(false)
         setTeamStartup(true)
         setDocumentStartup(false)
+        setReportStartup(false)
         setRelationShip(false)
     }
 
@@ -68,6 +73,18 @@ const StartupMainDashboard = () => {
         setFundingStartup(false)
         setTeamStartup(false)
         setDocumentStartup(true)
+        setReportStartup(false)
+        setRelationShip(false)
+    }
+
+    const reportFunction = () => {
+        setToggleMenu(true)
+        setPitchStartup(false)
+        setBasicStartup(false)
+        setFundingStartup(false)
+        setTeamStartup(false)
+        setDocumentStartup(false)
+        setReportStartup(true)
         setRelationShip(false)
     }
 
@@ -78,6 +95,7 @@ const StartupMainDashboard = () => {
         setFundingStartup(false)
         setTeamStartup(false)
         setDocumentStartup(false)
+        setReportStartup(false)
         setRelationShip(true)
     }
 
@@ -120,7 +138,10 @@ const StartupMainDashboard = () => {
                                 <Nav.Link onClick={documentFunction} className='startup-navbar-color py-2' eventKey="link-5">Documents</Nav.Link>
                             </Nav.Item>
                             <Nav.Item className="basic-startup-form-div">
-                                <Nav.Link onClick={relationFunction} className='startup-navbar-color py-2' eventKey="link-6">Relationship Manager</Nav.Link>
+                                <Nav.Link onClick={reportFunction} className='startup-navbar-color py-2' eventKey="link-6">Report History</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item className="basic-startup-form-div">
+                                <Nav.Link onClick={relationFunction} className='startup-navbar-color py-2' eventKey="link-7">Relationship Manager</Nav.Link>
                             </Nav.Item>
                         </Nav>
                         <div>
@@ -129,6 +150,7 @@ const StartupMainDashboard = () => {
                             <Funding />
                             <Team />
                             <Documents />
+                            <ReportStartup />
                             <RelationShip />
                         </div>
                     </div>
@@ -162,7 +184,10 @@ const StartupMainDashboard = () => {
                                 <Nav.Link onClick={documentFunction} className='startup-navbar-color py-2' eventKey="link-5">Documents</Nav.Link>
                             </Nav.Item>
                             <Nav.Item className="basic-startup-form-div">
-                                <Nav.Link onClick={relationFunction} className='startup-navbar-color py-2' eventKey="link-6">Relationship Manager</Nav.Link>
+                                <Nav.Link onClick={reportFunction} className='startup-navbar-color py-2' eventKey="link-6">Report History</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item className="basic-startup-form-div">
+                                <Nav.Link onClick={relationFunction} className='startup-navbar-color py-2' eventKey="link-7">Relationship Manager</Nav.Link>
                             </Nav.Item>
                         </Nav>
                         }
@@ -172,6 +197,7 @@ const StartupMainDashboard = () => {
                             <Funding />
                             <Team />
                             <Documents />
+                            <ReportStartup />
                             <RelationShip />
                         </div>
                         }

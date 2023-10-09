@@ -9,14 +9,15 @@ const StartupDashboardProvider = ({ children }) => {
     const [fundingStartup, setFundingStartup] = useState(false);
     const [teamStartup, setTeamStartup] = useState(false);
     const [documentStartup, setDocumentStartup] = useState(false);
+    const [reportStartup,setReportStartup] = useState(false);
     const [relationShip, setRelationShip] = useState(false);
 
     return (
         <StartupDashboardContext.Provider value={{
             basicStartup, setBasicStartup,
             pitchStartup, setPitchStartup, fundingStartup, setFundingStartup,
-            teamStartup, setTeamStartup, documentStartup, setDocumentStartup,
-            relationShip, setRelationShip
+            teamStartup, setTeamStartup, reportStartup,setReportStartup,
+            documentStartup, setDocumentStartup,relationShip, setRelationShip
         }}>
             {children}
         </StartupDashboardContext.Provider>
