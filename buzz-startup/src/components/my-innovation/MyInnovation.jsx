@@ -21,9 +21,9 @@ const MyInnovation = () => {
             <div className="d-grid gap-2 col-2 mx-auto get-start-button-mobile-css">
                 <button className="road-map-button mb-2" type="button">Get Started</button>
             </div>
-            <div className='my-innovation-image-div'>
+            {/* <div className='my-innovation-image-div'>
                 <img src={IstockImage} alt="" />
-            </div>
+            </div> */}
             <h2 className='text-center mt-2 customfW'>Explore 100000+ ideas</h2>
 
             <div className='my-innovation-searchbar-div py-1'>

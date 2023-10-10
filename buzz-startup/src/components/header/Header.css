@@ -89,12 +89,20 @@
     width: 40%;
 }
 
+.shpid{
+    width: 70%;
+}
+
 .navbar-link-investor-menu-div{
     width: 33%;
 }
 
 .border-bottom-css-navbar{
     border-bottom: 1px solid #dbd6d6;
+}
+
+.startup-content-align{
+    justify-content: end;
 }
 
 
@@ -141,6 +149,11 @@
     }
 
     .hpid{
+        width: 20%;
+        margin-left: 37%;
+    }
+
+    .shpid{
         width: 20%;
         margin-left: 37%;
     }
