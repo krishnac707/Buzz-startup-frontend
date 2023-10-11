@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import "./Home.css";
 import bannerImage from './../../images/Untitled design.jpg';
 import { useSpring, animated } from 'react-spring';
@@ -9,10 +9,13 @@ import userImage from "./../../images/user.png";
 import fundingImage from "./../../images/funding.png";
 import rocketImage from "./../../images/rocket.png";
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/Auth.context';
 
 const Home = () => {
 
   const router = useNavigate();
+  const { state, dispatch } = useContext(AuthContext);
+
 
   const NumberAnimation = ({ n }) => {
     const { number } = useSpring({
@@ -23,6 +26,12 @@ const Home = () => {
     })
     return <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>
   }
+
+  useEffect(() => {
+    if (state?.user?._id) {
+        router('/')
+    }
+}, [state])
 
   return (
     <div className='home-body'>

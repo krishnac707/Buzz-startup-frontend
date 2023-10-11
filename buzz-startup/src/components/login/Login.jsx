@@ -1,66 +1,87 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "./Login.css"
 import { useNavigate } from 'react-router-dom';
 import googleImage from "./../../images/google-image.png"
 import investorImage from "./../../images/login_investor.svg"
 import startupImage from "./../../images/startup-login-image.svg"
 import partnerImage from "./../../images/partnerImage.jpg"
+import api from '../apiConfig';
+import toast from 'react-hot-toast';
+import { AuthContext } from '../../context/Auth.context';
 
 const Login = () => {
   const router = useNavigate();
-  const [userData,setUserData] = useState({email:"",password:"",role:"startup"})
-  const [selectedOption, setSelectedOption] = useState("startup");
+  const [userData, setUserData] = useState({ Email: "", Password: "", Role: "Startup" })
+  const [selectedOption, setSelectedOption] = useState("Startup");
   const [imageSrc, setImageSrc] = useState(startupImage);
+  const { state, dispatch } = useContext(AuthContext);
 
   // console.log(userData,"15");
 
   const handleOptionChange = (event) => {
     const value = event.target.value;
     setSelectedOption(value);
-    if (value === "startup") {
+    if (value === "Startup") {
       setImageSrc(startupImage);
-      setUserData({...userData,[event.target.name]:value})
-    } else if (value === "investor") {
+      setUserData({ ...userData, [event.target.name]: value })
+    } else if (value === "Investor") {
       setImageSrc(investorImage);
-      setUserData({...userData,[event.target.name]:value})
+      setUserData({ ...userData, [event.target.name]: value })
     }
-    else if (value === "partner") {
+    else if (value === "Partner") {
       setImageSrc(partnerImage);
-      setUserData({...userData,[event.target.name]:value})
+      setUserData({ ...userData, [event.target.name]: value })
     }
   };
 
-  const handleInput= (e) => {
-    setUserData({...userData,[e.target.name]:e.target.value})
+  const handleInput = (e) => {
+    setUserData({ ...userData, [e.target.name]: e.target.value })
   }
 
-  const formSubmit = (e) => {
+  const formSubmit = async (e) => {
     e.preventDefault()
-    if(userData.email && userData.password && userData.role){
-      if(userData.role == "startup"){
-        if(userData.email == "startup@gmail.com" && userData.password == "startup"){
-          router("/start-up-account")
-        }
-        else{
-          alert("Incorrect Email or Password or role")
+    try {
+      if (userData.Email && userData.Password && userData.Role) {
+        const response = await api.post("/all/login", { userData })
+        console.log(response, "46");
+        if (response.data.success) {
+          if (response.data.user?.Role == "Startup") {
+            dispatch({
+              type: "LOGIN",
+              payload: response.data.user
+            })
+            localStorage.setItem("token", JSON.stringify(response.data.token))
+            setUserData({ email: "", password: "" })
+            router("/start-up-account");
+            toast.success(response.data.message);
+          }
+
+          if (response.data.user?.Role == "Investor") {
+            dispatch({
+              type: "LOGIN",
+              payload: response.data.user
+            })
+            localStorage.setItem("token", JSON.stringify(response.data.token))
+            setUserData({ email: "", password: "" })
+            router("/investor-form-account");
+            toast.success(response.data.message);
+          }
         }
       }
-      if(userData.role == "investor"){
-        if(userData.email == "investor@gmail.com" && userData.password == "investor"){
-          router("/investor-form-account")
-        }
-        else{
-          alert("Incorrect Email or Password or role")
-        }
+      else {
+        toast.error("All fields are mandatory")
       }
-      
-      
     }
-    else
-    {
-      alert("Please fill all details")
+    catch (error) {
+      console.log(error);
     }
   }
+
+  useEffect(() => {
+    if (state?.user?._id) {
+      router('/')
+    }
+  }, [state])
 
   return (
     <div className='login-body'>
@@ -74,15 +95,15 @@ const Login = () => {
             <form onSubmit={formSubmit}>
               <div className='radio-form-css-div'>
                 <div>
-                  <input type="radio" name="role" value="startup" onChange={handleOptionChange}  checked={selectedOption === "startup"} />
+                  <input type="radio" name="Role" value="Startup" onChange={handleOptionChange} checked={selectedOption === "Startup"} />
                   <p className='mb-0 px-1'>Startup</p>
                 </div>
                 <div>
-                  <input type="radio" name="role" value="investor" onChange={handleOptionChange} checked={selectedOption === "investor"} />
+                  <input type="radio" name="Role" value="Investor" onChange={handleOptionChange} checked={selectedOption === "Investor"} />
                   <p className='mb-0 px-1'>Investor</p>
                 </div>
                 <div>
-                  <input type="radio" name="role" value="partner" onChange={handleOptionChange} checked={selectedOption === "partner"} />
+                  <input type="radio" name="Role" value="Partner" onChange={handleOptionChange} checked={selectedOption === "Partner"} />
                   <p className='mb-0 px-1'>Partner</p>
                 </div>
               </div>
@@ -99,17 +120,17 @@ const Login = () => {
                 <span className='half-horizontal-line'></span>
               </div>
               <div className='login-email-div'>
-                <input type="text" required="required" name='email' onChange={handleInput} />
+                <input type="text" required="required" name='Email' onChange={handleInput} />
                 <span>Enter Email</span>
               </div>
               <div className='login-password-div'>
-                <input type="password" required="required" name='password' onChange={handleInput} />
+                <input type="password" required="required" name='Password' onChange={handleInput} />
                 <span>Enter Password</span>
               </div>
               <p className='forgot-password-text-css'>Forgot my password</p>
               <input type="submit" value="Log In" className='login-button-color' />
               <div className='horizontal-line-css-div'></div>
-              <p className='login-signup-link-css'>Don't have an account? <span className='sign-up-link-css' onClick={()=>router("/register")}>Sign Up Now</span></p>
+              <p className='login-signup-link-css'>Don't have an account? <span className='sign-up-link-css' onClick={() => router("/register")}>Sign Up Now</span></p>
             </form>
           </div>
           <div className="login-image-div" >

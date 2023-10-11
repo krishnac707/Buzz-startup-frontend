@@ -14,31 +14,65 @@ import InvesterAccountDashboardProvider from './context/InvestorAccountDashboard
 import GeneralDetailDashboardProvider from './context/GeneralDetailDashboard.context';
 import KycFormDashboardProvider from './context/KycFormDashboard.context';
 import FullReportDashboardProvider from './context/fullReportDashboard.context';
+import { Toaster } from 'react-hot-toast';
+import AuthProvider from './context/Auth.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <StartupDashboardProvider>
-        <BasicFormDashboardProvider>
-          <PitchDashboardProvider>
-            <TeamDashboardProvider>
-              <DocumentDashboardProvider>
-                <InvesterAccountDashboardProvider>
-                  <GeneralDetailDashboardProvider>
-                    <KycFormDashboardProvider>
-                      <FullReportDashboardProvider>
-                      <App />
-                      </FullReportDashboardProvider>
-                    </KycFormDashboardProvider>
-                  </GeneralDetailDashboardProvider>
-                </InvesterAccountDashboardProvider>
-              </DocumentDashboardProvider>
-            </TeamDashboardProvider>
-          </PitchDashboardProvider>
-        </BasicFormDashboardProvider>
-      </StartupDashboardProvider>
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <StartupDashboardProvider>
+          <BasicFormDashboardProvider>
+            <PitchDashboardProvider>
+              <TeamDashboardProvider>
+                <DocumentDashboardProvider>
+                  <InvesterAccountDashboardProvider>
+                    <GeneralDetailDashboardProvider>
+                      <KycFormDashboardProvider>
+                        <FullReportDashboardProvider>
+                          <Toaster
+                            position="top-center"
+                            reverseOrder={false}
+                            gutter={8}
+                            containerClassName=""
+                            containerStyle={{}}
+                            toastOptions={{
+                              // Define default options
+                              className: '',
+                              duration: 4000,
+                              style: {
+                                background: '#363636',
+                                color: '#fff',
+                              },
+
+                              // Default options for specific types
+                              success: {
+                                duration: 3000,
+                                theme: {
+                                  primary: 'green',
+                                  secondary: 'black',
+                                },
+                              },
+                              error: {
+                                style: {
+                                  background: 'red',
+                                },
+                              },
+                            }}
+                          />
+                          <App />
+                        </FullReportDashboardProvider>
+                      </KycFormDashboardProvider>
+                    </GeneralDetailDashboardProvider>
+                  </InvesterAccountDashboardProvider>
+                </DocumentDashboardProvider>
+              </TeamDashboardProvider>
+            </PitchDashboardProvider>
+          </BasicFormDashboardProvider>
+        </StartupDashboardProvider>
+      </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>
 );
 

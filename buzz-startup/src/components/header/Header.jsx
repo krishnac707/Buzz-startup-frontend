@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './Header.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import headerImage from './../../images/startup-dashboard-profile-logo.png'
+import { AuthContext } from '../../context/Auth.context';
 
 function Header() {
     const router = useNavigate();
@@ -17,24 +18,29 @@ function Header() {
     const isInvestorHomeDashboard = location.pathname === "/investor/home";
     const isInvestorAccountDashboard = location.pathname === "/investor/account";
     const isFullReport = location.pathname === "/full-report"
+    const { state, dispatch } = useContext(AuthContext)
 
-    // const [isOpen, setIsOpen] = useState(false);
+    console.log(state,"23");
 
-    // const toggleMenu = () => {
-    //     setIsOpen(!isOpen);
-    //   };
 
-    // const startupMenuRouter = () => {
-    //    setIsOpen(false)
-    //    router("/startup-page")
-    // }
     const [expanded, setExpanded] = useState(false);
-    
+
     const handleNavItemClick = (route) => {
-        router(route) 
-      setExpanded(false); // Close the Navbar when a menu item is clicked
+        router(route)
+        setExpanded(false); // Close the Navbar when a menu item is clicked
     };
 
+    const handleLogoutNavItemClick = (route)=> {
+        router(route)
+        dispatch({ type: 'LOGOUT' })
+        setExpanded(false);
+    }
+
+    useEffect(() => {
+        if (state?.user?._id) {
+            router('/')
+        }
+    },[state])
 
 
     if (isLoginPage || isFullReport || isSignupPage || isStartupPage || isOverviewProfile || isInvestorMainDashboard) {
@@ -73,7 +79,7 @@ function Header() {
                 <Navbar expand="lg" fixed="top" className="bg-body-tertiary border-bottom-css-navbar p-0">
                     <Container>
                         <div className='navbar-heading-logo-color-1 navbar-logo-width' ><p className='mb-0 logo-cursor' onClick={() => router("/")}>BuzzStartups</p></div>
-                        <Navbar.Toggle  aria-controls="basic-navbar-nav" />
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav" className='navbar-menu-main-div-last'>
                             <Nav className="navbar-nav right-investor-header-div startup-content-align">
                                 {/* <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4' onClick={() => router("/overview-profile")}>Opportunities</Nav.Link>
@@ -117,7 +123,8 @@ function Header() {
 
                     <Navbar.Collapse id="basic-navbar-nav" className='navbar-menu-main-div-last'>
                         <Nav className="me-auto navbar-menu-div">
-                            <Nav.Link className='navbar-link-menu-div-last' onClick={() => handleNavItemClick("/login")}>Login</Nav.Link>
+                            {state?.user?.userId ? <Nav.Link className='navbar-link-menu-div-last' onClick={() => handleLogoutNavItemClick("/")}>Logout</Nav.Link> :
+                            <Nav.Link className='navbar-link-menu-div-last' onClick={() => handleNavItemClick("/login")}>Login</Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
