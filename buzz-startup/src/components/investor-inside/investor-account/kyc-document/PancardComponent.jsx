@@ -10,8 +10,8 @@ const PancardComponent = () => {
       <h5 className='mt-3'>Pancard</h5>
       <p>Please use an image no larger than 1200px * 600px.</p>
       <div className='file-div'>
-        <input type="file" name="" className='input-file' id="" />
-        <label for="fileInput" className="custom-button">Upload Pancard</label>
+        <input type="file" name="" className='input-file' id="pancardFileInput" />
+        <label for="pancardFileInput" className="custom-button">Upload Pancard</label>
       </div>
     </div>
 

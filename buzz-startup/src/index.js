@@ -21,57 +21,52 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <BrowserRouter>
-        <StartupDashboardProvider>
-          <BasicFormDashboardProvider>
-            <PitchDashboardProvider>
-              <TeamDashboardProvider>
-                <DocumentDashboardProvider>
-                  <InvesterAccountDashboardProvider>
-                    <GeneralDetailDashboardProvider>
-                      <KycFormDashboardProvider>
-                        <FullReportDashboardProvider>
-                          <Toaster
-                            position="top-center"
-                            reverseOrder={false}
-                            gutter={8}
-                            containerClassName=""
-                            containerStyle={{}}
-                            toastOptions={{
-                              // Define default options
-                              className: '',
-                              duration: 4000,
-                              style: {
-                                background: '#363636',
-                                color: '#fff',
-                              },
-
-                              // Default options for specific types
-                              success: {
-                                duration: 3000,
-                                theme: {
-                                  primary: 'green',
-                                  secondary: 'black',
-                                },
-                              },
-                              error: {
+        <BrowserRouter>
+          <StartupDashboardProvider>
+            <BasicFormDashboardProvider>
+              <PitchDashboardProvider>
+                <TeamDashboardProvider>
+                  <DocumentDashboardProvider>
+                    <InvesterAccountDashboardProvider>
+                      <GeneralDetailDashboardProvider>
+                        <KycFormDashboardProvider>
+                          <FullReportDashboardProvider>
+                            <Toaster
+                              position="top-center"
+                              reverseOrder={false}
+                              gutter={8}
+                              containerClassName=""
+                              containerStyle={{}}
+                              toastOptions={{
+                                // Define default options
+                                className: '',
+                                duration: 4000,
                                 style: {
-                                  background: 'red',
+                                  background: '#363636',
+                                  color: '#fff',
                                 },
-                              },
-                            }}
-                          />
-                          <App />
-                        </FullReportDashboardProvider>
-                      </KycFormDashboardProvider>
-                    </GeneralDetailDashboardProvider>
-                  </InvesterAccountDashboardProvider>
-                </DocumentDashboardProvider>
-              </TeamDashboardProvider>
-            </PitchDashboardProvider>
-          </BasicFormDashboardProvider>
-        </StartupDashboardProvider>
-      </BrowserRouter>
+
+                                // Default options for specific types
+                                success: {
+                                  duration: 3000,
+                                  theme: {
+                                    primary: 'green',
+                                    secondary: 'black',
+                                  },
+                                },
+                              }}
+                            />
+                            <App />
+                          </FullReportDashboardProvider>
+                        </KycFormDashboardProvider>
+                      </GeneralDetailDashboardProvider>
+                    </InvesterAccountDashboardProvider>
+                  </DocumentDashboardProvider>
+                </TeamDashboardProvider>
+              </PitchDashboardProvider>
+            </BasicFormDashboardProvider>
+          </StartupDashboardProvider>
+        </BrowserRouter>
     </AuthProvider>
   </React.StrictMode>
 );

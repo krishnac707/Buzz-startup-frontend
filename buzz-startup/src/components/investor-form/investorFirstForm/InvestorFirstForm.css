@@ -5,3 +5,14 @@
     padding: 1%;
     border-radius: 4px;
 }
+
+.PhoneInputCss{
+    width: 75% !important;
+    margin-top: 2%;
+    /* padding: 1%; */
+    border-radius: 4px;
+}
+
+.react-tel-input .form-control{
+    width: 100% !important;
+}

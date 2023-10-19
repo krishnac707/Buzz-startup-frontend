@@ -1,10 +1,27 @@
 import React from 'react'
 
-const InvestorSecondForm = () => {
+const InvestorSecondForm = ({ formData, setFormData }) => {
+
+  const handleInput = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value })
+  }
+
+  const HandleBusinessType = (event) => {
+    setFormData({ ...formData, "InvestorBusinessType": event.target.value })
+  }
+
+  const HandleSector = (event) => {
+    setFormData({ ...formData, "InvestorInterestedSector": event.target.value })
+  }
+
+  const HandleInvestingAmount = (event) => {
+    setFormData({ ...formData, "InvestorInvestingAmount": event.target.value })
+  }
+
   return (
     <div className='startup-first-form-div'>
-      <select name="stage">
-        <option disabled selected value="">
+      <select value={formData.InvestorBusinessType} onChange={HandleBusinessType}>
+        <option disabled value="default">
           You are an
         </option>
         <option value="Individual">Individual</option>
@@ -15,13 +32,13 @@ const InvestorSecondForm = () => {
         <option value="Corporate Fund">Corporate Fund</option>
       </select>
 
-      <input type="text" placeholder='Name of your organization' />
-      <input type="text" placeholder='Desigination' />
-      <input type="text" placeholder='Website URL' />
-      <input type="text" placeholder='Startups you have invested in' />
+      <input type="text" name='InvestorOrganizationName' value={formData.InvestorOrganizationName} onChange={handleInput} placeholder='Name of your organization' />
+      <input type="text" name='InvestorDesignation' value={formData.InvestorDesignation} onChange={handleInput} placeholder='Desigination' />
+      <input type="text" name='InvestorWebsiteUrl' value={formData.InvestorWebsiteUrl} onChange={handleInput} placeholder='Website URL' />
+      <input type="text" name='InvestorInvestedStartup' value={formData.InvestorInvestedStartup} onChange={handleInput} placeholder='Startups you have invested in' />
 
-      <select name="">
-        <option disabled selected value="">
+      <select value={formData.InvestorInterestedSector} onChange={HandleSector}>
+        <option disabled value="default">
           Which sector you are looking to invest in
         </option>
         <option value="Fintech">Fintech</option>
@@ -33,8 +50,8 @@ const InvestorSecondForm = () => {
         <option value="Retail">Retail</option>
       </select>
 
-      <select name="">
-        <option disabled selected value="">
+      <select value={formData.InvestorInvestingAmount} onChange={HandleInvestingAmount}>
+        <option disabled  value="default">
           How much amount you are looking to invest in every financial year
         </option>
         <option value="$0 to $5000">$0 to $5000</option>

@@ -1,21 +1,22 @@
 import React from 'react'
 import "./StartupFirstForm.css"
-// import DatePicker from 'react-date-picker'
 
 const StartupFirstForm = ({ formData, setFormData }) => {
 
-    // const [dateValue, onDateChange] = useState(new Date());
+    const handleInput = (event) =>{
+        setFormData({...formData,[event.target.name]:event.target.value})
+    }
 
     return (
         <div className='startup-first-form-div'>
-            <input type="text" name="" placeholder='Enter Your Startup Name' />
-            <input type="text" name="" placeholder='Enter Email Address' />
-            <input type="date" name="" placeholder='Enter Date' />
-            <input type="text" name="" placeholder='Website URL' />
-            <input type="text" name="" placeholder='Headquarter' />
-            <input type="text" name="" placeholder='State' />
-            <input type="text" name="" placeholder='City' />
-            <input type="text" name="" placeholder='Pincode' />
+            <input type="text" name="StartupName" value={formData.StartupName} onChange={handleInput} placeholder='Enter Your Startup Name' />
+            <input type="text" name="StartupEmail" value={formData.StartupEmail} onChange={handleInput} placeholder='Enter Email Address' />
+            <input type="date" name="StartupDate" value={formData.StartupDate} onChange={handleInput} placeholder='Enter Date' />
+            <input type="text" name="StartupWebsiteUrl" value={formData.StartupWebsiteUrl} onChange={handleInput} placeholder='Website URL' />
+            <input type="text" name="StartupHeadQuarter" value={formData.StartupHeadQuarter} onChange={handleInput} placeholder='Headquarter' />
+            <input type="text" name="StartupState" value={formData.StartupState} onChange={handleInput} placeholder='State' />
+            <input type="text" name="StartupCity" value={formData.StartupCity} onChange={handleInput} placeholder='City' />
+            <input type="text" name="StartupPincode" value={formData.StartupPincode} onChange={handleInput} placeholder='Pincode' />
         </div>
     )
 }

@@ -22,6 +22,15 @@ function Header() {
 
     console.log(state,"23");
 
+    const [isToken,setIsToken] = useState(false);
+
+    // useEffect(()=>{
+    //         var tokenCheck = JSON.parse(localStorage.getItem("token"))
+
+    //         if(tokenCheck)
+             
+    // },[isToken])
+
 
     const [expanded, setExpanded] = useState(false);
 
@@ -123,7 +132,7 @@ function Header() {
 
                     <Navbar.Collapse id="basic-navbar-nav" className='navbar-menu-main-div-last'>
                         <Nav className="me-auto navbar-menu-div">
-                            {state?.user?.userId ? <Nav.Link className='navbar-link-menu-div-last' onClick={() => handleLogoutNavItemClick("/")}>Logout</Nav.Link> :
+                            {state?.user?.Email ? <Nav.Link className='navbar-link-menu-div-last' onClick={() => handleLogoutNavItemClick("/")}>Logout</Nav.Link> :
                             <Nav.Link className='navbar-link-menu-div-last' onClick={() => handleNavItemClick("/login")}>Login</Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>

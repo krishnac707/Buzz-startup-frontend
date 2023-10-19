@@ -3,33 +3,34 @@ import { useNavigate } from 'react-router-dom';
 import InvestorFirstForm from '../investorFirstForm/InvestorFirstForm';
 import InvestorSecondForm from '../investorSecondForm/InvestorSecondForm';
 import InvestorThirdForm from '../investorThirdForm/InvestorThirdForm';
+import toast from 'react-hot-toast';
+import api from '../../apiConfig';
 
 const InvestorMainForm = () => {
 
     const [page, setPage] = useState(0);
     const router = useNavigate();
     const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        countryCode: "",
-        phoneNo:"",
-        linkedinUrl:"",
-        country:"",
-        youAreAn:"",
-        organization:"",
-        designation:"",
-        websiteUrl: "",
-        startUpInvest:"",
-        investorInterest:"",
-        investorAmount:"",
-        state: "",
-        city: "",
-        pincode: "",
-        knowAboutUs: "",
-        agreePolicy: "",
+        InvestorName: "",
+        InvestorEmail: "",
+        InvestorNumber: "",
+        InvestorLinkdinUrl: "",
+        InvestorCountry: "",
+        InvestorCity: "",
+        InvestorPincode: "",
+        InvestorBusinessType: "",
+        InvestorOrganizationName: "",
+        InvestorDesignation: "",
+        InvestorWebsiteUrl: "",
+        InvestorInvestedStartup: "",
+        InvestorInterestedSector: "",
+        InvestorInvestingAmount: "",
+        InvestorKownAboutUs: "",
+        InvestorTermAndCondition: "",
     });
     const FormTitles = ["Create Your Investor Profile", "Let us know you better", "Create Your Investor Profile"];
 
+    console.log(formData,"35");
     const PageDisplay = () => {
         if (page === 0) {
             return <InvestorFirstForm formData={formData} setFormData={setFormData} />;
@@ -40,11 +41,45 @@ const InvestorMainForm = () => {
         }
     };
 
-    const FormSubmit = () => {
+    const FormSubmit = async (event) => {
+        event.preventDefault();
         if (page === FormTitles.length - 1) {
-            alert("FORM SUBMITTED");
-            router("/investor/home")
-            // console.log(formData);
+            if (formData.InvestorName && formData.InvestorEmail && formData.InvestorNumber && formData.InvestorLinkdinUrl
+                && formData.InvestorCountry && formData.InvestorCity && formData.InvestorPincode && formData.InvestorBusinessType
+                && formData.InvestorOrganizationName && formData.InvestorDesignation && formData.InvestorWebsiteUrl && formData.InvestorInvestedStartup
+                && formData.InvestorInterestedSector && formData.InvestorInvestingAmount && formData.InvestorKownAboutUs && formData.InvestorTermAndCondition) {
+                const token = JSON.parse(localStorage.getItem("token"));
+                try {
+                    const response = await api.post("/investors/investor-fill-basic-detail", { formData, token })
+                    if (response.data.success) {
+                        toast.success(response.data.message);
+                        router("/investor/home")
+                        setFormData({
+                            InvestorName: "",
+                            InvestorEmail: "",
+                            InvestorNumber: "",
+                            InvestorLinkdinUrl: "",
+                            InvestorCountry: "default",
+                            InvestorCity: "",
+                            InvestorPincode: "",
+                            InvestorBusinessType: "default",
+                            InvestorOrganizationName: "",
+                            InvestorDesignation: "",
+                            InvestorWebsiteUrl: "",
+                            InvestorInvestedStartup: "",
+                            InvestorInterestedSector: "default",
+                            InvestorInvestingAmount: "default",
+                            InvestorKownAboutUs: "default",
+                            InvestorTermAndCondition: false,
+                        })
+                    }
+                } catch (error) {
+                    toast.error(error.response.data.message)
+                }
+            }
+            else {
+                toast.error("All fields are mandatory")
+            }
         } else {
             setPage((currPage) => currPage + 1);
         }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "./Home.css";
 import bannerImage from './../../images/Untitled design.jpg';
 import { useSpring, animated } from 'react-spring';
@@ -10,11 +10,19 @@ import fundingImage from "./../../images/funding.png";
 import rocketImage from "./../../images/rocket.png";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/Auth.context';
+import api from '../apiConfig';
+import toast from 'react-hot-toast';
 
 const Home = () => {
 
   const router = useNavigate();
   const { state, dispatch } = useContext(AuthContext);
+  const [startupFormDetail, setStartupFormDetail] = useState();
+  const [startupStatus, setStartupStatus] = useState(false);
+  const [InvestorFormDetail, setInvestorFormDetail] = useState();
+  const [InvestorStatus, setInvestorStatus] = useState(false);
+
+  console.log(state, "19");
 
 
   const NumberAnimation = ({ n }) => {
@@ -27,23 +35,79 @@ const Home = () => {
     return <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>
   }
 
-  useEffect(() => {
-    if (state?.user?._id) {
-        router('/')
+  const startupDetailFunction = async () => {
+    if (state?.user?.Email) {
+      if (state?.user?.Role == "Startup") {
+        const token = JSON.parse(localStorage.getItem("token"));
+        if (token) {
+          try {
+            const response = await api.post("/startups/startup-basic-detail", { token })
+            if (response.data.success) {
+              setStartupFormDetail(response.data.startupDetail)
+              setStartupStatus(response.data.startupFormStatus)
+              router("/overview-profile")
+            }
+          }
+          catch (error) {
+            router("/start-up-account")
+            console.log(error);
+          }
+        }
+      }
+      else {
+        toast.error("You are Not a Startup User");
+      }
     }
-}, [state])
+    else {
+      router("/login")
+    }
+  }
+
+  const InvestorDetailFunction = async () => {
+    if (state?.user?.Email) {
+      if (state?.user?.Role == "Investor") {
+        const token = JSON.parse(localStorage.getItem("token"));
+        if (token) {
+          try {
+            const response = await api.post("/investors/investor-basic-detail", { token })
+            if (response.data.success) {
+              setInvestorFormDetail(response.data.InvestorDetail)
+              setInvestorStatus(response.data.InvestorFormStatus)
+              router("/investor/home")
+            }
+          }
+          catch (error) {
+            router("/investor-form-account")
+            console.log(error);
+          }
+        }
+      }
+      else {
+        toast.error("You are Not a Investor User");
+      }
+    }
+    else {
+      router("/login")
+    }
+  }
+
+  //   useEffect(() => {
+  //     if (state?.user?.Email) {
+  //         router('/')
+  //     }
+  // }, [state])
 
   return (
     <div className='home-body'>
       <div className='home-banner-image-div'>
         <img src={bannerImage} alt="" />
-        <button className='banner-image-button-first-css' onClick={() => router("/login")}>Apply For Funding &rarr;</button>
-        <button className='banner-image-button-second-css' onClick={() => router("/login")}>Invest With Us &rarr;</button>
+        <button className='banner-image-button-first-css' onClick={() => startupDetailFunction()}>Apply For Funding &rarr;</button>
+        <button className='banner-image-button-second-css' onClick={() => InvestorDetailFunction()}>Invest With Us &rarr;</button>
       </div>
       <h2 className='text-dark home-subheading-text'>INVEST WITH US</h2>
       <h3 className='home-banner-heading-text orange-color'>INVESTMENT MADE EASY</h3>
       <p className='home-buzz-start-up-vision'>BuzzStartup’s vision is to make investment opportunities universally accessible. By employing innovative strategies, we break barriers hindering startup growth, creating a supportive investment ecosystem.</p>
-      <button className='home-start-invest-button' onClick={() => router("/login")}>Start Investing Now</button>
+      <button className='home-start-invest-button' onClick={() => startupDetailFunction()}>Start Investing Now</button>
 
       <div className='home-number-animation-css'>
         <div className='home-inside-number-animation-css'>
@@ -314,7 +378,7 @@ const Home = () => {
             </div>
           </div>
 
-          <button onClick={() => router("/login")}>Apply For Funding &rarr;</button>
+          <button onClick={() =>  startupDetailFunction()}>Apply For Funding &rarr;</button>
 
         </div>
       </div>
@@ -353,7 +417,7 @@ const Home = () => {
             </div>
           </div>
 
-          <button onClick={() => router("/login")}>Apply For Funding &rarr;</button>
+          <button onClick={() => InvestorDetailFunction()}>Apply For Funding &rarr;</button>
 
         </div>
 

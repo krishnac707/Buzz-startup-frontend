@@ -11,15 +11,15 @@ const AadharCardComponent = () => {
             <h5 className='mt-3'>Front Aadhar</h5>
             <p>Please use an image no larger than 1200px * 600px.</p>
             <div className='file-div'>
-                <input type="file" name="" className='input-file' id="" />
+                <input type="file" name="" className='input-file' id="fileInput" />
                 <label for="fileInput" className="custom-button">Upload Aadhar Front</label>
             </div>
 
             <h5 className='mt-3'>Back Aadhar</h5>
             <p>Please use an image no larger than 1200px * 600px.</p>
             <div className='file-div'>
-                <input type="file" name="" className='input-file' id="" />
-                <label for="fileInput" className="custom-button">Upload Aadhar Back</label>
+                <input type="file" name="" className='input-file' id="backFileInput" />
+                <label for="backFileInput" className="custom-button">Upload Aadhar Back</label>
             </div>
         </div>
 

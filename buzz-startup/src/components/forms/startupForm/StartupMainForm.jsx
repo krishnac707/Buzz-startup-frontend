@@ -4,28 +4,33 @@ import StartupSecondForm from '../startupSecondForm/StartupSecondForm';
 import StartupThirdForm from '../startupThirdForm/StartupThirdForm';
 import './StartupMainForm.css';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import api from '../../apiConfig';
 
 const StartupMainForm = () => {
 
     const [page, setPage] = useState(0);
     const router = useNavigate();
     const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        date: "",
-        website: "",
-        headQuarter: "",
-        state: "",
-        city: "",
-        pincode: "",
-        stage: "",
-        business: "",
-        selectSector: "",
-        currentRound: "",
-        totalInvestment: "",
-        knowAboutUs: "",
-        agreePolicy: "",
+        StartupName: "",
+        StartupEmail: "",
+        StartupDate: "",
+        StartupWebsiteUrl: "",
+        StartupHeadQuarter: "",
+        StartupState: "",
+        StartupCity: "",
+        StartupPincode: "",
+        StartupStage: "default",
+        StartupBusinessType: "default",
+        StartupMultipleSector: "default",
+        StartupRound: "default",
+        StartupPreviousInvestment: "",
+        StartupKnowAboutUs: "default",
+        StartupTermsAndCondition: false,
     });
+
+    console.log(formData, "30");
+
     const FormTitles = ["Create Your Startup Profile", "Let us know you better", "Create Your Startup Profile"];
 
     const PageDisplay = () => {
@@ -38,12 +43,49 @@ const StartupMainForm = () => {
         }
     };
 
-    const FormSubmit = () => {
+
+
+    const FormSubmit = async (event) => {
+        event.preventDefault();
         if (page === FormTitles.length - 1) {
-            alert("FORM SUBMITTED");
-            router("/overview-profile")
-            // console.log(formData);
-        } else {
+            if (formData.StartupName && formData.StartupEmail && formData.StartupDate && formData.StartupWebsiteUrl && formData.StartupHeadQuarter
+                && formData.StartupState && formData.StartupCity && formData.StartupPincode && formData.StartupStage
+                && formData.StartupBusinessType && formData.StartupMultipleSector && formData.StartupRound && formData.StartupPreviousInvestment
+                && formData.StartupKnowAboutUs && formData.StartupTermsAndCondition) {
+                const token = JSON.parse(localStorage.getItem("token"));
+                try {
+                    const response = await api.post("/startups/startup-fill-basic-details", { formData, token })
+                    if (response.data.success) {
+                        toast.success(response.data.message);
+                        router("/overview-profile")
+                        setFormData({
+                            StartupName: "",
+                            StartupEmail: "",
+                            StartupDate: "",
+                            StartupWebsiteUrl: "",
+                            StartupHeadQuarter: "",
+                            StartupState: "",
+                            StartupCity: "",
+                            StartupPincode: "",
+                            StartupStage: "",
+                            StartupBusinessType: "",
+                            StartupMultipleSector: "",
+                            StartupRound: "",
+                            StartupPreviousInvestment: "",
+                            StartupKnowAboutUs: "",
+                            StartupTermsAndCondition: false,
+                        })
+                    }
+                    // alert("FORM SUBMITTED");
+                } catch (error) {
+                    toast.error(error.response.data.message)
+                }
+            }
+            else {
+                toast.error("All fields are mandatory")
+            }
+        }
+        else {
             setPage((currPage) => currPage + 1);
         }
     }

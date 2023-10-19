@@ -15,8 +15,10 @@ const Login = () => {
   const [selectedOption, setSelectedOption] = useState("Startup");
   const [imageSrc, setImageSrc] = useState(startupImage);
   const { state, dispatch } = useContext(AuthContext);
-
-  // console.log(userData,"15");
+  const [startupFormDetail, setStartupFormDetail] = useState();
+  const [startupStatus, setStartupStatus] = useState(false);
+  const [InvestorFormDetail, setInvestorFormDetail] = useState();
+  const [InvestorStatus, setInvestorStatus] = useState(false);
 
   const handleOptionChange = (event) => {
     const value = event.target.value;
@@ -43,7 +45,6 @@ const Login = () => {
     try {
       if (userData.Email && userData.Password && userData.Role) {
         const response = await api.post("/all/login", { userData })
-        console.log(response, "46");
         if (response.data.success) {
           if (response.data.user?.Role == "Startup") {
             dispatch({
@@ -52,8 +53,8 @@ const Login = () => {
             })
             localStorage.setItem("token", JSON.stringify(response.data.token))
             setUserData({ email: "", password: "" })
-            router("/start-up-account");
             toast.success(response.data.message);
+            startupDetailFunction();
           }
 
           if (response.data.user?.Role == "Investor") {
@@ -63,9 +64,13 @@ const Login = () => {
             })
             localStorage.setItem("token", JSON.stringify(response.data.token))
             setUserData({ email: "", password: "" })
-            router("/investor-form-account");
+            // router("/investor-form-account");
             toast.success(response.data.message);
+            InvestorDetailFunction();
           }
+        }
+        else {
+          toast.error(response.data.message)
         }
       }
       else {
@@ -73,12 +78,48 @@ const Login = () => {
       }
     }
     catch (error) {
-      console.log(error);
+      toast.error(error.response.data.message)
+    }
+  }
+
+  const startupDetailFunction = async () => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    console.log(token);
+    if (token) {
+      try {
+        const response = await api.post("/startups/startup-basic-detail", { token })
+        if (response.data.success) {
+          setStartupFormDetail(response.data.startupDetail)
+          setStartupStatus(response.data.startupFormStatus)
+          router("/overview-profile")
+        }
+      } catch (error) {
+        router("/start-up-account")
+        console.log(error);
+      }
+    }
+  }
+
+  const InvestorDetailFunction = async () => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    console.log(token);
+    if (token) {
+      try {
+        const response = await api.post("/investors/investor-basic-detail", { token })
+        if (response.data.success) {
+          setInvestorFormDetail(response.data.InvestorDetail)
+          setInvestorStatus(response.data.InvestorFormStatus)
+          router("/investor/home")
+        }
+      } catch (error) {
+        router("/investor-form-account")
+        console.log(error);
+      }
     }
   }
 
   useEffect(() => {
-    if (state?.user?._id) {
+    if (state?.user?.Email) {
       router('/')
     }
   }, [state])

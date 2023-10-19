@@ -10,15 +10,15 @@ const PassportComponent = () => {
       <h5 className='mt-3'>Front Passport</h5>
       <p>Please use an image no larger than 1200px * 600px.</p>
       <div className='file-div'>
-        <input type="file" name="" className='input-file' id="" />
-        <label for="fileInput" className="custom-button">Upload Passport Front</label>
+        <input type="file" name="" className='input-file' id="passportFrontInput" />
+        <label for="passportFrontInput" className="custom-button">Upload Passport Front</label>
       </div>
 
       <h5 className='mt-3'>Back Passport</h5>
       <p>Please use an image no larger than 1200px * 600px.</p>
       <div className='file-div'>
-        <input type="file" name="" className='input-file' id="" />
-        <label for="fileInput" className="custom-button">Upload Passport Back</label>
+        <input type="file" name="" className='input-file' id="passportBackInput" />
+        <label for="passportBackInput" className="custom-button">Upload Passport Back</label>
       </div>
     </div>
   

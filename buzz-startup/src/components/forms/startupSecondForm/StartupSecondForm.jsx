@@ -1,11 +1,32 @@
 import React from 'react';
 import './StartupSecondForm.css';
 
-const StartupSecondForm = () => {
+const StartupSecondForm = ({ formData, setFormData }) => {
+
+    const handleInput = (event) => {
+        setFormData({ ...formData, [event.target.name]: event.target.value })
+    }
+
+    const HandleChange = (event) => {
+        setFormData({ ...formData, "StartupStage": event.target.value })
+    }
+
+    const BusinessSelect = (event) => {
+        setFormData({ ...formData, "StartupBusinessType": event.target.value })
+    }
+
+    const SectorSelect = (event) => {
+        setFormData({ ...formData, "StartupMultipleSector": event.target.value })
+    }
+
+    const SelectRound = (event) => {
+        setFormData({ ...formData, "StartupRound": event.target.value })
+    }
+
     return (
         <div className='startup-first-form-div'>
-            <select name="stage">
-                <option disabled selected value="">
+            <select onChange={HandleChange} value={formData.StartupStage}>
+                <option value="default" disabled>
                     Stage
                 </option>
                 <option value="ideation">Ideation</option>
@@ -15,8 +36,8 @@ const StartupSecondForm = () => {
                 <option value="Early">Early</option>
             </select>
 
-            <select name="">
-                <option disabled selected value="">
+            <select onChange={BusinessSelect} value={formData.StartupBusinessType}>
+                <option disabled value="default">
                     Type of Business
                 </option>
                 <option value="D2C">D2C</option>
@@ -26,8 +47,8 @@ const StartupSecondForm = () => {
                 <option value="Others">Others</option>
             </select>
 
-            <select name="">
-                <option disabled selected value="">
+            <select onChange={SectorSelect} value={formData.StartupMultipleSector}>
+                <option disabled value="default">
                     Select Multiple Sector
                 </option>
                 <option value="Fintech">Fintech</option>
@@ -35,8 +56,8 @@ const StartupSecondForm = () => {
                 <option value="Ecommerce">Ecommerce</option>
             </select>
 
-            <select name="">
-                <option disabled selected value="">
+            <select onChange={SelectRound} value={formData.StartupRound}>
+                <option disabled value="default">
                     Current Round*
                 </option>
                 <option value="Seed">Seed</option>
@@ -44,7 +65,7 @@ const StartupSecondForm = () => {
                 <option value="Pre Series A">Pre Series A</option>
             </select>
 
-            <input type="text" placeholder='Total Investment Raised Previous round if any)' />
+            <input type="number" name='StartupPreviousInvestment' value={formData.StartupPreviousInvestment} onChange={handleInput} placeholder='Total Investment Raised Previous round if any)' />
 
         </div>
     )
