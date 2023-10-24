@@ -120,7 +120,8 @@ function Header() {
                             <Nav.Link className='navbar-link-menu-div' onClick={() => { handleNavItemClick("/contact-us") }}>Contact Us</Nav.Link>
                             {/* <Nav.Link className='navbar-link-menu-div'>Explore</Nav.Link> */}
                             <NavDropdown title="Explore" className='navbar-link-menu-div' id="basic-nav-dropdown">
-                                {state?.user?.Email && <NavDropdown.Item onClick={() => handleNavItemClick("/my-innovation")}>MyInnovation</NavDropdown.Item>}
+                                {/* {state?.user?.Email && <NavDropdown.Item onClick={() => handleNavItemClick("/my-innovation")}>MyInnovation</NavDropdown.Item>} */}
+                                <NavDropdown.Item onClick={() => handleNavItemClick("/my-innovation")}>MyInnovation</NavDropdown.Item>
                                 <NavDropdown.Item onClick={() => handleNavItemClick("/portfolio")}>Portfolio</NavDropdown.Item>
                                 <NavDropdown.Item onClick={() => handleNavItemClick("/pitch-deck")}>
                                     Pitch Deck
