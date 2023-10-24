@@ -23,9 +23,7 @@ import ContactUs from './components/contact-us/ContactUs';
 import PortfolioComponent from './components/portfolio-component/PortfolioComponent';
 
 function App() {
-    if (process.env.REACT_APP_ENV === 'development') {
-        console.log('This will only log in development mode.');
-    }
+   
     return (
         <div>
             <Header />
