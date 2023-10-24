@@ -84,7 +84,6 @@ const Login = () => {
 
   const startupDetailFunction = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
-    console.log(token);
     if (token) {
       try {
         const response = await api.post("/startups/startup-basic-detail", { token })
@@ -102,7 +101,6 @@ const Login = () => {
 
   const InvestorDetailFunction = async () => {
     const token = JSON.parse(localStorage.getItem("token"));
-    console.log(token);
     if (token) {
       try {
         const response = await api.post("/investors/investor-basic-detail", { token })

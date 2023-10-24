@@ -22,9 +22,6 @@ const Home = () => {
   const [InvestorFormDetail, setInvestorFormDetail] = useState();
   const [InvestorStatus, setInvestorStatus] = useState(false);
 
-  console.log(state, "19");
-
-
   const NumberAnimation = ({ n }) => {
     const { number } = useSpring({
       from: { number: 0 },

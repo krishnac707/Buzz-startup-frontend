@@ -23,6 +23,9 @@ import ContactUs from './components/contact-us/ContactUs';
 import PortfolioComponent from './components/portfolio-component/PortfolioComponent';
 
 function App() {
+    if (process.env.REACT_APP_ENV === 'development') {
+        console.log('This will only log in development mode.');
+    }
     return (
         <div>
             <Header />
@@ -41,8 +44,8 @@ function App() {
                 <Route exact path='/financial-modelling' element={<FinancialModalling />} />
                 <Route exact path='/investor/home' element={<InvestorHome />} />
                 <Route exact path='/investor/account' element={<InvestorAccount />} />
-                <Route exact path='/my-innovation' element = {<MyInnovation />} />
-                <Route exact path='/full-report' element= {<FullReport />} />
+                <Route exact path='/my-innovation' element={<MyInnovation />} />
+                <Route exact path='/full-report' element={<FullReport />} />
                 <Route exact path='/about-us' element={<AboutUs />} />
                 <Route exact path='/contact-us' element={<ContactUs />} />
                 <Route exact path='/portfolio' element={<PortfolioComponent />} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './MyInnovation.css'
 import IstockImage from './../../images/MyInnovation.jpeg'
 import searchIcon from './../../images/search-interface-symbol.png'
@@ -6,12 +6,73 @@ import { Typewriter } from 'react-simple-typewriter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
+import api from '../apiConfig'
+import { AuthContext } from '../../context/Auth.context'
+import { MagnifyingGlass } from 'react-loader-spinner'
 
 
 const MyInnovation = () => {
 
     const [isSolution, setSolution] = useState(false)
     const router = useNavigate()
+    const [InvestorFormDetail, setInvestorFormDetail] = useState({});
+    const { state, dispatch } = useContext(AuthContext);
+    const [prompt, setPrompt] = useState();
+    const [promptData, setPromptData] = useState();
+    const [latestArray, setLatestArray] = useState();
+
+    useEffect(() => {
+        const stringArray = promptData?.data.split('== ');
+        setLatestArray(stringArray)
+    }, [promptData?.data])
+
+    // useEffect(() => {
+    //     const InvestorDetailFunction = async () => {
+    //         if (state?.user?.Email) {
+    //             if (state?.user?.Role == "Investor") {
+    //                 const token = JSON.parse(localStorage.getItem("token"));
+    //                 if (token) {
+    //                     try {
+    //                         const response = await api.post("/investors/investor-basic-detail", { token })
+    //                         if (response.data.success) {
+    //                             setInvestorFormDetail(response.data.InvestorDetail)
+    //                         }
+    //                     }
+    //                     catch (error) {
+    //                         console.log(error);
+    //                     }
+    //                 }
+    //             }
+    //             else {
+    //                 toast.error("You are Not a Investor User");
+    //             }
+    //         }
+    //     }
+    //     InvestorDetailFunction()
+    // }, [])
+
+    const searchChat = async () => {
+        setLatestArray("")
+        if (prompt) {
+            setSolution(true)
+            try {
+                const token = JSON.parse(localStorage.getItem("token"))
+                if (token) {
+                    const response = await api.post("/buzz-startup-ai/buzzstartups-chat-report", { token, prompt })
+                    if (response.data.success) {
+                        setPromptData(response.data.promptData)
+                    }
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+        else {
+            toast.error("Please Type something first and then click on search")
+        }
+    }
 
     return (
         <div className='my-innovation-body'>
@@ -27,8 +88,8 @@ const MyInnovation = () => {
             <h2 className='text-center mt-2 customfW'>Explore 100000+ ideas</h2>
 
             <div className='my-innovation-searchbar-div py-1'>
-                <input type="text" placeholder='Suggest a startup idea that uses AI to improve health and wellness.' />
-                <img src={searchIcon} alt="" onClick={() => setSolution(true)} />
+                <input type="text" value={prompt} placeholder='Suggest a startup idea that uses AI to improve health and wellness.' onChange={(e) => setPrompt(e.target.value)} />
+                <img src={searchIcon} alt="" onClick={searchChat} />
             </div>
 
             {!isSolution && <div className='my-innovation-suggestion-div mb-3'>
@@ -43,12 +104,24 @@ const MyInnovation = () => {
             {isSolution && <div className='my-innovation-solution-div p-2'>
                 <h4 className='common-font-weight'>AI-Powered Wellness Platform</h4>
                 <p>
-                    <Typewriter
-                        words={['One common frustration in the wellness industry is the difficulty in finding personalized and effective health solutions that fit into busy lifestyles. A startup business idea could be to create an AI-powered wellness platform that uses machine learning algorithms to analyze individual health data and provide targeted recommendations for diet, exercise, and mental health practices. The platform could also offer personalized coaching, community support, and gamification features to increase engagement and motivation. According to a report by Grand View Research, the global digital health market size is expected to reach $509.2 billion by 2025, with a compound annual growth rate of 27.7%.']}
-                        loop={1}
-                        typeSpeed={40}
-                        delaySpeed={2000}
-                    />
+                    {latestArray ?
+                        <Typewriter
+                            words={latestArray}
+                            loop={1}
+                            typeSpeed={40}
+                            delaySpeed={2000}
+                        />
+                        : <MagnifyingGlass
+                            visible={true}
+                            height="80"
+                            width="80"
+                            ariaLabel="MagnifyingGlass-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="MagnifyingGlass-wrapper"
+                            glassColor='#c0efff'
+                            color='#e15b64'
+                        />}
+
                 </p>
                 <div className='border-bottom'></div>
                 <h4 className='common-font-weight'>Follow up questions</h4>
@@ -69,7 +142,7 @@ const MyInnovation = () => {
                 </div>
                 <div className='border-bottom'></div>
                 <div className="d-grid gap-2 col-2 mx-auto mobile-full-report-width-div">
-                    <button className="road-map-button mb-2 mt-2 " type="button" onClick={()=>router("/full-report")}>Get Full Report</button>
+                    <button className="road-map-button mb-2 mt-2 " type="button" onClick={() => router("/full-report")}>Get Full Report</button>
                 </div>
 
             </div>}

@@ -20,16 +20,16 @@ function Header() {
     const isFullReport = location.pathname === "/full-report"
     const { state, dispatch } = useContext(AuthContext)
 
-    console.log(state,"23");
-
-    const [isToken,setIsToken] = useState(false);
+    const [isToken, setIsToken] = useState(false);
 
     // useEffect(()=>{
     //         var tokenCheck = JSON.parse(localStorage.getItem("token"))
 
     //         if(tokenCheck)
-             
+
     // },[isToken])
+
+    
 
 
     const [expanded, setExpanded] = useState(false);
@@ -39,7 +39,7 @@ function Header() {
         setExpanded(false); // Close the Navbar when a menu item is clicked
     };
 
-    const handleLogoutNavItemClick = (route)=> {
+    const handleLogoutNavItemClick = (route) => {
         router(route)
         dispatch({ type: 'LOGOUT' })
         setExpanded(false);
@@ -49,7 +49,7 @@ function Header() {
         if (state?.user?._id) {
             router('/')
         }
-    },[state])
+    }, [state])
 
 
     if (isLoginPage || isFullReport || isSignupPage || isStartupPage || isOverviewProfile || isInvestorMainDashboard) {
@@ -120,7 +120,7 @@ function Header() {
                             <Nav.Link className='navbar-link-menu-div' onClick={() => { handleNavItemClick("/contact-us") }}>Contact Us</Nav.Link>
                             {/* <Nav.Link className='navbar-link-menu-div'>Explore</Nav.Link> */}
                             <NavDropdown title="Explore" className='navbar-link-menu-div' id="basic-nav-dropdown">
-                                <NavDropdown.Item onClick={() => handleNavItemClick("/my-innovation")}>MyInnovation</NavDropdown.Item>
+                                {state?.user?.Email && <NavDropdown.Item onClick={() => handleNavItemClick("/my-innovation")}>MyInnovation</NavDropdown.Item>}
                                 <NavDropdown.Item onClick={() => handleNavItemClick("/portfolio")}>Portfolio</NavDropdown.Item>
                                 <NavDropdown.Item onClick={() => handleNavItemClick("/pitch-deck")}>
                                     Pitch Deck
@@ -133,7 +133,7 @@ function Header() {
                     <Navbar.Collapse id="basic-navbar-nav" className='navbar-menu-main-div-last'>
                         <Nav className="me-auto navbar-menu-div">
                             {state?.user?.Email ? <Nav.Link className='navbar-link-menu-div-last' onClick={() => handleLogoutNavItemClick("/")}>Logout</Nav.Link> :
-                            <Nav.Link className='navbar-link-menu-div-last' onClick={() => handleNavItemClick("/login")}>Login</Nav.Link>}
+                                <Nav.Link className='navbar-link-menu-div-last' onClick={() => handleNavItemClick("/login")}>Login</Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
