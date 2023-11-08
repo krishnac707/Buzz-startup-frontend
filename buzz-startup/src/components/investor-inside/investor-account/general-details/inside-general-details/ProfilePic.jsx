@@ -10,56 +10,52 @@ const ProfilePic = () => {
   const { profilePic } = useContext(GeneralDetailDashboardContext)
   const [profilePicture, setProfilePicture] = useState(null);
   const [userProfile, setUserProfile] = useState();
-  console.log(userProfile,"13");
 
-  const serverAddress = 'http://localhost:8000';
-
-  // const stringWithForwardSlashes = userProfile.replace(/\\/g, '/');
-   // Replace with your image path
+  // const serverAddress = 'http://localhost:8000';
+  const serverAddress = 'https://buzz-startups-backend.vercel.app';
   const imageUrl = serverAddress + '/' + userProfile;
-  console.log(imageUrl,"18");
 
   const handleProfilePicture = (e) => {
     setProfilePicture(e.target.files[0]);
   };
 
+  console.log(profilePicture,"22");
+
   const formSubmit = async (event) => {
-    try {
-      var formData = new FormData();
-      formData.append('profilePicture', profilePicture);
-      if (formData) {
+    var formData = new FormData();
+    formData.append('profilePicture', profilePicture);
+    if (formData) {
+      try {
         const response = await api.put("/all/update-profile-picture-investor-data", formData)
         if (response.data.success) {
           toast.success(response.data.message)
         }
-        else {
-          toast.error(response.data.message)
-        }
       }
-      else {
-        toast.error("Please fill the detail first...")
+      catch (error) {
+        toast.error(error.response.data.message)
+        console.log(error);
       }
     }
-    catch (error) {
-      console.log(error);
+    else {
+      toast.error("Please fill the detail first...")
     }
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     const getProfile = async () => {
-      const response  = await api.get("/all/get-profile-image")
-      if(response.data.success){
+      const response = await api.get("/all/get-profile-image")
+      if (response.data.success) {
         setUserProfile(response.data.userProfilePictureData.userProfilePicture)
       }
     }
     getProfile()
-  },[])
+  }, [])
 
   return profilePic &&
     <div className='basic-logo-body-div my-3'>
       <div>
         {userProfile?.length ? <img src={imageUrl} alt="" /> :
-         <img src={logoImage} alt="" />}
+          <img src={logoImage} alt="" />}
         {/*  */}
       </div>
 

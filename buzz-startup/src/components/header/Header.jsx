@@ -72,7 +72,7 @@ function Header() {
                                 <NavDropdown title={<img src={headerImage} className='hpid py-2' alt="Image" />} className='navbar-link-investor-menu-div i-mobile-view-size' id="basic-nav-dropdown">
                                     {/* <span className='nhid'><img className='pt-3 pb-3' src={headerImage} alt="" /></span> */}
                                     <NavDropdown.Item onClick={() => router('/investor/account')}>My Profile</NavDropdown.Item>
-                                    <NavDropdown.Item>Logout</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={() => handleLogoutNavItemClick("/")}>Logout</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
                         </Navbar.Collapse>
@@ -96,7 +96,7 @@ function Header() {
                                 <NavDropdown title={<img src={headerImage} className='shpid py-2' alt="Image" />} className='navbar-link-investor-menu-div i-mobile-view-size' id="basic-nav-dropdown">
                                     {/* <span className='nhid'><img className='pt-3 pb-3' src={headerImage} alt="" /></span> */}
                                     <NavDropdown.Item onClick={() => router('/overview-profile')}>My Profile</NavDropdown.Item>
-                                    <NavDropdown.Item>Logout</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={() => handleLogoutNavItemClick("/")}>Logout</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
                         </Navbar.Collapse>

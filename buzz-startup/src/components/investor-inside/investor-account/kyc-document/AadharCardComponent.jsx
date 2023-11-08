@@ -21,26 +21,24 @@ const AadharCardComponent = () => {
 
     const formSubmit = async (event) => {
         event.preventDefault();
-        try {
-            console.log(aadharFront, "28");
-            var formData = new FormData();
-            formData.append('aadharFront', aadharFront);
-            formData.append('aadharBack', aadharBack);
-            if (formData) {
+        console.log(aadharFront, "28");
+        var formData = new FormData();
+        formData.append('aadharFront', aadharFront);
+        formData.append('aadharBack', aadharBack);
+        if (formData) {
+            try {
                 const response = await api.post("/investors/update-kyc-aadharcard-investor-data", formData)
                 if (response.data.success) {
                     toast.success(response.data.message)
                 }
-                else {
-                    toast.error(response.data.message)
-                }
             }
-            else {
-                toast.error("Please fill the detail first...")
+            catch (error) {
+                toast.error(error.response.data.message)
+                console.log(error);
             }
         }
-        catch (error) {
-            console.log(error);
+        else {
+            toast.error("Please fill the detail first...")
         }
     }
 
@@ -61,7 +59,9 @@ const AadharCardComponent = () => {
                     <label htmlFor="backFileInput" className="custom-button">Upload Aadhar Back</label>
                 </div>
                 {/* <div> */}
-                    <input type="submit" className='uploadImageButtonCss px-3 py-1 mt-1 mx-auto' value="Save" />
+                {/* <input type="submit" className='uploadImageButtonCss px-3 py-1 mt-1 mx-auto' value="Save" /> */}
+                <input type='submit' className='startup-basic-general-save-button text-center py-1 my-3' value="Save" />
+
                 {/* </div> */}
             </form>
         </div>

@@ -30,22 +30,25 @@ const MentorDetail = () => {
     setUserData(deleteValue)
   }
 
-  const formSubmit = async(e) => {
+  const formSubmit = async (e) => {
     e.preventDefault();
-    try{
-      for (var i = 0; i < userData.length; i++) {
-        if (userData[i].name || userData[i].linkedinUrl) {
-          const response = await api  .post("/startups/add-startup-advisor-data", userData)
+    for (var i = 0; i < userData.length; i++) {
+      if (userData[i].name || userData[i].linkedinUrl) {
+        try {
+          const response = await api.post("/startups/add-startup-advisor-data", userData)
           if (response.data.success) {
             toast.success(response.data.message)
             return setUserData([])
           }
         }
+        catch (err) {
+          toast.error(err.response.data.message)
+          console.log("err", err);
+        }
       }
-    }
-    catch (err) {
-      toast.error(err.response.data.message)
-      console.log("err", err);
+      else {
+        toast.error("Please fill all detail first")
+      }
     }
   }
 

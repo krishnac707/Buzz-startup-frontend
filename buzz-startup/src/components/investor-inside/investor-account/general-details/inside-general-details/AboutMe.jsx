@@ -35,40 +35,38 @@ const AboutMe = () => {
       }
     }
     InvestorDetailFunction()
-  },[])
+  }, [])
 
   const HandleInput = (event) => {
-    setInvestorFormDetail({...InvestorFormDetail,[event.target.name]:event.target.value})
+    setInvestorFormDetail({ ...InvestorFormDetail, [event.target.name]: event.target.value })
   }
 
   const formSubmit = async (event) => {
-    try {
-      event.preventDefault();
-      if (InvestorFormDetail) {
+    event.preventDefault();
+    if (InvestorFormDetail.InvestorAboutMe) {
+      try {
         const token = JSON.parse(localStorage.getItem("token"))
         const response = await api.put("/investors/update-investor-data", { InvestorFormDetail, token })
         if (response.data.success) {
           toast.success(response.data.message)
         }
-        else {
-          toast.error(response.data.message)
-        }
       }
-      else {
-        toast.error("Please fill the detail first...")
+      catch (error) {
+        toast.error(error.response.data.message)
+        console.log('Error:', error);
       }
     }
-    catch (error) {
-      console.log('Error:', error);
+    else {
+      toast.error("Please fill the detail first...")
     }
   }
 
   return aboutMe &&
     <div>
       <form onSubmit={formSubmit}>
-        <textarea name='InvestorAboutMe' onChange={HandleInput} className='mt-3' id="" cols="70" rows="7"></textarea>
+        <textarea name='InvestorAboutMe' onChange={HandleInput} className='mt-3 px-1' id="" cols="70" rows="7"></textarea>
         <input type='submit' className='startup-basic-general-save-button text-center py-1 my-3' value="Save" />
-        <button className='startup-basic-general-save-button text-center  mx-2 py-1 my-3'>Cancel</button>
+        {/* <button className='startup-basic-general-save-button text-center  mx-2 py-1 my-3'>Cancel</button> */}
       </form>
     </div>
 }

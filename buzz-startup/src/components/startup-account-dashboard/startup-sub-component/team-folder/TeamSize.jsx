@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react'
 import { TeamDashboardContext } from '../../../../context/TeamDashboard.context'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import toast from 'react-hot-toast'
+import api from '../../../apiConfig'
 
 const TeamSize = () => {
   const { teamSize } = useContext(TeamDashboardContext)
@@ -12,7 +14,7 @@ const TeamSize = () => {
     if (!isSaveButton) {
       setIsSaveButton(true)
     }
-    setUserData([...userData, { teamCount: "" }])
+    setUserData([...userData, { teamName: "", teamSize: "" }])
   }
 
   const handleInput = (e, i) => {
@@ -28,30 +30,62 @@ const TeamSize = () => {
     setUserData(deleteValue)
   }
 
+  const formSubmit = async (e) => {
+    e.preventDefault();
+    for (var i = 0; i < userData.length; i++) {
+      if (userData[i].teamName || userData[i].teamSize) {
+        try {
+          const response = await api.post("/startups/startup-team-size-detail", userData)
+          if (response.data.success) {
+            toast.success(response.data.message)
+            return setUserData([])
+          }
+        }
+        catch (err) {
+          toast.error(err.response.data.message)
+          console.log("err", err);
+        }
+      }
+      else {
+        toast.error("Please fill all detail first")
+      }
+    }
+  }
+
   return (teamSize &&
     <div>
-      {userData && userData.map((val, i) => {
-        return (
-          <div className='mt-3 fouder-detail-css p-3'>
-            <div className='delete-founder-button-css'>
-              <button onClick={handleDelete}><FontAwesomeIcon icon={faXmark} /></button>
-            </div>
-            <div className='startup-general-body'>
-              <div className='startup-general-startup-name-div py-3'>
-                <div className='py-2'>Team Size :</div>
-                <div>
-                  <input className='p-2 startname-input-general' type="text" name="teamCount" value={val.teamCount} onChange={(e) => handleInput(e, i)} />
+      <form onSubmit={formSubmit}>
+        {userData && userData.map((val, i) => {
+          return (
+            <div className='mt-3 fouder-detail-css p-3'>
+              <div className='delete-founder-button-css'>
+                <button onClick={handleDelete}><FontAwesomeIcon icon={faXmark} /></button>
+              </div>
+              <div className='startup-general-body'>
+                <div className='startup-general-startup-name-div py-3'>
+                  <div className='py-2'>Team Name :</div>
+                  <div>
+                    <input className='p-2 startname-input-general' type="text" name="teamName" value={val.teamName} onChange={(e) => handleInput(e, i)} />
+                  </div>
+                </div>
+              </div>
+              <div className='startup-general-body'>
+                <div className='startup-general-startup-name-div py-3'>
+                  <div className='py-2'>Team Size :</div>
+                  <div>
+                    <input className='p-2 startname-input-general' type="number" name="teamSize" value={val.teamSize} onChange={(e) => handleInput(e, i)} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )
-      }
-      )}
-      <div className='add-founder-button-css'>
-        <button className='startup-team-add-button text-center py-2 my-3' onClick={addFormButton}>+Add Team Size</button>
-      </div>
-      {isSaveButton && <button className='startup-basic-general-save-button text-center py-1 my-3'>Save</button>}
+          )
+        }
+        )}
+        <div className='add-founder-button-css'>
+          <button type='button' className='startup-team-add-button text-center py-2 my-3' onClick={addFormButton}>+Add Team Size</button>
+        </div>
+        {isSaveButton && <button type='submit' className='startup-basic-general-save-button text-center py-1 my-3'>Save</button>}
+      </form>
     </div>
   )
 }
