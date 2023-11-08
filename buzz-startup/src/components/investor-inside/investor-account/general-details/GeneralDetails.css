@@ -1,6 +1,47 @@
-.uploadImageButtonCss{
+/* .uploadImageButtonCss{
     background-color: black;
     color: white;
     border-radius: 6px;
     cursor: pointer;
+} */
+
+.investorProfileLabelUploadCss {
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 80%;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+}
+
+@media screen and (max-width: 850px) {
+    .investorProfileLabelUploadCss {
+        width: 100%;
+    }
+    .importantMarginCss{
+        margin-top: 1px !important;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .investorProfileLabelUploadCss {
+        background-color: black;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        /* margin-bottom: 3px; */
+    }
+
+    .importantMarginCss{
+        margin-top: 1px !important;
+    }
+
 }

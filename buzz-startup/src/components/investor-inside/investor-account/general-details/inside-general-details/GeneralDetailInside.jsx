@@ -7,8 +7,10 @@ import toast from 'react-hot-toast';
 const GeneralDetailInside = () => {
 
   const { generalDetailInside } = useContext(GeneralDetailDashboardContext)
-  const { state, dispatch } = useContext(AuthContext);
+  const { state } = useContext(AuthContext);
   const [InvestorFormDetail, setInvestorFormDetail] = useState({});
+
+  // const phoneNumberWithoutCountryCode = InvestorFormDetail.InvestorNumber.replace(/^1/, '');
 
   useEffect(() => {
     const InvestorDetailFunction = async () => {

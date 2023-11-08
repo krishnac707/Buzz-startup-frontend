@@ -2,47 +2,33 @@ import React, { useContext, useEffect, useState } from 'react'
 import { GeneralDetailDashboardContext } from '../../../../../context/GeneralDetailDashboard.context'
 import logoImage from "./../../../../../images/startup-dashboard-profile-logo.png"
 import "../GeneralDetails.css"
-import { AuthContext } from '../../../../../context/Auth.context'
 import api from '../../../../apiConfig'
 import toast from 'react-hot-toast'
 
 const ProfilePic = () => {
 
   const { profilePic } = useContext(GeneralDetailDashboardContext)
-  const { state, dispatch } = useContext(AuthContext);
-  const [InvestorFormDetail, setInvestorFormDetail] = useState({});
+  const [profilePicture, setProfilePicture] = useState(null);
+  const [userProfile, setUserProfile] = useState();
+  console.log(userProfile,"13");
 
-  useEffect(() => {
-    const InvestorDetailFunction = async () => {
-      if (state?.user?.Email) {
-        if (state?.user?.Role == "Investor") {
-          const token = JSON.parse(localStorage.getItem("token"));
-          if (token) {
-            try {
-              const response = await api.post("/investors/investor-basic-detail", { token })
-              if (response.data.success) {
-                setInvestorFormDetail(response.data.InvestorDetail)
-              }
-            }
-            catch (error) {
-              console.log(error);
-            }
-          }
-        }
-        else {
-          toast.error("You are Not a Investor User");
-        }
-      }
-    }
-    InvestorDetailFunction()
-  }, [])
+  const serverAddress = 'http://localhost:8000';
 
-  const checkFunction = async (event) => {
+  // const stringWithForwardSlashes = userProfile.replace(/\\/g, '/');
+   // Replace with your image path
+  const imageUrl = serverAddress + '/' + userProfile;
+  console.log(imageUrl,"18");
+
+  const handleProfilePicture = (e) => {
+    setProfilePicture(e.target.files[0]);
+  };
+
+  const formSubmit = async (event) => {
     try {
-      event.preventDefault();
-      if (InvestorFormDetail.InvestorProfileImage) {
-        const token = JSON.parse(localStorage.getItem("token"))
-        const response = await api.put("/investors/update-investor-data", { InvestorFormDetail, token })
+      var formData = new FormData();
+      formData.append('profilePicture', profilePicture);
+      if (formData) {
+        const response = await api.put("/all/update-profile-picture-investor-data", formData)
         if (response.data.success) {
           toast.success(response.data.message)
         }
@@ -55,33 +41,35 @@ const ProfilePic = () => {
       }
     }
     catch (error) {
-      console.log('Error:', error);
+      console.log(error);
     }
   }
 
-  const formSubmit = async (event) => {
-    console.log("hello");
-    console.log(InvestorFormDetail,"64");
-    await setInvestorFormDetail({...InvestorFormDetail,[event.target.name]:event.target.files[0]})
-    console.log(InvestorFormDetail,"65");
-    console.log(InvestorFormDetail?.InvestorProfileImage);
-    // await checkFunction(event); 
-  }
+  useEffect(()=> {
+    const getProfile = async () => {
+      const response  = await api.get("/all/get-profile-image")
+      if(response.data.success){
+        setUserProfile(response.data.userProfilePictureData.userProfilePicture)
+      }
+    }
+    getProfile()
+  },[])
 
   return profilePic &&
     <div className='basic-logo-body-div my-3'>
-      <div><img src={logoImage} alt="" /></div>
-      <div className='pt-4'><p>PNG or JPG no bigger than 1000px wide and tall.</p></div>
-      <div className='pt-3'>
-        {/* <button className='py-1'>Upload</button> */}
-        <input type="file" name="InvestorProfileImage" onChange={formSubmit} className='input-file' id="imageUploadInput" />
-        <label htmlFor="imageUploadInput" className='uploadImageButtonCss px-3 py-1' >Upload</label>
-        <button className='uploadImageButtonCss'>Submit</button>
-
+      <div>
+        {userProfile?.length ? <img src={imageUrl} alt="" /> :
+         <img src={logoImage} alt="" />}
+        {/*  */}
       </div>
 
+      <div className='pt-4'><p>PNG or JPG no bigger than 1000px wide and tall.</p></div>
+      <div className='pt-3'>
+        <input type="file" name="InvestorProfileImage" onChange={handleProfilePicture} className='input-file' id="imageUploadInput" />
+        <label htmlFor="imageUploadInput" className='investorProfileLabelUploadCss'>Upload</label>
+        <button className='investorProfileLabelUploadCss importantMarginCss' onClick={formSubmit}>Submit</button>
+      </div>
     </div>
-
 }
 
 export default ProfilePic

@@ -7,23 +7,27 @@ import toast from 'react-hot-toast'
 const AadharCardComponent = () => {
 
     const { aadharcard } = useContext(KycFormDashboardContext)
-    const [aadharImage, setAadharImage] = useState({ frontImage: null, backImage: null })
-    console.log(aadharImage, "9");
+    const [aadharFront, setAadharFront] = useState(null);
+    const [aadharBack, setAadharBack] = useState(null);
 
+    const handleAadharFront = (e) => {
+        setAadharFront(e.target.files[0]);
+    };
 
-    const handleImageField = (e) => {
-        setAadharImage({ ...aadharImage, [e.target.name]: e.target.files[0] })
-    }
+    const handleAadharBack = (e) => {
+        setAadharBack(e.target.files[0]);
+    };
+
 
     const formSubmit = async (event) => {
         event.preventDefault();
         try {
-            const formData = new FormData();
-            formData.append("aadharFrontImage", aadharImage.frontImage);
-            formData.append("aadharBackImage", aadharImage.backImage);
+            console.log(aadharFront, "28");
+            var formData = new FormData();
+            formData.append('aadharFront', aadharFront);
+            formData.append('aadharBack', aadharBack);
             if (formData) {
-                const token = JSON.parse(localStorage.getItem("token"))
-                const response = await api.put("/investors/update-investor-data", { formData, token })
+                const response = await api.post("/investors/update-kyc-aadharcard-investor-data", formData)
                 if (response.data.success) {
                     toast.success(response.data.message)
                 }
@@ -46,17 +50,19 @@ const AadharCardComponent = () => {
                 <h5 className='mt-3'>Front Aadhar</h5>
                 <p>Please use an image no larger than 1200px * 600px.</p>
                 <div className='file-div'>
-                    <input type="file" name="frontImage" className='input-file' onChange={handleImageField} id="fileInput" />
+                    <input type="file" className='input-file' onChange={handleAadharFront} id="fileInput" />
                     <label htmlFor="fileInput" className="custom-button">Upload Aadhar Front</label>
                 </div>
 
                 <h5 className='mt-3'>Back Aadhar</h5>
                 <p>Please use an image no larger than 1200px * 600px.</p>
                 <div className='file-div'>
-                    <input type="file" name="backImage" className='input-file' onChange={handleImageField} id="backFileInput" />
+                    <input type="file" className='input-file' onChange={handleAadharBack} id="backFileInput" />
                     <label htmlFor="backFileInput" className="custom-button">Upload Aadhar Back</label>
                 </div>
-                <input type="submit" className='uploadImageButtonCss px-3 py-1 mt-1 mx-auto' value="Save" />
+                {/* <div> */}
+                    <input type="submit" className='uploadImageButtonCss px-3 py-1 mt-1 mx-auto' value="Save" />
+                {/* </div> */}
             </form>
         </div>
 
