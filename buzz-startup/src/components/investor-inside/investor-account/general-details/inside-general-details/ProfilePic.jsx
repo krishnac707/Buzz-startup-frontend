@@ -11,8 +11,8 @@ const ProfilePic = () => {
   const [profilePicture, setProfilePicture] = useState(null);
   const [userProfile, setUserProfile] = useState();
 
-  // const serverAddress = 'http://localhost:8000';
-  const serverAddress = 'https://buzz-startups-backend.vercel.app';
+  const serverAddress = 'http://localhost:8000';
+  // const serverAddress = 'https://buzz-startups-backend.vercel.app';
   const imageUrl = serverAddress + '/' + userProfile;
 
   const handleProfilePicture = (e) => {

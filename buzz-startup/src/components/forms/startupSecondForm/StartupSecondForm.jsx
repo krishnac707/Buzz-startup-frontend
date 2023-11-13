@@ -54,6 +54,27 @@ const StartupSecondForm = ({ formData, setFormData }) => {
                 <option value="Fintech">Fintech</option>
                 <option value="Edtech">Edtech</option>
                 <option value="Ecommerce">Ecommerce</option>
+                <option value="Consumer Economy">Consumer Economy</option>
+                <option value="Agriech">Agriech</option>
+                <option value="Cyber Security">Cyber Security</option>
+                <option value="Retail">Retail</option>
+                <option value="Media Tech">Media Tech</option>
+                <option value="Web3.0">Web3.0</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Bio Tech">Bio Tech</option>
+                <option value="Fitness Tech">Fitness Tech</option>
+                <option value="AI">AI</option>
+                <option value="Deep Tech">Deep Tech</option>
+                <option value="Blockchain">Blockchain</option>
+                <option value="Climate Tech">Climate Tech</option>
+                <option value="Consumer Brands">Consumer Brands</option>
+                <option value="IoT">IoT</option>
+                <option value="Travel tech">Travel tech</option>
+                <option value="EV">EV</option>
+                <option value="Health Tech">Health Tech</option>
+                <option value="Logistics">Logistics</option>
+                <option value="Clean Tech">Clean Tech</option>
+                <option value="Other">Other</option>
             </select>
 
             <select onChange={SelectRound} value={formData.StartupRound}>

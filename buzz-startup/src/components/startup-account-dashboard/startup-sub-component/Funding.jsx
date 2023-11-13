@@ -10,7 +10,16 @@ const Funding = () => {
 
   const { fundingStartup } = useContext(StartupDashboardContext)
   const { state, dispatch } = useContext(AuthContext);
-  const [startupFundingData, setUserData] = useState({})
+  const [startupFundingData, setUserData] = useState({
+    currencyType: 'USD',
+    fundingAsk: '',
+    valuation: '',
+    minimumTicketSize: '',
+    capTableEntryFounder: '',
+    capTableEntryESOP: '',
+    capTableEntryInvestor: '',
+    commitmentSoFar: '',
+  })
   const [isUpdate, setIsUpdate] = useState(false);
   const router = useNavigate();
 
@@ -42,10 +51,20 @@ const Funding = () => {
 
   const handleInput = (e) => {
     setUserData({ ...startupFundingData, [e.target.name]: e.target.value })
+    // const { name, value } = e.target;
+    // setUserData((prevData) => ({
+    //   ...prevData,
+    //   [name]: value,
+    // }));
   }
 
   const handleCurrency = (e) => {
     setUserData({ ...startupFundingData, "currencyType": e.target.value })
+    // const { value } = e.target;
+    // setUserData((prevData) => ({
+    //   ...prevData,
+    //   "currencyType": value,
+    // }));
   }
 
 
@@ -53,7 +72,9 @@ const Funding = () => {
   const formSubmit = async (event) => {
     event.preventDefault();
     if (!isUpdate) {
-      if (startupFundingData.currencyType && startupFundingData.fundingAsk && startupFundingData.valuation && startupFundingData.minimumTicketSize && startupFundingData.capTableEntry && startupFundingData.commitmentSoFar) {
+      if (startupFundingData.currencyType && startupFundingData.fundingAsk && startupFundingData.valuation &&
+        startupFundingData.minimumTicketSize && startupFundingData.capTableEntryFounder &&
+        startupFundingData.capTableEntryESOP && startupFundingData.capTableEntryInvestor && startupFundingData.commitmentSoFar) {
         try {
           const response = await api.post("/startups/startup-funding-detail", { startupFundingData })
           if (response.data.success) {
@@ -70,8 +91,8 @@ const Funding = () => {
       try {
         const response = await api.put("/startups/update-startup-funding-detail", { startupFundingData })
         if (response.data.success) {
-          console.log("hello 44");
           toast.success(response.data.message)
+          setUserData(response.data.startupFundingDetails)
         }
         else {
           toast.error(response.data.message)
@@ -129,10 +150,23 @@ const Funding = () => {
         </div>
 
         <div className='startup-general-body'>
+          <div className='py-2'>Cap Table Entry</div>
           <div className='startup-general-startup-name-div py-3'>
-            <div className='py-2'>Cap Table Entry</div>
+            <div className='py-2'>Founder : (in %)</div>
             <div>
-              <input className='p-2 startname-input-general' type="text" name="capTableEntry" value={startupFundingData.capTableEntry} onChange={handleInput} />
+              <input className='p-2 startname-input-general' type="number" name="capTableEntryFounder" value={startupFundingData.capTableEntryFounder} onChange={handleInput} />
+            </div>
+          </div>
+          <div className='startup-general-startup-name-div py-3'>
+            <div className='py-2'>ESOP : (in %)</div>
+            <div>
+              <input className='p-2 startname-input-general' type="number" name="capTableEntryESOP" value={startupFundingData.capTableEntryESOP} onChange={handleInput} />
+            </div>
+          </div>
+          <div className='startup-general-startup-name-div py-3'>
+            <div className='py-2'>Investor : (in %)</div>
+            <div>
+              <input className='p-2 startname-input-general' type="number" name="capTableEntryInvestor" value={startupFundingData.capTableEntryInvestor} onChange={handleInput} />
             </div>
           </div>
         </div>

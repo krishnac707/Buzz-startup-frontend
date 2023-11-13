@@ -7,7 +7,9 @@ import toast from 'react-hot-toast';
 const Highlights = () => {
   const { highlights } = useContext(PitchDashboardContext);
   const { state } = useContext(AuthContext);
-  const [userData, setUserData] = useState({})
+  const [userData, setUserData] = useState({startupHighlights:""})
+
+  console.log(userData,"12");
 
   useEffect(() => {
     const startupDetailFunction = async () => {
@@ -62,7 +64,6 @@ const Highlights = () => {
   return (highlights &&
     <div>
       <form onSubmit={formSubmit} className='tract-body-css'>
-
         <p className='pt-3'>This is how others will learn about the project, so make it good!</p>
         <textarea className='p-1' type="text" name="startupHighlights" value={userData.startupHighlights} onChange={handleInput} />
         <div>

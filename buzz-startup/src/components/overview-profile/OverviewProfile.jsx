@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./OverviewProfile.css"
 import { useNavigate } from 'react-router-dom'
+import api from '../apiConfig'
 
 const OverviewProfile = () => {
 
+    const [startupData, setStartupData] = useState({})
     const router = useNavigate();
+
+    console.log(startupData);
+
+    useEffect(() => {
+        const startupFunction = async () => {
+            try {
+                const response = await api.get("/investors/get-single-startup-overview")
+                if (response.data.success) {
+                    setStartupData(response.data.result)
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+        startupFunction()
+    }, [])
 
     return (
         <div className='overview-profile-body'>
@@ -26,50 +45,54 @@ const OverviewProfile = () => {
                 crowd!
             </p>
 
-            <div className='companys-cards-deals-div'>
+            {startupData && <div className='companys-cards-deals-div'>
 
                 <div className='company-card-inside-deal-div shadow-sm mb-2' >
                     <div className="company-name-image-div">
                         <div><img src="https://www.efeed.in/static/media/logoFull_orange.01ce8f91aee2decbba6a6ca90acf97b6.svg" alt="" /></div>
                         <div>
-                            <h6>eFeed</h6>
-                            <p className='home-live-dashboard-company-description-font-size'>Better nutrition better lives</p>
+                            {startupData.startupName ? <h6>{startupData.startupName}</h6> : <h6>--</h6>}
+                            {startupData.startupTagline ? <p className='home-live-dashboard-company-description-font-size'>{startupData.startupTagline}</p> : <p className='home-live-dashboard-company-description-font-size'>--</p>}
                         </div>
                     </div>
                     <div className='valuation-deadline-div'>
                         <div>
                             <p className="mb-0">valuation</p>
-                            <p className="mb-0"><b>32 cr</b></p>
+                            {startupData.startupValuation ? <p className="mb-0"><b>{startupData.startupValuation}</b></p> : <p className="mb-0"><b>{startupData.startupValuation}</b></p>}
                         </div>
                         <div>
-                            <p className="mb-0">Deadline</p>
-                            <p className="mb-0"><b>2022-12-15</b></p>
+                            <p className="mb-0">Stages</p>
+                            {startupData.startupStages ? <p className="mb-0"><b>{startupData.startupStages}</b></p> : <p className="mb-0"><b>--</b></p>}
                         </div>
                     </div>
                     <div className='valuation-deadline-div-1'>
                         <div>
                             <p className="mb-0">Funding Asked</p>
-                            <p className="mb-0"><b>4 cr</b></p>
+                            {startupData.startupFundingAsk ? <p className="mb-0"><b>{startupData.startupFundingAsk}</b></p> : <p className="mb-0"><b>--</b></p>}
                         </div>
                         <div>
                             <p className="mb-0">Min. Investment</p>
-                            <p className="mb-0"><b>2 Lakhs</b></p>
+                            {startupData.startupMinimumFunding ? <p className="mb-0"><b>{startupData.startupMinimumFunding}</b></p> : <p className="mb-0"><b>--</b></p>}
                         </div>
                     </div>
                     <div className='valuation-deadline-div-2'>
                         <div>
                             <p className="mb-0">CAP</p>
-                            <p className="mb-0"><b>Founder:60%</b></p>
+                            {/* <p className="mb-0"><b>Founder:60%</b></p>
                             <p className="mb-0"><b>ESOP:20%</b></p>
-                            <p className="mb-0"><b>Investor:20%</b></p>
-                            <button className='agritech-button'>Agritech</button>
+                            <p className="mb-0"><b>Investor:20%</b></p> */}
+                            {startupData.startupcapTableEntryFounder ? <p className="mb-0"><b>Founder : {startupData.startupcapTableEntryFounder} %</b></p> : <p className="mb-0"><b>Founder : -- %</b></p>}
+                            {startupData.startupCapTableEntryESOP ? <p className="mb-0"><b>ESOP : {startupData.startupCapTableEntryESOP} %</b></p> : <p className="mb-0"><b>Founder : -- %</b></p>}
+                            {startupData.startupCapTableEntryInvestor ? <p className="mb-0"><b>Investor : {startupData.startupCapTableEntryInvestor} %</b></p> : <p className="mb-0"><b>Founder : -- %</b></p>}
+                            {startupData.startupSector ? <button className='agritech-button'>{startupData.startupSector}</button> : <button className='agritech-button'>--</button>}
                         </div>
                         <div>
-                            <p className="mb-0"><b>500,000 USD</b></p>
+                            <p className="mb-0">Commitment So Far</p>
+                            {startupData.startupCommetmentSoFar ? <p className="mb-0"><b>{startupData.startupCommetmentSoFar}</b></p> : <p className="mb-0"><b>--</b></p>}
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>}
 
         </div>
     )
