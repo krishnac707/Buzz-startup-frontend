@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './Header.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import headerImage from './../../images/startup-dashboard-profile-logo.png'
 import { AuthContext } from '../../context/Auth.context';
 
@@ -9,6 +9,7 @@ function Header() {
     const router = useNavigate();
 
     const location = useLocation();
+    const { id } = useParams();
     const isLoginPage = location.pathname === '/login';
     const isSignupPage = location.pathname === '/register';
     const isStartupPage = location.pathname === '/start-up-account';
@@ -17,26 +18,16 @@ function Header() {
     const isInvestorMainDashboard = location.pathname === "/investor-form-account";
     const isInvestorHomeDashboard = location.pathname === "/investor/home";
     const isInvestorAccountDashboard = location.pathname === "/investor/account";
-    const isFullReport = location.pathname === "/full-report"
+    const isFullReport = location.pathname === "/full-report";
+    const isInvestorVerificationComplete = location.pathname === "/investor-opportunity";
+    const isInterestStartup = location.pathname === "/startup-interest";
+    const isSingleInterestStartup = location.pathname.includes("/get-single-interest-startup-detail/");;
     const { state, dispatch } = useContext(AuthContext)
-
-    const [isToken, setIsToken] = useState(false);
-
-    // useEffect(()=>{
-    //         var tokenCheck = JSON.parse(localStorage.getItem("token"))
-
-    //         if(tokenCheck)
-
-    // },[isToken])
-
-    
-
-
     const [expanded, setExpanded] = useState(false);
 
     const handleNavItemClick = (route) => {
         router(route)
-        setExpanded(false); // Close the Navbar when a menu item is clicked
+        setExpanded(false); 
     };
 
     const handleLogoutNavItemClick = (route) => {
@@ -56,7 +47,7 @@ function Header() {
         return null;
     }
 
-    if (isInvestorHomeDashboard || isInvestorAccountDashboard) {
+    if (isInvestorHomeDashboard || isInvestorAccountDashboard || isInvestorVerificationComplete || isInterestStartup || isSingleInterestStartup) {
         return (
             <div id='navbar-header' >
                 <Navbar expand="lg" fixed="top" className="bg-body-tertiary border-bottom-css-navbar p-0">
@@ -67,8 +58,9 @@ function Header() {
                             {/* <Navbar.Collapse id="basic-navbar-nav" className={isMenuOpen ? "show" : ""}> */}
 
                             <Nav className="navbar-nav right-investor-header-div">
-                                <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4' onClick={() => router("/investor/home")}>Opportunities</Nav.Link>
-                                <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4'>My Portfolio</Nav.Link>
+                                <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4' onClick={() => router("/investor-opportunity")}>Opportunities</Nav.Link>
+                                {/* <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4' onClick={() => router("/investor/home")}>Opportunities</Nav.Link> */}
+                                <Nav.Link className='navbar-link-menu-div-investor-last i-mobile-view-size pt-4' onClick={() => router('/startup-interest')}>My Portfolio</Nav.Link>
                                 <NavDropdown title={<img src={headerImage} className='hpid py-2' alt="Image" />} className='navbar-link-investor-menu-div i-mobile-view-size' id="basic-nav-dropdown">
                                     {/* <span className='nhid'><img className='pt-3 pb-3' src={headerImage} alt="" /></span> */}
                                     <NavDropdown.Item onClick={() => router('/investor/account')}>My Profile</NavDropdown.Item>

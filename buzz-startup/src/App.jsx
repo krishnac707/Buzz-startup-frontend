@@ -21,6 +21,9 @@ import FullReport from './components/full-report/FullReport';
 import AboutUs from './components/about-us/AboutUs';
 import ContactUs from './components/contact-us/ContactUs';
 import PortfolioComponent from './components/portfolio-component/PortfolioComponent';
+import InvestorOpportunity from './components/investor-inside/investor-opportunity/InvestorOpportunity';
+import InterestInvestor from './components/investor-inside/interest-investor/InterestInvestor';
+import SingleInterestStartupDetail from './components/investor-inside/interest-startup-detail/SingleInterestStartupDetail';
 
 function App() {
    
@@ -47,6 +50,9 @@ function App() {
                 <Route exact path='/about-us' element={<AboutUs />} />
                 <Route exact path='/contact-us' element={<ContactUs />} />
                 <Route exact path='/portfolio' element={<PortfolioComponent />} />
+                <Route exact path='/investor-opportunity' element={<InvestorOpportunity />} />
+                <Route exact path='/startup-interest' element={<InterestInvestor />} />
+                <Route exact path='/get-single-interest-startup-detail/:id' element={<SingleInterestStartupDetail />} />
             </Routes>
             <Footer />
         </div>

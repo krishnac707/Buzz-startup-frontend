@@ -23,7 +23,7 @@ const Funding = () => {
   const [isUpdate, setIsUpdate] = useState(false);
   const router = useNavigate();
 
-  console.log(startupFundingData, "10");
+  console.log(state, "26 funding");
 
   useEffect(() => {
     const getStartupDetails = async () => {
@@ -103,8 +103,6 @@ const Funding = () => {
       }
     }
   }
-
-
 
   return (fundingStartup &&
     <div>

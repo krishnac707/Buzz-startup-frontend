@@ -1,0 +1,43 @@
+.investor-main-opportunity-div {
+    width: 100%;
+    margin-top: 7%;
+    /* padding-top: 8% !important; */
+    /* background-color: #f9f9f9; */
+    padding-bottom: 3%;
+
+}
+
+.select-opportunity-width{
+    width: auto !important;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.interested-button-width{
+    width: 100%;
+}
+
+@media screen and (max-width: 850px) {
+
+    .investor-main-opportunity-div {
+        width: 100%;
+        margin-top: 5%;
+        padding-top: 4% !important;
+        /* background-color: #f9f9f9; */
+        padding-bottom: 3%;
+    
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .investor-main-opportunity-div {
+        width: 100%;
+        margin-top: 7%;
+        padding-top: 8% !important;
+        /* background-color: #f9f9f9; */
+        padding-bottom: 3%;
+    
+    }
+}

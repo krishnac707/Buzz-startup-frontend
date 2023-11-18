@@ -107,7 +107,8 @@ const Login = () => {
         if (response.data.success) {
           setInvestorFormDetail(response.data.InvestorDetail)
           setInvestorStatus(response.data.InvestorFormStatus)
-          router("/investor/home")
+          // router("/investor/home")
+          router("/investor-opportunity")
         }
       } catch (error) {
         router("/investor-form-account")

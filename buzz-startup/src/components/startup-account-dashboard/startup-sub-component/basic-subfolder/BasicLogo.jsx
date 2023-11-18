@@ -18,8 +18,6 @@ const BasicLogo = () => {
     setProfilePicture(e.target.files[0]);
   };
 
-  console.log(profilePicture,"21");
-
   const formSubmit = async (event) => {
     var formData = new FormData();
     formData.append('profilePicture', profilePicture);
@@ -32,7 +30,6 @@ const BasicLogo = () => {
         }
       }
       catch (error) {
-        console.log("hh2");
         toast.error(error.response.data.message)
         console.log(error);
       }
