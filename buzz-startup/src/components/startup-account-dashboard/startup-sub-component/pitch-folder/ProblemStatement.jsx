@@ -3,42 +3,50 @@ import { PitchDashboardContext } from '../../../../context/PitchDashboard.contex
 import { AuthContext } from '../../../../context/Auth.context';
 import toast from 'react-hot-toast';
 import api from '../../../apiConfig';
+import Loader from '../../../loader-component/Loader';
 
 const ProblemStatement = () => {
   const { problemStatement } = useContext(PitchDashboardContext);
   const { state } = useContext(AuthContext);
   const [userData, setUserData] = useState({})
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const startupDetailFunction = async () => {
-      if (state?.user?.Email) {
-        if (state?.user?.Role == "Startup") {
-          const token = JSON.parse(localStorage.getItem("token"));
-          if (token) {
-            try {
-              const response = await api.post("/startups/startup-basic-detail", { token })
-              if (response.data.success) {
-                setUserData(response.data.startupDetail)
-              }
-            }
-            catch (error) {
-              console.log(error);
-            }
-          }
-        }
-        else {
-          toast.error("You are Not a Startup User");
-        }
-      }
-    }
     startupDetailFunction()
   }, [])
+
+  const startupDetailFunction = async () => {
+    setLoading(true);
+    if (state?.user?.Email) {
+      if (state?.user?.Role == "Startup") {
+        const token = JSON.parse(localStorage.getItem("token"));
+        if (token) {
+          try {
+            const response = await api.post("/startups/startup-basic-detail", { token })
+            if (response.data.success) {
+              setUserData(response.data.startupDetail)
+            }
+          }
+          catch (error) {
+            console.log(error);
+          }
+          finally {
+            setLoading(false);
+          }
+        }
+      }
+      else {
+        toast.error("You are Not a Startup User");
+      }
+    }
+  }
 
   const handleInput = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value })
   }
 
   const formSubmit = async (event) => {
+    setLoading(true);
     try {
       event.preventDefault();
       if (userData.startupProblemStatement) {
@@ -58,17 +66,23 @@ const ProblemStatement = () => {
     catch (error) {
       console.log('Error:', error);
     }
+    finally {
+      setLoading(false);
+    }
   }
 
   return (problemStatement &&
     <div>
-      <form onSubmit={formSubmit} className='tract-body-css'>
-        <p className='pt-3'>This is how others will learn about the project, so make it good!</p>
-        <textarea className='p-1' type="text" name="startupProblemStatement" value={userData.startupProblemStatement} onChange={handleInput} />
-        <div>
-          <button className='startup-basic-general-save-button text-center py-1 my-3'>Save</button>
-        </div>
-      </form>
+      {loading ? (
+        <Loader loading={loading} />
+      ) : (
+        <form onSubmit={formSubmit} className='tract-body-css'>
+          <p className='pt-3'>This is how others will learn about the project, so make it good!</p>
+          <textarea className='p-1' type="text" name="startupProblemStatement" value={userData.startupProblemStatement} onChange={handleInput} />
+          <div>
+            <button className='startup-basic-general-save-button text-center py-1 my-3'>Save</button>
+          </div>
+        </form>)}
     </div>
   )
 }

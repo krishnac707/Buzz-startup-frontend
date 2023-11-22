@@ -2,26 +2,28 @@ import React, { useEffect, useState } from 'react'
 import './InvestorOpportunity.css'
 import api from '../../apiConfig';
 import toast from 'react-hot-toast';
+import Loader from '../../loader-component/Loader';
 
 const InvestorOpportunity = () => {
   const [allStartups, setAllstartups] = useState([]);
   const [filteredStartups, setFilteredStartups] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState('');
 
-  useEffect(() => {
-    const getStartupData = async () => {
-      try {
-        const response = await api.get("/investors/get-all-startup-overview-data",)
-        if (response.data.success) {
-          setAllstartups(response.data.allStartup);
-          setFilteredStartups(response.data.allStartup);
-        }
-      }
-      catch (err) {
-        toast.error(err.response.data.message)
-        console.log(err);
+  const getStartupData = async () => {
+    try {
+      const response = await api.get("/investors/get-all-startup-overview-data",)
+      if (response.data.success) {
+        setAllstartups(response.data.allStartup);
+        setFilteredStartups(response.data.allStartup);
       }
     }
+    catch (err) {
+      toast.error(err.response.data.message)
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
     getStartupData()
   }, []);
 
@@ -41,7 +43,6 @@ const InvestorOpportunity = () => {
   };
 
   const addStartupInterest = async (startupId) => {
-    console.log(startupId, "44");
     try {
       const response = await api.post("/investors/add-interested-startup-detail", { startupId: startupId })
       if (response.data.success) {
@@ -50,8 +51,11 @@ const InvestorOpportunity = () => {
     }
     catch (err) {
       toast.error(err.response.data.message)
-      // console.log(err);
     }
+  }
+
+  if (!filteredStartups.length) {
+    return <Loader loading={true} />;
   }
 
   return (

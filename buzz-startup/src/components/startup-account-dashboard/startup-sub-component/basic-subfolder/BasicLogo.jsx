@@ -22,7 +22,6 @@ const BasicLogo = () => {
     var formData = new FormData();
     formData.append('profilePicture', profilePicture);
     if (formData) {
-      console.log("hello 2");
       try {
         const response = await api.put("/all/update-profile-picture-investor-data", formData)
         if (response.data.success) {

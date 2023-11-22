@@ -63,7 +63,7 @@ const InvestorAccount = () => {
                     <div className='startup-side-nav-component-content-div'>
                         <Nav className='startup-side-nav' variant="pills" defaultActiveKey="link-1">
                             <Nav.Item className="basic-startup-form-div">
-                                <Nav.Link onClick={generalDetailFunction} className='startup-navbar-color py-2' eventKey="link-1">Generial Details</Nav.Link>
+                                <Nav.Link onClick={generalDetailFunction} className='startup-navbar-color py-2' eventKey="link-1">General Details</Nav.Link>
                             </Nav.Item>
                             <Nav.Item className="basic-startup-form-div">
                                 <Nav.Link onClick={kycDocFunction} className='startup-navbar-color py-2' eventKey="link-2">KYC Documents</Nav.Link>

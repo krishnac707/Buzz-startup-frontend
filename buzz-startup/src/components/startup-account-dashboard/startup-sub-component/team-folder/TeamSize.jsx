@@ -4,14 +4,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import toast from 'react-hot-toast'
 import api from '../../../apiConfig'
+import Loader from '../../../loader-component/Loader'
 
 const TeamSize = () => {
   const { teamSize } = useContext(TeamDashboardContext)
   const [isSaveButton, setIsSaveButton] = useState(false);
   const [userData, setUserData] = useState([]);
-  const [teamData, setTeamData] = useState([])
+  const [teamData, setTeamData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  console.log(teamData?.teamSizeDetails, "14");
+  const getTeamSizeFunction = async () => {
+    setLoading(true);
+    try {
+      const response = await api.get("/startups/get-startup-team-size-data")
+      if (response.data.success) {
+        setTeamData(response.data.teamSizeDetails)
+      }
+    }
+    catch (err) {
+      console.log(err);
+    }
+    finally {
+      setLoading(false);
+    }
+  }
 
   const addFormButton = () => {
     if (!isSaveButton) {
@@ -27,13 +43,33 @@ const TeamSize = () => {
     setUserData(onChangeValue)
   }
 
-  const handleDelete = (i) => {
+  const handleFormDelete = (i) => {
     const deleteValue = [...userData]
     deleteValue.splice(i, 1)
     setUserData(deleteValue)
   }
 
+  const handleDelete = async (teamSizeId) => {
+    setLoading(true);
+    try {
+      const response = await api.delete(`/startups/remove-startup-team-size/${encodeURIComponent(teamData?._id)}`, {
+        data: { teamSizeId },
+      });
+      if (response.data.success) {
+        toast.success(response.data.message)
+        return getTeamSizeFunction();
+      }
+    } catch (error) {
+      toast.error(error.response.data.message)
+      console.error('Error deleting item:', error);
+    }
+    finally {
+      setLoading(false);
+    }
+  };
+
   const formSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     // const confirmSubmit = window.confirm("Are you sure you want to submit this form?");
     // if(confirmSubmit){
@@ -43,12 +79,16 @@ const TeamSize = () => {
           const response = await api.post("/startups/startup-team-size-detail", userData)
           if (response.data.success) {
             toast.success(response.data.message)
-            return setUserData([])
+            setUserData([]);
+            return getTeamSizeFunction();
           }
         }
         catch (err) {
           toast.error(err.response.data.message)
           console.log("err", err);
+        }
+        finally {
+          setLoading(false);
         }
       }
       else {
@@ -59,32 +99,24 @@ const TeamSize = () => {
   }
 
   useEffect(() => {
-    const getTeamSizeFunction = async () => {
-      try {
-        const response = await api.get("/startups/get-startup-team-size-data")
-        if (response.data.success) {
-          setTeamData(response.data.teamSizeDetails)
-        }
-      }
-      catch (err) {
-        console.log(err);
-      }
-    }
     getTeamSizeFunction()
   }, [])
 
   return (teamSize &&
     <div>
+      {loading ? (
+        <Loader loading={loading} />
+      ) :
+        (<div>
       {teamData?.teamSizeDetails && teamData?.teamSizeDetails.map((singleTeamData, i) => <div className='mt-3 fouder-detail-css p-3'>
         <div className='delete-founder-button-css'>
-          <button onClick={handleDelete}><FontAwesomeIcon icon={faXmark} /></button>
+          <button onClick={() => handleDelete(singleTeamData?._id)}><FontAwesomeIcon icon={faXmark} /></button>
         </div>
         <div className='startup-general-body'>
           <div className='startup-general-startup-name-div py-3'>
             <div className='py-2'>Team Name :</div>
             <div>
               <p>{singleTeamData.teamName}</p>
-              {/* <input className='p-2 startname-input-general' type="text" name="teamName" value={singleTeamData.teamName} onChange={(e) => handleInput(e, i)} /> */}
             </div>
           </div>
         </div>
@@ -93,7 +125,6 @@ const TeamSize = () => {
             <div className='py-2'>Team Size :</div>
             <div>
               <p>{singleTeamData.teamSize}</p>
-              {/* <input className='p-2 startname-input-general' type="number" name="teamSize" value={val.teamSize} onChange={(e) => handleInput(e, i)} /> */}
             </div>
           </div>
         </div>
@@ -104,7 +135,7 @@ const TeamSize = () => {
           return (
             <div className='mt-3 fouder-detail-css p-3'>
               <div className='delete-founder-button-css'>
-                <button onClick={handleDelete}><FontAwesomeIcon icon={faXmark} /></button>
+                <button onClick={handleFormDelete}><FontAwesomeIcon icon={faXmark} /></button>
               </div>
               <div className='startup-general-body'>
                 <div className='startup-general-startup-name-div py-3'>
@@ -131,6 +162,7 @@ const TeamSize = () => {
         </div>
         {isSaveButton && <button type='submit' className='startup-basic-general-save-button text-center py-1 my-3'>Save</button>}
       </form>
+      </div>)}
     </div>
   )
 }

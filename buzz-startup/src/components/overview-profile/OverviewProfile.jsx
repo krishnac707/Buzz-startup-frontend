@@ -8,8 +8,6 @@ const OverviewProfile = () => {
     const [startupData, setStartupData] = useState({})
     const router = useNavigate();
 
-    console.log(startupData);
-
     useEffect(() => {
         const startupFunction = async () => {
             try {

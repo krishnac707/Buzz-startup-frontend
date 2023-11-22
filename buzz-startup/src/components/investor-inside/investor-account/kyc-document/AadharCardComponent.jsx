@@ -21,7 +21,6 @@ const AadharCardComponent = () => {
 
     const formSubmit = async (event) => {
         event.preventDefault();
-        console.log(aadharFront, "28");
         var formData = new FormData();
         formData.append('aadharFront', aadharFront);
         formData.append('aadharBack', aadharBack);

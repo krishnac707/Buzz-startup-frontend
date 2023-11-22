@@ -25,8 +25,6 @@ const Signup = () => {
   const [imageSrc, setImageSrc] = useState(startupImage);
   const { state } = useContext(AuthContext)
 
-  console.log(userData, "16");
-
   const handleOptionChange = (event) => {
     const value = event.target.value;
     setSelectedOption(value);

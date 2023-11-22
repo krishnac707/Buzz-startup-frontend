@@ -30,7 +30,6 @@ const InvestorMainForm = () => {
     });
     const FormTitles = ["Create Your Investor Profile", "Let us know you better", "Create Your Investor Profile"];
 
-    console.log(formData,"35");
     const PageDisplay = () => {
         if (page === 0) {
             return <InvestorFirstForm formData={formData} setFormData={setFormData} />;

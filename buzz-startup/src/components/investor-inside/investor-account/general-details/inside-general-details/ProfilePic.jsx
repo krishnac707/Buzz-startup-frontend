@@ -19,8 +19,6 @@ const ProfilePic = () => {
     setProfilePicture(e.target.files[0]);
   };
 
-  console.log(profilePicture,"22");
-
   const formSubmit = async (event) => {
     var formData = new FormData();
     formData.append('profilePicture', profilePicture);

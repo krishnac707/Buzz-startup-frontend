@@ -3,32 +3,39 @@ import './InterestInvestor.css'
 import toast from 'react-hot-toast';
 import api from '../../apiConfig';
 import { useNavigate } from 'react-router-dom';
+import Loader from '../../loader-component/Loader';
 
 const InterestInvestor = () => {
 
-    const [startupInterestedDetail,setStartupInterestedDetail] = useState([])
+    const [startupInterestedDetail, setStartupInterestedDetail] = useState([])
+    const [loading, setLoading] = useState(true);
     const router = useNavigate();
 
-    useEffect(()=>{
-        const getStartupDetails = async() => {
-            try{
-                const response = await api.get("/investors/get-interested-startup-detail")
-                if(response.data.success){
-                    setStartupInterestedDetail(response.data.startupDetails)
-                }
-            }
-            catch(err){
-                toast.error(err.response.data.message)
+    const getStartupDetails = async () => {
+        try {
+            const response = await api.get("/investors/get-interested-startup-detail")
+            if (response.data.success) {
+                setStartupInterestedDetail(response.data.startupDetails)
             }
         }
+        catch (err) {
+            toast.error(err.response.data.message)
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
         getStartupDetails()
-    },[])
+    }, [])
 
     return (
         <div className='interest-investor-main-div'>
             <h1 className='text-center'>Your Startup Interested List </h1>
             <div className='companys-cards-deals-div'>
-                {startupInterestedDetail.length ? startupInterestedDetail.map(startupData => (
+                {loading ? (<Loader loading={true} />)
+                 : 
+                startupInterestedDetail.length ? startupInterestedDetail.map(startupData => (
                     <div className='company-card-inside-deal-div shadow-sm mb-2' key={startupData.startupId} onClick={() => router(`/get-single-interest-startup-detail/${startupData.startupId}`)}>
                         <div className="company-name-image-div">
                             <div><img src="https://www.efeed.in/static/media/logoFull_orange.01ce8f91aee2decbba6a6ca90acf97b6.svg" alt="" /></div>
@@ -71,9 +78,11 @@ const InterestInvestor = () => {
                             </div>
                         </div>
                     </div>
-                )): <div>
-                    <h2 className='text-center'>No Startup Found...</h2>
-                </div> }
+                )) :
+                    <div className='iiis-width'>
+                        <h3 className='text-center'>You have not shown interest in any Startup yet</h3>
+                    </div>
+                }
             </div>
         </div>
     )

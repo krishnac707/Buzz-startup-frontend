@@ -29,8 +29,6 @@ const StartupMainForm = () => {
         StartupTermsAndCondition: false,
     });
 
-    console.log(formData, "30");
-
     const FormTitles = ["Create Your Startup Profile", "Let us know you better", "Create Your Startup Profile"];
 
     const PageDisplay = () => {

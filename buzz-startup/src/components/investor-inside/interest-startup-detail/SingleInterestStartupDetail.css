@@ -1,13 +1,16 @@
 .interest-single-startup-main-div {
-
-    width: 50%;
     margin-top: 7%;
-    /* padding-top: 8% !important; */
-    /* background-color: #f9f9f9; */
     padding-bottom: 3%;
 
 }
 
+.single-startup-detail-main-div-width{
+    width: 100%;
+}
+
+.single-startup-detail-width {
+    width: 50%;
+}
 
 @media screen and (max-width: 850px) {
 
@@ -15,9 +18,12 @@
         width: 100%;
         margin-top: 5%;
         padding-top: 4% !important;
-        /* background-color: #f9f9f9; */
         padding-bottom: 3%;
-    } 
+    }
+
+    .single-startup-detail-width {
+        width: 90%;
+    }
 
 }
 
@@ -27,8 +33,10 @@
         width: 100%;
         margin-top: 7%;
         padding-top: 8% !important;
-        /* background-color: #f9f9f9; */
         padding-bottom: 3%;
     }
-    
+
+    .single-startup-detail-width {
+        width: 90%;
+    }
 }
